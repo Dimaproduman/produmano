@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="72c66184-b4fa-48d7-95e1-d02803fa33ad" name="my test" url="http://psyhofor.ftp.ukraine.com.ua">
+        <fileTransfer host="psyhofor.ftp.ukraine.com.ua" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
