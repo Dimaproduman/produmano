@@ -21,6 +21,7 @@
 	<![endif]-->
 	
 	<link href="<?php bloginfo('template_url'); ?>/style.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_url'); ?>/css/edit-style.css" rel="stylesheet">
 	
 	<?php if ( is_user_logged_in() ) { echo '<style>.to_top{top:32px !important;}</style>'; } ?>
 	
