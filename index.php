@@ -6,4 +6,4 @@
  * Time: 13:02
  */
 
-echo 'hello gg ftf';
+echo 'hello gg new';
