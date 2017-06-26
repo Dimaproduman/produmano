@@ -1,0 +1,356 @@
+var editing_model = null;
+
+
+
+
+
+/* Представление цены */
+var PriceView = Backbone.View.extend({
+    tagName: 'div',
+    className: 'input',
+    template: $('#price-block').html(),
+
+    initialize: function() {
+        Backbone.on('recalculate', this.recalculate, this);
+        this.model.on('change:price', this.render, this);
+        this.recalculate();
+    },
+    render: function() {
+        var tmpl = _.template(this.template);
+        this.$el.html(tmpl(this.model.toJSON()));
+        return this;
+    },
+    recalculate: function() {
+        var area = prepare_number(jQuery('#area').val());
+        var count_rooms = prepare_number(jQuery('#rooms').val());
+        var area_bathrooms = prepare_number(jQuery('#area_bathrooms').val());
+        var san = jQuery('#bathrooms_type').val();
+
+        var type = jQuery('input[name="design_type"]:checked').attr('id');
+         
+        var t_formulas =  _.sortBy( formulas[type], 'max');
+        var forumula = false;
+         
+
+        for(var i in t_formulas) {
+            var f = t_formulas[i];
+            if(f['max'] > area) {
+                formula = f.formula;
+                break;
+            }
+        }
+        if(!formula) {
+            throw "Ошибка! Нет формулы под данную площадь.";
+        }
+
+        var is_common = false;
+        var is_separate = false;
+        if(san == 'common') {
+            is_common = true;
+        } else if(san == 'separate') {
+            is_separate = true;
+        }
+        //((площадь_квартиры-площадь_санузлов)*2470,02705464716 + площадь_санузлов * ((выбран_общий_санузел*21134,2599705666) + (выбран_раздельный_санузел*31441,7646242646)) + 6000 + площадь_квартиры)*1,15
+        var replacements = {
+            ',': '.',
+            'площадь_квартиры': area,
+            'площадь_санузлов': area_bathrooms,
+            'выбран_общий_санузел': is_common,
+            'выбран_раздельный_санузел': is_separate,
+        }
+
+        for(var i in replacements) {
+            formula = formula.split(i).join(replacements[i]);
+        }
+
+        var b_price = new Function('return ' + formula);
+        
+        this.model.set('price', b_price().toFixed(2));
+		
+		//дублирование цены в меню
+		var zprice = jQuery('.price').text();
+		jQuery('.menu-block .btn-order').text(zprice);
+
+    }
+});
+/*
+    Общее представление приложения
+*/
+var ApplicationView = Backbone.View.extend({
+    events: {
+        'click .select-design-block .add-item': 'add_room'
+    },
+    initialize: function() {
+        this.$el = jQuery('#application');
+        this.$area = this.$el.find('#area_list');
+        Backbone.on('rerender_room_types', this.change_rooms, this);
+        this.renderAreaFields();
+        this.renderDesignType();
+        this.renderPriceBlock();
+        this.renderSelectBathroom();
+        this.renderRooms();
+        this.initSkycke();
+    },
+    initSkycke: function() {
+        jQuery('.sticky').each(function() {
+           /*var el = $(this);
+           var stickyTop = $(this).position().top-jQuery('body').position().top; // returns number
+           
+           var stickyHeight = $(this).height();
+           el.after('<div class="pass" style="display: none">&nbsp;</div>');
+           el.next().css('height', el.height());
+           var width = el.width();
+           $(window).scroll(function(){ // scroll event
+               
+               var windowTop = $(window).scrollTop(); // returns number
+
+               if (stickyTop < windowTop){
+                  el.css({ position: 'fixed', top: 0 }).addClass('sticked');
+                  el.next().show();
+               }
+               else {
+                  el.css({'position':'static' }).removeClass('sticked');
+                  el.next().hide();
+               }
+             });*/
+        });
+    },
+    change_rooms: function() {
+        var r = parseInt(prepare_number(jQuery('#rooms').val()));
+        var l = (c_rooms.length-3) - r;
+         
+        for(var i = 0; i < l; i++) {
+            var rem = c_rooms.last().trigger('remove');
+            //c_rooms.remove(c_rooms.last());
+        }
+        for(var i = l; i < 0; i++) {
+            c_rooms.add(new RoomTypeModel());
+        }
+        jQuery('.room-item:hidden').remove();
+        Backbone.trigger('room_render_end');
+    },
+    /*
+     Вывод базовых полей
+    */
+    renderAreaFields: function() {
+        collection.each(function(area){
+            var field = new AreaFieldView({model: area});
+            this.$area.append(field.render().$el);
+        }, this);
+    },
+    /*
+     Вывод блока с ценой
+    */
+    renderPriceBlock: function() {
+        var price = new PriceView({model: new PriceModel()});
+        price.render().$el.insertAfter(this.$area);
+		
+		
+		
+    },
+    /*
+     Вывод блока с выбором типа санузла
+    */
+    renderSelectBathroom: function() {
+        var bathroom = jQuery(_.template(jQuery('#t_select_bathroom').html())(url_query.toJSON()));
+        bathroom.insertAfter(this.$area)
+        Backbone.trigger('recalculate');
+    },
+    /*
+     Вывод комнат
+    */
+    renderRooms: function() {
+        var r = new RoomsTypeListView();
+        this.$el.find('.select-design-block').prepend(r.render().$el);
+    },
+    /*
+     Добавление комнаты
+    */
+    add_room: function() {
+        if(this.$el.find('.select-design-block .add-item').hasClass('disabled')) {
+            return false;
+        }
+        c_rooms.add(new RoomTypeModel());
+		jQuery(".rooms .room-item").map(function(i, o) { $(o).addClass("item" + (i + 1)); });
+
+
+        return false;
+    },
+    /* 
+     Вывод блока с выбором типа дизайна
+    */
+    renderDesignType: function() {
+        var design = jQuery(_.template(jQuery('#design-block').html())(url_query.toJSON()));
+        design.insertAfter(this.$area);
+		
+    }
+});
+
+
+// Выбор цвета
+jQuery('.style-color').on('click', '.color', function() {
+    jQuery('.style-color .color').removeClass('selected');
+    jQuery(this).addClass('selected');
+    
+    var add = -1;
+    if(jQuery('#ceiling_cornices').is(':checked')) {
+        add += jQuery('.list-colors .color').length;
+    }
+     console.log(jQuery(this).data('id'), add, (parseInt(jQuery(this).data('id'))) + add);
+    sliderModal.goToSlide((parseInt(jQuery(this).data('id'))) + add);
+    return false;
+});
+// Сохранение
+jQuery('.btn-save').on('click', function() {
+	
+	console.log(editing_model);
+	
+    editing_model.set('color', new ColorModel(jQuery('.style-color .color.selected').data('model')));
+	
+	
+    editing_model.set('cornices', jQuery('#ceiling_cornices').is(':checked'));
+    Backbone.trigger('reload_room_type');
+    jQuery('#modSelectDesign .close').click();
+});
+ 
+// При изменении комнат проверяем, если стоит базовый, то нужно изменить на дизайнерский
+Backbone.on('change_rooms', function() {
+    if(is_process_change) return;
+    if(jQuery('input[name="design_type"]:checked').attr('id') == 'basic') {
+        c_rooms.each(function(item) {
+            console.log(item.get('color').get('color').toUpperCase());
+            if(!(['#FFFFFF', 'WHITE', '#FFF'].indexOf(item.get('color').get('color').toUpperCase()) !== -1)) {
+                 jQuery('#designer').click();
+                 console.log(item.get('color').get('color').toUpperCase());
+            }
+            
+        });
+    }
+});
+// При клике на базовый, если цвета комнат не белые, нужно оповестить пользователя, что при базовом
+// все цвета будут белыми.
+var is_process_change = false;
+jQuery('#calc_form').on('click', '#basic', function() {
+    var is_default = true;
+    is_process_change = true;
+    c_rooms.each(function(item) {
+        if(!(['#FFFFFF', 'WHITE', '#FFF'].indexOf(item.get('color').get('color').toUpperCase()) !== -1)) {
+            is_default = false;
+			
+			//item.set('color', new ColorModel(current_color_proj[item.get('type')][1]));
+        }
+    });
+
+    if(!is_default) {
+        if(!confirm(MESS[lang]['basic_set_confirm'])) {
+            return false;
+        }
+        c_rooms.each(function(item) { 
+            item.set('color', new ColorModel(current_color_proj[item.get('type')][0]));
+            item.set('cornices', false);
+        }); 
+        Backbone.trigger('reload_room_type');
+    }
+    is_process_change = false;
+});
+// При выборе типа дизайна, пересчитать
+jQuery(document).on('click', 'input[name="design_type"]', function() {
+    Backbone.trigger('reload_room_type')
+    Backbone.trigger('recalculate');
+});
+// Сохраняем
+jQuery('.submit_order').click(function() {
+    jQuery('#ser_rooms').val(JSON.stringify(c_rooms.toJSON()));
+    jQuery('#calc_form').submit();
+    return false;
+});
+
+
+
+
+	
+jQuery(document).ready(function(){	
+
+
+	jQuery(".rooms .room-item").map(function(i, o) { $(o).addClass("item" + (i + 1)); });
+
+	jQuery( "#designer" ).change(function() {
+		jQuery('#dis').hide();
+	});
+	jQuery( "#basic" ).change(function() {
+		jQuery('#dis').show();
+	});
+	jQuery( "#individual" ).change(function() {
+		jQuery('#dis').show();
+	});
+	
+	jQuery('.btn-save').click(function(){
+	jQuery(".design_item input#individual").attr("checked", "checked");
+	});
+	
+
+jQuery('.item1 .btn-edit').click(function(){
+	jQuery('.span.niceCheck em').html('ДРУГОЙ ВИД'); alert('tt');
+});
+	
+
+
+	jQuery('.list-colorss span').click(function(){
+		jQuery('.list-colorss span').removeClass('selected');
+		jQuery(this).addClass('selected');
+		
+		at = jQuery(this).attr("data-id");
+		//alert(at);
+		
+		ii=1;
+		jQuery('.rooms .btn-edit').each(function ()
+			{
+			// alert(ii);	
+			jQuery('.item'+ii+' a.btn-edit').click();
+			jQuery('.list-colors a[data-id='+at+']').click();
+			jQuery('.btn-save').click();
+			jQuery('#modSelectDesign .close').click();
+			ii++;
+			Backbone.trigger('reload_room_type');
+			//var editing_model = null;
+		});
+		
+		jQuery('#modSelectDesign').hide();
+	
+		var MyIntervalID = setInterval(function(){
+			jQuery('#modSelectDesign').hide();
+		},10);
+		setTimeout (function(){ clearInterval (MyIntervalID );}, 1000);
+		//jQuery('.image a').trigger('click');
+		//jQuery('.list-colors a[data-id='+at+']').click();
+		//jQuery('.btn-save').click();
+
+
+		
+	
+	
+//	alert('8');
+
+//Backbone.View.extend('edit');
+	//editing_model = {		cid: "c3"	}
+	//console.log(RoomTypeView);
+	
+	
+	//editing_model.set('color', new ColorModel(jQuery('.list-colorss span.selected').data('model')));
+  //  editing_model.set('cornices', jQuery('#ceiling_cornices').is(':checked'));
+  // Backbone.trigger('reload_room_type');
+    //jQuery('#modSelectDesign .close').click();
+  
+     console.log(jQuery(this).data('id'));
+ 
+    return false;
+   
+});
+});
+
+
+
+
+
+
+$(window).scroll();
