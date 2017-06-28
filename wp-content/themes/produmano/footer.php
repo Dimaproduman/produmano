@@ -589,10 +589,7 @@ ga('send', 'pageview');
 
 </script>
 
-<script>
-
-
-</script>
+script
    
    
     <?php wp_footer(); ?>
@@ -628,5 +625,8 @@ var google_remarketing_only = true;
 </div>
 
 </noscript>
+
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/edit-script.js"></script>
+
 </body> 
 </html>
