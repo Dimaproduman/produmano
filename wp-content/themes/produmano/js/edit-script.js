@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+	//nice select
+	$('.select-beauty').niceSelect();
+	//nice select-end
+
 	//only integer in input
 	 function onlyInteger(a){
 	 	$(a).bind("change keyup input click", function() {

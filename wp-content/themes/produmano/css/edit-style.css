@@ -32,3 +32,45 @@
   margin-top: -10px;
   text-align: center;
 }
+.nice-select {
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: block;
+  color: #000;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #cdcdcd;
+}
+.nice-select .list {
+  width: calc(100%);
+  left: 0px;
+  border-radius: 4px;
+  border: 0px solid $border-color;
+  border-top: 0;
+  margin-top: 0;
+}
+select.select-beauty {
+  display: none !important;
+}
+.element-select {
+  padding: 20px 0;
+}
+.nice-select:active,
+.nice-select.open,
+.nice-select:focus {
+  border: 1px solid #cdcdcd;
+}
+.form-order-block .nice-select.select-beauty {
+  display: block;
+  width: 100%;
+}
+.form-order-block .current {
+  display: block;
+  text-align: center;
+  color: #888;
+}
+.nice-select .option {
+  font-size: 14px;
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+$yellow = #FAE029
+$yellow-hover = #DFC722
+
+
+.btn--hover
+	&:hover
+		background: #DFC722!important
+
+.btn-select
+	@extend .btn--hover
+
+.input-row
+	position: relative
+
+.input-placeholder-val
+	position: absolute
+	top 15px
+	transition all .4s
+	color #888888
+	display: block
+	text-align: center
+	width: 100%
+
+.input-animate
+	display: inline-block
+	z-index 20
+	color black
+
+.input-animate:focus+span,
+.input-animate[data-empty="false"] + span
+	top 3px
+	font-size: 10px
+
+.input__error
+	display: none
+	font-size: 12px
+	color red
+	margin-bottom: 10px
+	margin-top: -10px
+	text-align: center
+
+.nice-select
+	border-radius 4px
+	margin-bottom: 20px
+	display: block
+	color #000000
+	font-size 14px
+	height: 50px
+	line-height: 50px
+	border: 1px solid #cdcdcd
+	.list
+		width: calc(100% )
+		left 0px
+		border-radius 4px
+		border 0px solid $border-color
+		border-top 0
+		margin-top: 0
+
+select.select-beauty
+	display: none!important
+
+.element-select
+	padding: 20px 0
+
+.nice-select:active, .nice-select.open, .nice-select:focus
+	border 1px solid #cdcdcd
+
+.form-order-block
+	.nice-select.select-beauty
+		display: block
+		width: 100%
+	.current
+		display: block
+		text-align: center
+		color: #888888
+.nice-select .option
+	font-size: 14px
+	text-align: center

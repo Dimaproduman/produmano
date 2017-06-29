@@ -626,6 +626,7 @@ var google_remarketing_only = true;
 
 </noscript>
 
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.nice-select.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/edit-script.js"></script>
 
 </body> 
