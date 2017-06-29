@@ -114,7 +114,7 @@
                         <form class="form">
                             <div class="input">
                                 <div class="input-row">
-                                    <input type="text" class="number input-animate input--number" name="area_h" id="area_h"   data-input="Площадь квартиры, м2">
+                                    <input type="text" class="number input-animate input--number" name="area_h" id="area_h"   data-input="Площадь квартиры, м2" >
                                 </div>
                                     <div class="input__error area_h--error"> Максимальная площадь 500 м2</div>
                             </div>
@@ -122,12 +122,13 @@
                             <div class="input-row">
                                 <input type="text" class="number input-animate input--number" name="height_h" id="height_h" data-input="Высота потолка, м">
                             </div>
-                            <div class="input__error height_h--error"> Максимальная высота 4 м</div>
+                            <div class="input__error height_h--error"> Высота потолков от 2 до 4м</div>
 
                             <div class="input-row">
                                 <input type="text" class="number input-animate input--number" name="s_area_h" id="s_area_h" data-input="Площадь санузлов, м2">
                             </div>
-                            <div class="input__error s_area_h--error"> Максимальная площадь 40 м2</div>
+                            <div class="input__error s_area_h--error"> площадь от 1 до 40 м</div>
+                            <div class="input__error s_area_h--error-squer"> Не может быть больше площади квартиры</div>
 
 
                             <div class="input">
