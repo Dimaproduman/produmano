@@ -55,7 +55,7 @@ Template Name: Главная
                     <div class="input calc-apartment__el">
                         <label for="rooms">Площадь санузлов</label>
                         <input type="text" class="number input--number calc--flat" name="s_area" id="s_area" data-calc="s_area">
-                         <div class="input__error s_area--error"> площадь от 1 до 40 м</div>
+                         <div class="input__error s_area--error"> площадь от 2 до 40 м</div>
                          <div class="input__error s_area--error-squer"> Не может быть больше площади квартиры</div>
                     </div>
                     <div class="input calc-apartment__el">

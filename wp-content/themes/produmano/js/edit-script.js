@@ -36,11 +36,11 @@ $(document).ready(function(){
 
 	errorValInput('#area_h',1,500,'.area_h--error');
 	errorValInput('#height_h',2,4,'.height_h--error');
-	errorValInput('#s_area_h',1,40,'.s_area_h--error');
+	errorValInput('#s_area_h',2,40,'.s_area_h--error');
 
 	errorValInput('#area',1,500,'.area--error');
 	errorValInput('#height',2,4,'.height--error');
-	errorValInput('#s_area',1,40,'.s_area--error');
+	errorValInput('#s_area',2,40,'.s_area--error');
 
 	var syncSquer = function(elOne,elTwo,message){
 		$(elOne).add(elTwo).on("change keyup input ", function() {

@@ -122,7 +122,7 @@
                             <div class="input-row">
                                 <input type="text" class="number input-animate input--number" name="s_area_h" id="s_area_h" data-input="Площадь санузлов, м2" data-calc="s_area">
                             </div>
-                            <div class="input__error s_area_h--error"> площадь от 1 до 40 м</div>
+                            <div class="input__error s_area_h--error"> площадь от 2 до 40 м</div>
                             <div class="input__error s_area_h--error-squer"> Не может быть больше площади квартиры</div>
 
 
