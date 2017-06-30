@@ -41,28 +41,32 @@ Template Name: Главная
             <div class="form-select">
 			<p>Введите данные о квартире</p>
                 <form id="param">
-				<div class="input">
-					<label for="rooms">Площаль квартиры</label>
-					<input type="text" class="number" name="area" id="area" placeholder="30">
-				</div>
-				<div class="input">
-					<label for="rooms">Высота потолка</label>
-					<input type="text" class="number" name="height" id="height" placeholder="2.7">
-				</div>
-				<div class="input">
-					<label for="rooms">Площадь санузлов</label>
-					<input type="text" class="number" name="s_area" id="s_area" placeholder="6">
-				</div>
-				<div class="input">
-					<label for="rooms">Санузел
-					</label>
-					<select name="bathrooms_type" id="bathrooms_type">
-						<option value="v1" selected="selected">Общий</option>
-						<option value="v2">Раздельный</option>
-						<option value="v3">Два санузла</option>
-					</select>
-				</div>
-			
+                <div class="calc-apartment">
+                    <div class="input calc-apartment__el">
+                        <label for="rooms">Площаль квартиры</label>
+                        <input type="text" class="number input--number calc-flat" name="area" id="area" data-calc="area">
+                        <div class="input__error area--error"> Максимальная площадь 500 м2</div>
+                    </div>
+                    <div class="input calc-apartment__el">
+                        <label for="rooms">Высота потолка</label>
+                        <input type="text" class="number input--number calc-flat" name="height" id="height" data-calc="height">
+                        <div class="input__error height--error"> Высота потолков от 2 до 4м</div>
+                    </div>
+                    <div class="input calc-apartment__el">
+                        <label for="rooms">Площадь санузлов</label>
+                        <input type="text" class="number input--number calc--flat" name="s_area" id="s_area" data-calc="s_area">
+                         <div class="input__error s_area--error"> площадь от 1 до 40 м</div>
+                         <div class="input__error s_area--error-squer"> Не может быть больше площади квартиры</div>
+                    </div>
+                    <div class="input calc-apartment__el">
+                        <label for="rooms">Санузел</label>
+                        <select name="bathrooms_type" id="bathrooms_type" class="select-beauty">
+                            <option value="v1" selected="selected" data-display="Общий">Общий</option>
+                            <option value="v2">Раздельный</option>
+                            <option value="v3">Два санузла</option>
+                        </select>
+                    </div>
+                </div>
 			</form>
             </div>
             

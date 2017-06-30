@@ -74,3 +74,40 @@ select.select-beauty {
   font-size: 14px;
   text-align: center;
 }
+.calc-apartment {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.calc-apartment__el {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+@media only screen and (max-width: 768px) {
+  .calc-apartment__el {
+    width: 100%;
+  }
+  .calc-apartment__el input {
+    margin-bottom: 10px !important;
+  }
+}
+.calc-apartment__el input {
+  padding: 14px !important;
+  width: 80% !important;
+  margin-bottom: 20px;
+}
+.calc-apartment__el label {
+  display: block;
+  width: 100%;
+}
+.calc-apartment__el .select-beauty {
+  width: 80%;
+  text-align: center;
+}
+.calc-apartment__el .current {
+  display: block;
+  text-align: center;
+}

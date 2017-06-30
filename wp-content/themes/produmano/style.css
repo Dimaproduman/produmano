@@ -3132,7 +3132,7 @@ div#edit_r {
 
 @media (max-width: 991px){
 	.select-design-main #param {
-    padding-left: 30px;
+    padding-left: 0px;
 }
 	.menu-b ul li a {
     font-size: 10px;

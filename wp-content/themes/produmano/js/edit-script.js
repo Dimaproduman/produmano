@@ -6,12 +6,15 @@ $(document).ready(function(){
 
 	//only integer in input
 	 function onlyInteger(a){
-	 	$(a).bind("change keyup input click", function() {
-	 	    if (this.value.match(/[^\d\.\,]/g)) {
-	 	        this.value = this.value.replace(/[^\d\.\,]/g, '');
-	 	    }
-	 	});
-	 }
+   	$(a).bind("change keyup input click", function(e) {
+    		var reg = /(\d+[\.\,]?\d*)/;
+    			if(this.value.match(reg))
+   	        this.value = this.value.match(reg)[1];
+            else
+            	this.value = '';
+   	});
+   }
+
 	onlyInteger(".input--number");
 	//only integer in input end
 
@@ -35,19 +38,27 @@ $(document).ready(function(){
 	errorValInput('#height_h',2,4,'.height_h--error');
 	errorValInput('#s_area_h',1,40,'.s_area_h--error');
 
-	$('#s_area_h, #area_h ').on("change keyup input ", function() {
-				var currentVal = $('#s_area_h').val().replace(',','.')*1;
-				var sVal = $('#area_h').val().replace(',','.')*1;
-				console.log('currentVal',currentVal);
-				console.log('sVal',sVal);
+	errorValInput('#area',1,500,'.area--error');
+	errorValInput('#height',2,4,'.height--error');
+	errorValInput('#s_area',1,40,'.s_area--error');
+
+	var syncSquer = function(elOne,elTwo,message){
+		$(elOne).add(elTwo).on("change keyup input ", function() {
+				var currentVal = $(elOne).val().replace(',','.')*1;
+				var sVal = $(elTwo).val().replace(',','.')*1;
 	 	     if (currentVal >= sVal && sVal >= 1 && currentVal !='' ) {
 	 	         $(this).val(sVal) ;
-	 	     		$('.s_area_h--error-squer').show();
+	 	     		$(message).show();
 	 	     }
 	 	     else {
-	 				 $('.s_area_h--error-squer').hide();
+	 				 $(message).hide();
 	 	     }
 		});
+	}
+
+	syncSquer('#s_area_h', '#area_h ','.s_area_h--error-squer');
+	syncSquer('#s_area', '#area ','.s_area--error-squer');
+
 
 	//init animate placeholder
 	$('.input-animate').each(function(){
@@ -56,13 +67,26 @@ $(document).ready(function(){
 		current.parent().append(dataString);
 	});
 
-	$('.input-animate').on('input', function (e) {
+	$('.input-animate').on('input click', function (e) {
 		$(e.currentTarget).attr('data-empty', !e.currentTarget.value);
 	});
 
-	$('.input-placeholder-val').click(function(){
+$('.input-placeholder-val').click(function(){
 		$(this).parent().find('.input-animate').focus(); //найти Input и повесить focus
 	});
+
+	$('.calc-flat').each(function(){
+		$(this).on("change keyup input ", function() {
+			var subCalc = $(this).data('calc');
+			$('.input-animate').each(function(){
+				if($(this).data('calc') == subCalc ){
+					$(this).click();
+				}
+			})
+		})
+	})
+
+
 	//init animate placeholder end
 
 
