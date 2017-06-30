@@ -122,7 +122,7 @@ function fun_c() {
 		rez_cher =+area * +mch * +height/2.45;
 		//Чистовые материалы комнаты	(S общ-S сан)*М комнат*H/2,45
 		rez_ches = (+area - +s_area)* +mcom * +height / 2.45;
-		console.log(mcom);
+		//console.log(mcom);
 		// Чистовые материалы санузел	S сан*М сан*H/2,45
 		rez_san = +s_area * +msan * +height/2.45;
 		
@@ -130,13 +130,13 @@ function fun_c() {
 		
 		
 		c_total= +rez_pol + +rez_poto + +rez_sten + +rez_elec + +rez_sant + +rez_ob + +rez_cher + +rez_ches + +rez_san;
-		console.log(c_total);
+		//console.log(c_total);
 		
 		//скандинавский
 		var1 = 18850 +(340* area)+ (850*(+area - +s_area)) +33850 + (700*(3+5)) + (-2500 * s_area * height/2.45) + 5500 +14000 +3550 + c_total;
 		
 		test = 18850 +(340* area)+ (850*(+area - +s_area)) +33850 + (700*(3+5)) + (-2500 * s_area * height/2.45) + 5500 +14000 +3550;
-		console.log(test);
+		//console.log(test);
 		
 		var2 =(2500*(+area - +s_area)) + 
 		18850 +
@@ -178,7 +178,7 @@ function fun_c() {
 		var6 = -300* area+ 12800 +
 		(160*area)  + (-2500 * s_area * height/2.45) + c_total;
 		
-		console.log(var1);
+		//console.log(var1);
 		
 		var1 = var1.toFixed(0); //300.23
 		var1 = var1.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
@@ -287,7 +287,7 @@ function fun_c() {
 	coo3 = $.cookie('option3');
 	coo4 = $.cookie('option4');
 	
-	console.log(coo4);
+	//console.log(coo4);
 	
 	if(coo1 !== null){
 		jQuery('input[name="area"]').val(coo1);
