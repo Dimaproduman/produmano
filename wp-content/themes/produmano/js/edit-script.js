@@ -6,11 +6,13 @@ $(document).ready(function(){
 	//only integer in input
 	 function onlyInteger(a){
    	$(a).bind("change keyup input click", function(e) {
-    		var reg = /(\d+[\.\,]?\d*)/;
-    			if(this.value.match(reg))
+    		var reg = /(\d+[\.\,]?\d?)/;
+    			if(this.value.match(reg)){
    	        this.value = this.value.match(reg)[1];
+    			}
             else
             	this.value = '';
+			//noinspection JSAnnotator,JSAnnotator
    	});
    }
 
@@ -45,7 +47,7 @@ $(document).ready(function(){
 		$(elOne).add(elTwo).on("change keyup input ", function() {
 				var currentVal = $(elOne).val().replace(',','.')*1;
 				var sVal = $(elTwo).val().replace(',','.')*1;
-	 	     if (currentVal >= sVal && sVal >= 1 && currentVal !='' ) {
+	 	     if (currentVal > sVal && sVal >= 1 && currentVal !='' ) {
 	 	         $(this).val(sVal) ;
 	 	     		$(message).show();
 	 	     }
