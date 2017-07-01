@@ -1135,14 +1135,9 @@ form#param {
 </div>
 
 
-
-	
-
+    <script type="text/javascript" src="/wp-content/themes/produmano/editor/fun_calc.js"></script>
 <script type="text/javascript" src="/wp-content/themes/produmano/editor/all.js"></script>
-<script>
 
- 
-</script>
 
 
 <div id="modv" class="modal fade bs-example-modal-sm" data-toggle="modv">

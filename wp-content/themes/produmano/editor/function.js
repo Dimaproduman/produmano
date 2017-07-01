@@ -107,7 +107,7 @@ function fun_c() {
 		
 		// Работы по полу (S общ-S сан)*1300+S сан*1800
 		rez_pol = (+area - +s_area)*1300 + +s_area*1800;
-		console.log(rez_pol);
+		//console.log(rez_pol);
 		//Работы по потолку	S общ*400
 		rez_poto = +area *400;
 		//Работы по стенам	((S общ-S сан)*3765+S сан*2730)*H/2,45
@@ -270,6 +270,14 @@ function fun_c() {
 		
 	}).keyup();
 	jQuery("select").change(fun_c);
+
+
+    //вызываем функцию калькулятора
+    jQuery(document).on('keyup','.input #area', function(){
+        // jQuery("input").keyup(function () {
+        $(this).val().replace(",",".")*1;
+        $(this).val().replace(/\.$/gm, '');
+    }).keyup();
 	
 	
 	
