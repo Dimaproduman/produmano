@@ -28,16 +28,15 @@ Template Name: Главная
 </div>	
 
 
+
+
 <div class="linee"  id="di" style="    width: 100%;
     height: 10px;
     background: #f9f8f8;
     margin-top: 60px;"></div>
-
       <div class="select-design-main">
         <div class="select-design-block container">
             <h2>Выберите стиль</h2>
-            
-			
             <div class="form-select">
 			<p>Введите данные о квартире</p>
                 <form id="param">
@@ -69,7 +68,7 @@ Template Name: Главная
                 </div>
 			</form>
             </div>
-            
+
             <div class="design-plans row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="item">

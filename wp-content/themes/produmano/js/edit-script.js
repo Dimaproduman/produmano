@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	//nice select
 	$('.select-beauty').niceSelect();
 	//nice select-end
@@ -56,9 +55,9 @@ $(document).ready(function(){
 		});
 	}
 
+
 	syncSquer('#s_area_h', '#area_h ','.s_area_h--error-squer');
 	syncSquer('#s_area', '#area ','.s_area--error-squer');
-
 
 	//init animate placeholder
 	$('.input-animate').each(function(){
@@ -74,7 +73,6 @@ $(document).ready(function(){
 $('.input-placeholder-val').click(function(){
 		$(this).parent().find('.input-animate').focus(); //найти Input и повесить focus
 	});
-
 	$('.calc-flat').each(function(){
 		$(this).on("change keyup input ", function() {
 			var subCalc = $(this).data('calc');
@@ -85,10 +83,5 @@ $('.input-placeholder-val').click(function(){
 			})
 		})
 	})
-
-
-	//init animate placeholder end
-
-
 
 })
