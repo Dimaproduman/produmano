@@ -11,29 +11,49 @@ function fun_calc() {
     //console.log(id_k );
 
     //общая площадь
-    area = jQuery("input[name='area']").val();
-    if(area==''){
-        area ='25';
+    if(typeof g_area !== "undefined") {
+        area = g_area;
     }
-    //console.log(area);
-    area = area.replace(",",".");
-    area = area.replace(/\.$/gm, '');
+    else{
+        area = jQuery("input[name='area']").val();
+        if (area == '') {
+            area = '25';
+        }
+        //console.log(area);
+        area = area.replace(",", ".");
+        area = area.replace(/\.$/gm, '');
+    }
     //высота
-    height = jQuery("input[name='height']").val();
-    if(height==''){
-        height ='2.5';
+    if(typeof g_height !== "undefined") {
+        height = g_height;
     }
-    height = height.replace(",",".");
-    height = height.replace(/\.$/gm, '');
+    else {
+        height = jQuery("input[name='height']").val();
+        if (height == '') {
+            height = '2.5';
+        }
+        height = height.replace(",", ".");
+        height = height.replace(/\.$/gm, '');
+    }
     //площадь санузла
-    s_area = jQuery("input[name='s_area']").val();
-    if(s_area==''){
-        s_area ='3';
+    if(typeof g_s_area !== "undefined") {
+        s_area = g_s_area;
     }
-    s_area = s_area.replace(",",".");
-    s_area = s_area.replace(/\.$/gm, '');
+    else {
+        s_area = jQuery("input[name='s_area']").val();
+        if (s_area == '') {
+            s_area = '3';
+        }
+        s_area = s_area.replace(",", ".");
+        s_area = s_area.replace(/\.$/gm, '');
+    }
     //какой санузел выбран
-    bathrooms_type = jQuery("#bathrooms_type").val();
+    if(typeof g_bathrooms_type !== "undefined") {
+        bathrooms_type = g_bathrooms_type;
+    }
+    else {
+        bathrooms_type = jQuery("#bathrooms_type").val();
+    }
 
     batt = bathrooms_type;
 
@@ -157,28 +177,55 @@ function fun_calc() {
 
         //пол
         data_c_pol_p ={};
-        $('#menu-l > li> a[id-post="645"]').each(function() {
-            //console.log('ddddd');
+        //console.log($('#menu-l > li> a[id-post="645"]'));
+        if(typeof gos !== "undefined"){
+            $(gos).each(function () {
+                //console.log('ddddd');
 
-            fg = $(this).attr('data-id_categ_pol');
-            fg = fg.split(';');
-            if(fg[2] == 564){
-                c_pol = 0;
-                c_pol_opc = 0;
-            }
-            else if(fg[2] == 582){
-                //паркет +2500 *(Sобщ-S сан - S плитки в коридор или кухню(если есть))
-                c_pol= +fg[4] * (+area - +s_area);
+                fg = $(this).attr('data-id_categ_pol');
+                fg = fg.split(';');
+                if (fg[2] == 564) {
+                    c_pol = 0;
+                    c_pol_opc = 0;
+                }
+                else if (fg[2] == 582) {
+                    //паркет +2500 *(Sобщ-S сан - S плитки в коридор или кухню(если есть))
+                    c_pol = +fg[4] * (+area - +s_area);
 
 
-                //console.log(c_pol);
-                //разделение
-                c_pol_opc = c_pol*0.1;
-                c_pol= c_pol*0.9;
-               // console.log(c_pol_opc);
-            }
+                    //console.log(c_pol);
+                    //разделение
+                    c_pol_opc = c_pol * 0.1;
+                    c_pol = c_pol * 0.9;
+                    // console.log(c_pol_opc);
+                }
 
-        });
+            });
+        }
+        else {
+            $('#menu-l > li> a[id-post="645"]').each(function () {
+                //console.log('ddddd');
+
+                fg = $(this).attr('data-id_categ_pol');
+                fg = fg.split(';');
+                if (fg[2] == 564) {
+                    c_pol = 0;
+                    c_pol_opc = 0;
+                }
+                else if (fg[2] == 582) {
+                    //паркет +2500 *(Sобщ-S сан - S плитки в коридор или кухню(если есть))
+                    c_pol = +fg[4] * (+area - +s_area);
+
+
+                    //console.log(c_pol);
+                    //разделение
+                    c_pol_opc = c_pol * 0.1;
+                    c_pol = c_pol * 0.9;
+                    // console.log(c_pol_opc);
+                }
+
+            });
+        }
         //вывод значений
         c_id = 564;
         data_c_pol = 0;
@@ -190,36 +237,78 @@ function fun_calc() {
 
 
         c_pol_p =0;
-        $('#menu-l > li> a[data-id_categ_pol]').each(function() {
-            //console.log('ddddd');
-            id_e = $(this).attr('id-post');
-            ppp = $(this).attr('data-pol');
-            if(typeof ppp == "undefined") {
-                ppp = 1;
-            }
 
+        if(typeof gos !== "undefined"){
 
-            fg = $(this).attr('data-id_categ_pol');
-            fg = fg.split(';');
-            if(fg[2] == 844){
-                pro = $('#menu-l > li> a[id-post="645"]').attr('data-id_categ_pol');
-                pro = pro.split(';');
-                if(pro[2] == 582){
-                    c_pol_p -= -1800 * (-ppp);
-                    data_c_pol_pp = -1800 * (ppp);
-                    data_c_pol_pp = data_c_pol_pp.toFixed(0);
-                    data_c_pol_p[id_e] = data_c_pol_pp;
+           // console.log($('#menu-l > li> a[data-id_categ_pol]'));
+           // $(alls).each(function () {
+
+            $.each(allsm, function (i, z) {
+                id_e = $(z).attr('id-post');
+                ppp = $(z).attr('data-pol');
+                if (typeof ppp == "undefined") {
+                    ppp = 1;
                 }
-                else{
-                    //Плитка на пол (указать кол-во кв. метров)	+700 * кол-во метров указанное
-                    c_pol_p += +fg[4] * (+ppp);
-                    data_c_pol_pp = +fg[4] * (+ppp);
-                    data_c_pol_pp = data_c_pol_pp.toFixed(0);
-                    data_c_pol_p[id_e]=data_c_pol_pp;
-                }
-            }
 
-        });
+
+                fg = $(z).attr('data-id_categ_pol');
+                if(typeof fg !== "undefined") {
+                    fg = fg.split(';');
+                    if (fg[2] == 844) {
+                        pro = $(gos).attr('data-id_categ_pol');
+                        pro = pro.split(';');
+                        if (pro[2] == 582) {
+                            c_pol_p -= -1800 * (-ppp);
+                            data_c_pol_pp = -1800 * (ppp);
+                            data_c_pol_pp = data_c_pol_pp.toFixed(0);
+                            data_c_pol_p[id_e] = data_c_pol_pp;
+                        }
+                        else {
+                            //Плитка на пол (указать кол-во кв. метров)	+700 * кол-во метров указанное
+                            c_pol_p += +fg[4] * (+ppp);
+                            data_c_pol_pp = +fg[4] * (+ppp);
+                            data_c_pol_pp = data_c_pol_pp.toFixed(0);
+                            data_c_pol_p[id_e] = data_c_pol_pp;
+                        }
+                    }
+                }
+
+            });
+        }
+        else {
+            $('#menu-l > li> a[data-id_categ_pol]').each(function () {
+                //console.log('ddddd');
+                id_e = $(this).attr('id-post');
+                ppp = $(this).attr('data-pol');
+                if (typeof ppp == "undefined") {
+                    ppp = 1;
+                }
+
+
+                fg = $(this).attr('data-id_categ_pol');
+                fg = fg.split(';');
+                if (fg[2] == 844) {
+                    pro = $('#menu-l > li> a[id-post="645"]').attr('data-id_categ_pol');
+                    pro = pro.split(';');
+                    if (pro[2] == 582) {
+                        c_pol_p -= -1800 * (-ppp);
+                        data_c_pol_pp = -1800 * (ppp);
+                        data_c_pol_pp = data_c_pol_pp.toFixed(0);
+                        data_c_pol_p[id_e] = data_c_pol_pp;
+                    }
+                    else {
+                        //Плитка на пол (указать кол-во кв. метров)	+700 * кол-во метров указанное
+                        c_pol_p += +fg[4] * (+ppp);
+                        data_c_pol_pp = +fg[4] * (+ppp);
+                        data_c_pol_pp = data_c_pol_pp.toFixed(0);
+                        data_c_pol_p[id_e] = data_c_pol_pp;
+                    }
+                }
+
+            });
+        }
+
+
         //вывод значений
         //console.log(data_c_pol_p);
         c_id = 844;
@@ -228,22 +317,42 @@ function fun_calc() {
 
 
         //обои
-        $('#menu-l > li> a[id-post="645"]').each(function() {
-            fg = $(this).attr('data-id_categ_sten');
-            fg = fg.split(';');
-            //console.log(fg);
-            if(fg[2] == 702 || fg[2] == 845){
-                // обои без покраски	-300*S общ
-                c_oboi= 0;
-            }
-            else if(fg[2] == 651 || fg[2] == 638 || fg[2] == 639 || fg[2] == 640 || fg[2] == 679 || fg[2] == 680 || fg[2] == 681){
-                // обои без покраски	-300*S общ
-                // обои с покраской	+390*S общ
-                // обои с покраской	+390*S общ
-                c_oboi= +fg[4] * (+area);
-            }
+        if(typeof gos !== "undefined"){
+            $(gos).each(function () {
+                fg = $(this).attr('data-id_categ_sten');
+                fg = fg.split(';');
+                //console.log(fg);
+                if (fg[2] == 702 || fg[2] == 845) {
+                    // обои без покраски	-300*S общ
+                    c_oboi = 0;
+                }
+                else if (fg[2] == 651 || fg[2] == 638 || fg[2] == 639 || fg[2] == 640 || fg[2] == 679 || fg[2] == 680 || fg[2] == 681) {
+                    // обои без покраски	-300*S общ
+                    // обои с покраской	+390*S общ
+                    // обои с покраской	+390*S общ
+                    c_oboi = +fg[4] * (+area);
+                }
 
-        });
+            });
+        }
+        else {
+            $('#menu-l > li> a[id-post="645"]').each(function () {
+                fg = $(this).attr('data-id_categ_sten');
+                fg = fg.split(';');
+                //console.log(fg);
+                if (fg[2] == 702 || fg[2] == 845) {
+                    // обои без покраски	-300*S общ
+                    c_oboi = 0;
+                }
+                else if (fg[2] == 651 || fg[2] == 638 || fg[2] == 639 || fg[2] == 640 || fg[2] == 679 || fg[2] == 680 || fg[2] == 681) {
+                    // обои без покраски	-300*S общ
+                    // обои с покраской	+390*S общ
+                    // обои с покраской	+390*S общ
+                    c_oboi = +fg[4] * (+area);
+                }
+
+            });
+        }
         //console.log(c_oboi);
         //вывод значений
         c_id = [702, 845];
@@ -265,42 +374,85 @@ function fun_calc() {
 
 
         //двери
-        $('#menu-l > li> a[id-post="645"]').each(function() {
-            fg = $(this).attr('data-id_categ_dver');
-            fg = fg.split(';');
-            if(fg[2] == 585){
-                // экошпон	база
-                if($(this).attr('data-dver')){
-                    dv_a = $(this).attr('data-dver');
-                }
-                else{
-                    dv_a = 1;
-                }
+        if(typeof gos !== "undefined"){
+            $(gos).each(function () {
+                fg = $(this).attr('data-id_categ_dver');
+                fg = fg.split(';');
+                if (fg[2] == 585) {
+                    // экошпон	база
+                    if ($(this).attr('data-dver')) {
+                        dv_a = $(this).attr('data-dver');
+                    }
+                    else {
+                        dv_a = 1;
+                    }
 
-                c_dver= +fg[4] * dv_a;
-            }
-            else if(fg[2] == 586 || fg[2] == 587){
-                // хайтек	+2400* кол-во дверей
-                // эмаль	+2850*кол-во дверей
-                if($(this).attr('data-dver')){
-                    dv_a = $(this).attr('data-dver');
+                    c_dver = +fg[4] * dv_a;
                 }
-                else{
-                    dv_a = 1;
+                else if (fg[2] == 586 || fg[2] == 587) {
+                    // хайтек	+2400* кол-во дверей
+                    // эмаль	+2850*кол-во дверей
+                    if ($(this).attr('data-dver')) {
+                        dv_a = $(this).attr('data-dver');
+                    }
+                    else {
+                        dv_a = 1;
+                    }
+                    c_dver = +fg[4] * dv_a;
                 }
-                c_dver= +fg[4] * dv_a;
-            }
-        });
+            });
+        }
+        else {
+            $('#menu-l > li> a[id-post="645"]').each(function () {
+                fg = $(this).attr('data-id_categ_dver');
+                fg = fg.split(';');
+                if (fg[2] == 585) {
+                    // экошпон	база
+                    if ($(this).attr('data-dver')) {
+                        dv_a = $(this).attr('data-dver');
+                    }
+                    else {
+                        dv_a = 1;
+                    }
+
+                    c_dver = +fg[4] * dv_a;
+                }
+                else if (fg[2] == 586 || fg[2] == 587) {
+                    // хайтек	+2400* кол-во дверей
+                    // эмаль	+2850*кол-во дверей
+                    if ($(this).attr('data-dver')) {
+                        dv_a = $(this).attr('data-dver');
+                    }
+                    else {
+                        dv_a = 1;
+                    }
+                    c_dver = +fg[4] * dv_a;
+                }
+            });
+        }
         //console.log(c_dver);
-        $('#menu-l > li> a[id-post="559"]').each(function() {
-            fg = $(this).attr('data-id_categ_dver_v');
-            fg = fg.split(';');
-            if(fg[2] == 855){
-                // вход	база
-                c_dver_v= +fg[4];
-            }
+        if(typeof pri !== "undefined"){
+            $(pri).each(function () {
+                fg = $(this).attr('data-id_categ_dver_v');
+                fg = fg.split(';');
+                if (fg[2] == 855) {
+                    // вход	база
+                    c_dver_v = +fg[4];
+                }
 
-        });
+            });
+        }
+        else {
+            $('#menu-l > li> a[id-post="559"]').each(function () {
+                fg = $(this).attr('data-id_categ_dver_v');
+                fg = fg.split(';');
+                if (fg[2] == 855) {
+                    // вход	база
+                    c_dver_v = +fg[4];
+                }
+
+            });
+        }
         //console.log(c_dver_v);
         //вывод значений
         c_id = [585];
@@ -308,6 +460,9 @@ function fun_calc() {
             pz = $('.op a[data-id_categ="'+c_id+'"]').attr('data-caption');
             pz_a = $('.op a[data-id_categ="'+c_id+'"].active').attr('data-caption');
             if(pz_a){pz=pz_a;}
+            if(typeof dv_a == "undefined"){
+                dv_a=1;
+            }
 
             data_c_dver = pz* dv_a;
             $('.name_o'+item+' #cal').text(data_c_dver);
@@ -334,15 +489,28 @@ function fun_calc() {
 
 
         //плинтус
-        $('#menu-l > li> a[id-post="645"]').each(function() {
-            //$('#menu-l > li> a.active[data-id_categ_plin]').each(function() {
-            fg = $(this).attr('data-id_categ_plin');
-            fg = fg.split(';');
-            if(fg[2] == 655 || fg[2] == 656 || fg[2] == 657 || fg[2] == 658){
-                //цвет двери	+160*S общ
-                c_plin= +fg[4] * (+area);
-            }
-        });
+        if(typeof gos !== "undefined") {
+            $(gos).each(function () {
+                //$('#menu-l > li> a.active[data-id_categ_plin]').each(function() {
+                fg = $(this).attr('data-id_categ_plin');
+                fg = fg.split(';');
+                if (fg[2] == 655 || fg[2] == 656 || fg[2] == 657 || fg[2] == 658) {
+                    //цвет двери	+160*S общ
+                    c_plin = +fg[4] * (+area);
+                }
+            });
+        }
+        else {
+            $('#menu-l > li> a[id-post="645"]').each(function () {
+                //$('#menu-l > li> a.active[data-id_categ_plin]').each(function() {
+                fg = $(this).attr('data-id_categ_plin');
+                fg = fg.split(';');
+                if (fg[2] == 655 || fg[2] == 656 || fg[2] == 657 || fg[2] == 658) {
+                    //цвет двери	+160*S общ
+                    c_plin = +fg[4] * (+area);
+                }
+            });
+        }
         //console.log(c_plin);
         //вывод значений
         c_id = [655, 656, 657, 658];
@@ -382,15 +550,28 @@ function fun_calc() {
 
 
         //потолок светильники
-        $('#menu-l > li.visable > a[data-id_categ_poto]').each(function() {
-            fg = $(this).attr('data-id_categ_poto');
-            fg = fg.split(';');
-            //console.log(fg );
-            if(fg[2] == 862  || fg[2] == 863){
-                //натяжной	база
-                c_poto += +fg[4];
-            }
-        });
+        if(typeof gos !== "undefined") {
+            $(gos).each(function () {
+                fg = $(this).attr('data-id_categ_poto');
+                fg = fg.split(';');
+                //console.log(fg );
+                if (fg[2] == 862 || fg[2] == 863) {
+                    //натяжной	база
+                    c_poto += +fg[4];
+                }
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_poto]').each(function () {
+                fg = $(this).attr('data-id_categ_poto');
+                fg = fg.split(';');
+                //console.log(fg );
+                if (fg[2] == 862 || fg[2] == 863) {
+                    //натяжной	база
+                    c_poto += +fg[4];
+                }
+            });
+        }
         //console.log(c_poto);
 
 
@@ -398,33 +579,70 @@ function fun_calc() {
         k_poto =0;
         k_poto_opc = 0;
         c_poto_s= 0;
-        $('#menu-l > li.visable > a[data-id_categ_poto_p]').each(function() {
 
-            id_e = $(this).attr('id-post');
+        if(typeof allsm !== "undefined") {
 
-            fg = $(this).attr('data-id_categ_poto_p');
-            pot = $(this).attr('data-potol');
-            if(typeof pot == "undefined") {
-                pot = 1;
-            }
-            fg = fg.split(';');
 
-            if(fg[2] == 590){
-                k_poto += +fg[4]*pot;
+            //$('#menu-l > li.visable > a[data-id_categ_poto_p]').each(function () {
+           $.each(allsm, function (i, z) {
+                id_e = $(z).attr('id-post');
 
-                //разделение
-                k_poto_opc = k_poto*0.2;
-                k_poto = k_poto*0.8;
-               // console.log(k_poto_opc);
+                fg = $(z).attr('data-id_categ_poto_p');
+                pot = $(z).attr('data-potol');
+                if (typeof pot == "undefined") {
+                    pot = 1;
+                }
+              //  console.log(z);
+               //console.log(fg);
+               if(typeof fg !== "undefined") {
+                   fg = fg.split(';');
 
-            }
-            if(fg[2] == 701){
-                c_poto_s += +fg[4];
-            }
+                   if (fg[2] == 590) {
+                       k_poto += +fg[4] * pot;
 
-        });
+                       //разделение
+                       k_poto_opc = k_poto * 0.2;
+                       k_poto = k_poto * 0.8;
+                       // console.log(k_poto_opc);
 
-       // console.log(k_poto);
+                   }
+                   if (fg[2] == 701) {
+                       c_poto_s += +fg[4];
+                   }
+               }
+
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_poto_p]').each(function () {
+
+
+                id_e = $(this).attr('id-post');
+
+                fg = $(this).attr('data-id_categ_poto_p');
+                pot = $(this).attr('data-potol');
+                if (typeof pot == "undefined") {
+                    pot = 1;
+                }
+                fg = fg.split(';');
+
+                if (fg[2] == 590) {
+                    k_poto += +fg[4] * pot;
+
+                    //разделение
+                    k_poto_opc = k_poto * 0.2;
+                    k_poto = k_poto * 0.8;
+                    // console.log(k_poto_opc);
+
+                }
+                if (fg[2] == 701) {
+                    c_poto_s += +fg[4];
+                }
+
+            });
+        }
+
+        //console.log(k_poto);
        // console.log(c_poto_s);
 
         //натяжной	со скр карн
@@ -552,49 +770,102 @@ function fun_calc() {
         vva2 = 0;
         vva3 = 0;
 
-        $('#menu-l > li.visable > a[data-id_categ_akc]').each(function() {
-            fg = $(this).attr('data-id_categ_akc');
-            akk = $(this).attr('data-akc');
-            //console.log(akk);
-            if(typeof akk == "undefined") {
-                akk = 1;
-            }
-            fg = fg.split(';');
+        if(typeof allsm !== "undefined") {
 
-            if(fg[2] == 736 || fg[2] == 592 || fg[2] == 593 ){
-                vva1 += +height * fg[4]*akk;
-                //console.log(vva1);
-                //разделение
-                vva1_opc = vva1*0.3;
-                vva1 = vva1*0.7;
-               // console.log(vva1_opc);
-                vva3_opc = 0;
-            }
-            else if(fg[2] == 591){
-                vva1 += +height * fg[4]*akk;
-                vva1_opc = vva1*0.2;
-                vva1 = vva1*0.8;
-               // console.log(vva1_opc);
-                vva3_opc = 0;
-            }
-            else if(fg[2] == 594){
-                vva1 += +height * fg[4]*akk;
-                vva3_opc = 0;
-            }
-            else if(fg[2] == 738 ){
-                //Покраска	база+500р
-                vva2 += +fg[4];
-            }
 
-            else if(fg[2]  == 820 ){
-                //Молдинги	+(кол-во метров длины стены)*2800
-                vva3 += +fg[4]*akk;
-                vva3_opc = vva3*0.2;
-                vva3 = vva3*0.8;
-               // console.log(vva3_opc);
-                vva1_opc = 0;
-            }
-        });
+           $.each(allsm, function (i, z) {
+            //$('#menu-l > li.visable > a[data-id_categ_akc]').each(function () {
+                fg = $(z).attr('data-id_categ_akc');
+                akk = $(z).attr('data-akc');
+                //console.log(akk);
+                if (typeof akk == "undefined") {
+                    akk = 1;
+                }
+
+               if(typeof fg !== "undefined") {
+                   fg = fg.split(';');
+
+                   if (fg[2] == 736 || fg[2] == 592 || fg[2] == 593) {
+                       vva1 += +height * fg[4] * akk;
+                       //console.log(vva1);
+                       //разделение
+                       vva1_opc = vva1 * 0.3;
+                       vva1 = vva1 * 0.7;
+                       // console.log(vva1_opc);
+                       vva3_opc = 0;
+                   }
+                   else if (fg[2] == 591) {
+                       vva1 += +height * fg[4] * akk;
+                       vva1_opc = vva1 * 0.2;
+                       vva1 = vva1 * 0.8;
+                       // console.log(vva1_opc);
+                       vva3_opc = 0;
+                   }
+                   else if (fg[2] == 594) {
+                       vva1 += +height * fg[4] * akk;
+                       vva3_opc = 0;
+                   }
+                   else if (fg[2] == 738) {
+                       //Покраска	база+500р
+                       vva2 += +fg[4];
+                   }
+
+                   else if (fg[2] == 820) {
+                       //Молдинги	+(кол-во метров длины стены)*2800
+                       vva3 += +fg[4] * akk;
+                       vva3_opc = vva3 * 0.2;
+                       vva3 = vva3 * 0.8;
+                       // console.log(vva3_opc);
+                       vva1_opc = 0;
+                   }
+               }
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_akc]').each(function () {
+                fg = $(this).attr('data-id_categ_akc');
+                akk = $(this).attr('data-akc');
+                //console.log(akk);
+                if (typeof akk == "undefined") {
+                    akk = 1;
+                }
+                fg = fg.split(';');
+
+                if (fg[2] == 736 || fg[2] == 592 || fg[2] == 593) {
+                    vva1 += +height * fg[4] * akk;
+                    //console.log(vva1);
+                    //разделение
+                    vva1_opc = vva1 * 0.3;
+                    vva1 = vva1 * 0.7;
+                    // console.log(vva1_opc);
+                    vva3_opc = 0;
+                }
+                else if (fg[2] == 591) {
+                    vva1 += +height * fg[4] * akk;
+                    vva1_opc = vva1 * 0.2;
+                    vva1 = vva1 * 0.8;
+                    // console.log(vva1_opc);
+                    vva3_opc = 0;
+                }
+                else if (fg[2] == 594) {
+                    vva1 += +height * fg[4] * akk;
+                    vva3_opc = 0;
+                }
+                else if (fg[2] == 738) {
+                    //Покраска	база+500р
+                    vva2 += +fg[4];
+                }
+
+                else if (fg[2] == 820) {
+                    //Молдинги	+(кол-во метров длины стены)*2800
+                    vva3 += +fg[4] * akk;
+                    vva3_opc = vva3 * 0.2;
+                    vva3 = vva3 * 0.8;
+                    // console.log(vva3_opc);
+                    vva1_opc = 0;
+                }
+            });
+        }
         //console.log(vva1);
         //console.log(vva2);
         //console.log(vva3);
@@ -645,31 +916,65 @@ function fun_calc() {
 
 
         //инженерия
-        $('#menu-l > li> a[id-post="645"]').each(function() {
-            fg = $(this).attr('data-id_categ_ing_r');
-            fg = fg.split(';');
-            //console.log(fg );
-            if(fg[2] == 596){
-                //+70*S общ
-                c_ing_r= +fg[4] * +area;
-            }
-            if(fg[2] == 835){
-                //+70*S общ
-                c_ing_r= +fg[4] * +area;
-            }
-        });
+        if(typeof gos !== "undefined") {
+            $(gos).each(function() {
+                fg = $(this).attr('data-id_categ_ing_r');
+                fg = fg.split(';');
+                //console.log(fg );
+                if(fg[2] == 596){
+                    //+70*S общ
+                    c_ing_r= +fg[4] * +area;
+                }
+                if(fg[2] == 835){
+                    //+70*S общ
+                    c_ing_r= +fg[4] * +area;
+                }
+            });
+        }
+        else{
+            $('#menu-l > li> a[id-post="645"]').each(function() {
+                fg = $(this).attr('data-id_categ_ing_r');
+                fg = fg.split(';');
+                //console.log(fg );
+                if(fg[2] == 596){
+                    //+70*S общ
+                    c_ing_r= +fg[4] * +area;
+                }
+                if(fg[2] == 835){
+                    //+70*S общ
+                    c_ing_r= +fg[4] * +area;
+                }
+            });
+        }
+
         //радиатор
-        $('#menu-l > li> a[id-post="645"]').each(function() {
-            fg = $(this).attr('data-id_categ_ing');
-            fg = fg.split(';');
-            //console.log(fg );
-            if(fg[2] == 597){
-                c_ing= +fg[4] * (+area - +s_area);
-                c_ing = parseFloat(c_ing.toFixed(2));
-                //c_ing= c_ing.toFixed(2); //300.23
-                //c_ing = c_ing.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-            }
-        });
+        if(typeof gos !== "undefined") {
+            $(gos).each(function () {
+                fg = $(this).attr('data-id_categ_ing');
+                fg = fg.split(';');
+                //console.log(fg );
+                if (fg[2] == 597) {
+                    c_ing = +fg[4] * (+area - +s_area);
+                    c_ing = parseFloat(c_ing.toFixed(2));
+                    //c_ing= c_ing.toFixed(2); //300.23
+                    //c_ing = c_ing.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+                }
+            });
+
+        }
+        else {
+            $('#menu-l > li> a[id-post="645"]').each(function () {
+                fg = $(this).attr('data-id_categ_ing');
+                fg = fg.split(';');
+                //console.log(fg );
+                if (fg[2] == 597) {
+                    c_ing = +fg[4] * (+area - +s_area);
+                    c_ing = parseFloat(c_ing.toFixed(2));
+                    //c_ing= c_ing.toFixed(2); //300.23
+                    //c_ing = c_ing.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+                }
+            });
+        }
         //console.log(c_ing)
 
         c_id = [596, 835];
@@ -699,18 +1004,35 @@ function fun_calc() {
 
         //пол
         pol_s =0;
-        $('#menu-l > li.visable > a[data-id_categ_pol]').each(function() {
-            fg = $(this).attr('data-id_categ_pol');
-            fg = fg.split(';');
 
-            if(fg[2] == 860){
-                //-2500*S сан* H/2,5
-                pol_s = +fg[4] *s_area * height/2.45;
-            }
-            else if(fg[2] == 861){
-                pol_s = 0;
-            }
-        });
+        if(typeof san !== "undefined") {
+            $(san).each(function () {
+                fg = $(this).attr('data-id_categ_pol');
+                fg = fg.split(';');
+
+                if (fg[2] == 860) {
+                    //-2500*S сан* H/2,5
+                    pol_s = +fg[4] * s_area * height / 2.45;
+                }
+                else if (fg[2] == 861) {
+                    pol_s = 0;
+                }
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_pol]').each(function () {
+                fg = $(this).attr('data-id_categ_pol');
+                fg = fg.split(';');
+
+                if (fg[2] == 860) {
+                    //-2500*S сан* H/2,5
+                    pol_s = +fg[4] * s_area * height / 2.45;
+                }
+                else if (fg[2] == 861) {
+                    pol_s = 0;
+                }
+            });
+        }
 
         c_id = [860];
         c_id.forEach(function(item) {
@@ -743,46 +1065,99 @@ function fun_calc() {
         //console.log(pol_s);
         //сантех
         san_1 =0;
-        $('#menu-l > li.visable > a[data-id_categ_san_1]').each(function() {
-            fg = $(this).attr('data-id_categ_san_1');
-            fg = fg.split(';');
+        //console.log($('#menu-l > li.visable > a[data-id_categ_san_1]'));
+        if(typeof san !== "undefined") {
+            $(san).each(function () {
+                fg = $(this).attr('data-id_categ_san_1');
+                fg = fg.split(';');
 
-            if(fg[2] == 865){
-                //-2500*S сан* H/2,5
-                san_1 += +fg[4];
-            }
-        });
+                if (fg[2] == 865) {
+                    //-2500*S сан* H/2,5
+                    san_1 += +fg[4];
+                }
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_san_1]').each(function () {
+                fg = $(this).attr('data-id_categ_san_1');
+                fg = fg.split(';');
+
+                if (fg[2] == 865) {
+                    //-2500*S сан* H/2,5
+                    san_1 += +fg[4];
+                }
+            });
+        }
 
         san_2 =0;
-        $('#menu-l > li.visable > a[data-id_categ_san_2]').each(function() {
-            fg = $(this).attr('data-id_categ_san_2');
-            fg = fg.split(';');
-            //console.log(fg);
-            if(fg[2] == 866){
-                //-2500*S сан* H/2,5
-                san_2 += +fg[4];
-            }
-        });
+        if(typeof san !== "undefined") {
+            $(san).each(function () {
+                fg = $(this).attr('data-id_categ_san_2');
+                fg = fg.split(';');
+                //console.log(fg);
+                if (fg[2] == 866) {
+                    //-2500*S сан* H/2,5
+                    san_2 += +fg[4];
+                }
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_san_2]').each(function () {
+                fg = $(this).attr('data-id_categ_san_2');
+                fg = fg.split(';');
+                //console.log(fg);
+                if (fg[2] == 866) {
+                    //-2500*S сан* H/2,5
+                    san_2 += +fg[4];
+                }
+            });
+        }
         san_3 =0;
-        $('#menu-l > li.visable > a[data-id_categ_san_3]').each(function() {
-            fg = $(this).attr('data-id_categ_san_3');
-            fg = fg.split(';');
+        if(typeof san !== "undefined") {
+            $(san).each(function () {
+                fg = $(this).attr('data-id_categ_san_3');
+                fg = fg.split(';');
 
-            if(fg[2] == 867){
-                //-2500*S сан* H/2,5
-                san_3 += +fg[4];
-            }
-        });
+                if (fg[2] == 867) {
+                    //-2500*S сан* H/2,5
+                    san_3 += +fg[4];
+                }
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_san_3]').each(function () {
+                fg = $(this).attr('data-id_categ_san_3');
+                fg = fg.split(';');
+
+                if (fg[2] == 867) {
+                    //-2500*S сан* H/2,5
+                    san_3 += +fg[4];
+                }
+            });
+        }
         san_4 =0;
-        $('#menu-l > li.visable > a[data-id_categ_san_4]').each(function() {
-            fg = $(this).attr('data-id_categ_san_4');
-            fg = fg.split(';');
+        if(typeof san !== "undefined") {
+            $(san).each(function () {
+                fg = $(this).attr('data-id_categ_san_4');
+                fg = fg.split(';');
 
-            if(fg[2] == 868){
-                //-2500*S сан* H/2,5
-                san_4 += +fg[4];
-            }
-        });
+                if (fg[2] == 868) {
+                    //-2500*S сан* H/2,5
+                    san_4 += +fg[4];
+                }
+            });
+        }
+        else {
+            $('#menu-l > li.visable > a[data-id_categ_san_4]').each(function () {
+                fg = $(this).attr('data-id_categ_san_4');
+                fg = fg.split(';');
+
+                if (fg[2] == 868) {
+                    //-2500*S сан* H/2,5
+                    san_4 += +fg[4];
+                }
+            });
+        }
 
 
         c_id = [865, 866, 867, 868];
@@ -807,7 +1182,7 @@ function fun_calc() {
 
     // опции
     с_mater = c_pol + c_pol_p + c_oboi +c_dver +c_dver_v +c_plin +k_poto +c_poto+c_poto_s +c_akc1 +c_akc2 +c_akc3 +c_rad +c_ing +c_ing_r+ pol_s +san_1 +san_2 +san_3 +san_4;
-    //console.log(с_mater+'!!!!!!!');
+    console.log(с_mater+'!!!!!!!');
 
     so1_c = '(<b>не выбрано</b>)';so2_c = '(<b>не выбрано</b>)';so3_c = '(<b>не выбрано</b>)';so4_c = '(<b>не выбрано</b>)';so5_c = '(<b>не выбрано</b>)';so6_c = '(<b>не выбрано</b>)';so7_c = '(<b>не выбрано</b>)';so8_c = '(<b>не выбрано</b>)';so9_c = '(<b>не выбрано</b>)';so10_c = '(<b>не выбрано</b>)';so11_c = '(<b>не выбрано</b>)';so12_c = '(<b>не выбрано</b>)';so13_c = '(<b>не выбрано</b>)';so14_c = '(<b>не выбрано</b>)';so15_c = '(<b>не выбрано</b>)';so16_c = '(<b>не выбрано</b>)';so17_c = '(<b>не выбрано</b>)';so18_c = '(<b>не выбрано</b>)';so19_c = '(<b>не выбрано</b>)';so20_c = '(<b>не выбрано</b>)';so21_c = '(<b>не выбрано</b>)';so22_c = '(<b>не выбрано</b>)';
 
@@ -1070,6 +1445,7 @@ function fun_calc() {
 
     //Работы по стенам	((S общ-S сан)*3765+S сан*2730)*H/2,45
     rez_sten = ((+area - +s_area)*3765 + +s_area*2730)* +height / 2.45;
+
     if(typeof vva1_opc != "undefined"){
         rez_sten = rez_sten + vva1_opc;
        // console.log(vva1_opc);
@@ -1078,6 +1454,7 @@ function fun_calc() {
         rez_sten = rez_sten + vva3_opc;
         //console.log(vva3_opc);
     }
+    console.log(rez_sten);
     //добавляем опцию со втор стр
     rez_sten = rez_sten + so2;
     rez_sten = rez_sten + so7_op;
@@ -1178,6 +1555,10 @@ function fun_calc() {
     }
 
 
+    rabot = rez_pol + rez_poto + rez_sten + rez_elec + rez_ob;
+    rabot = rabot.toFixed(0); //300.23
+    rabot = rabot.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    rabot = rabot + ' P.';
 
 
 
@@ -1206,6 +1587,22 @@ function fun_calc() {
     jQuery(".it em>em").text(c_totals);
 
     console.log(c_totals);
+    c_pol_p=0;
+    vva1 = 0;
+    vva2 = 0;
+    vva3 = 0;
+    san_1 = 0;
+    san_2 = 0;
+    san_3 = 0;
+    san_4 = 0;
+    c_poto_s = 0;
+    k_poto = 0;
+    c_poto = 0;
+    rez_sten = 0;
+    vva1_opc = 0;
+    vva3_opc =0;
+   // с_two =0;
+   // c_totals = 0;
 
 }
 

@@ -13,8 +13,14 @@ function toprice($id, $mkey)
 {
     global $wpdb;
     $zn = $wpdb->get_results("SELECT meta_value FROM pr_postmeta WHERE post_id = $id AND meta_key = '$mkey'");
-    echo $zn['0']->meta_value;
+    $txt = str_replace(array("\r","\n"),"",$zn['0']->meta_value);
+    echo $txt;
+
 }
+
+
+
+
 
 
 
@@ -25,30 +31,7 @@ function toprice($id, $mkey)
 
 
 
-<form id="param">
-    <div class="input">
-        <label for="rooms">Площадь квартиры</label>
-        <input type="text" class="number" name="area" id="area" placeholder="25" value="30.5">
-    </div>
-    <div class="input">
-        <label for="rooms">Высота потолка</label>
-        <input type="text" class="number" name="height" id="height" placeholder="2.5"  value="3">
-    </div>
-    <div class="input">
-        <label for="rooms">Площадь санузлов</label>
-        <input type="text" class="number" name="s_area" id="s_area" placeholder="3" value="3">
-    </div>
-    <div class="input">
-        <label for="rooms">Санузел
-        </label>
-        <select name="bathrooms_type" id="bathrooms_type">
-            <option value="v1" selected="selected">Общий</option>
-            <option value="v2">Раздельный</option>
-            <option value="v3">Два санузла</option>
-        </select>
-    </div>
 
-</form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/wp-content/themes/produmano/editor/fun_calc.js"></script>
@@ -56,17 +39,48 @@ function toprice($id, $mkey)
 
 
 
-
-<ul id="menu-l" class="active">
-    <li class="menu-post visable"><?php toprice('560','гостинная'); ?></li>
-    <li class="menu-post visable"><?php toprice('560','кухня'); ?></li>
-    <li class="menu-post visable"><?php toprice('560','прихожая'); ?></li>
-    <li class="menu-post visable"><?php toprice('560','санузел_общ'); ?></li>
-</ul>
 <script>
+
+    <?php
+$g[] = array("гостинная", "кухня", "прихожая", "санузел_общ");
+$g[] =  array("гостинная_копировать", "кухня_копировать", "прихожая_копировать", "санузел_общ_копировать");
+//$g[]= array("прихожая", "прихожая_копировать", "прихожая_копировать2", "прихожая_копировать3", "прихожая_копировать4", "прихожая_копировать5");
+//$g[]=array("санузел_общ", "санузел_общ_копировать", "санузел_общ_копировать2", "санузел_общ_копировать3", "санузел_общ_копировать4", "санузел_общ_копировать5");
+//print_r($g);
+
+foreach ($g as $value) {
+
+    $dd1 = $value[0];
+    $dd2 = $value[0];
+    $dd3 = $value[0];
+    $dd4 = $value[0];
+    ?>
+
     inf_cat ='645';
     c_rad = 0;
+   g_area = 30.5;
+   g_height = 3;
+   g_s_area = 3;
+    g_bathrooms_type = 'v1';
+    gos = '<?php toprice('560',$dd1); ?>';
+    kuh = '<?php toprice('560',$dd2); ?>';
+    pri = '<?php toprice('560',$dd3); ?>';
+    san = '<?php toprice('560',$dd4); ?>';
+
+    //alls =gos + kuh + pri + san;
+    allsm ={};
+    allsm[0] = gos;
+    allsm[1] = kuh;
+    allsm[2] = pri;
+    allsm[3] = san;
+
+    //console.log(allsm);
     fun_calc();
+
+    <?php
+
+    }
+    ?>
 
 </script>
 
