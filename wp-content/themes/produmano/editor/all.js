@@ -199,13 +199,18 @@ function fun_iconright(jsondata) {
 			if(typeof fg_pol !== "undefined") {
 				//console.log(inf_cat_pol);
 				jQuery('#option1').append('<span>Вы можете выбрать другой материал пола в разделе гостиная.</span>');
+                console.log(fg_pol);
 				if(fg_pol[2] == 564){
 					jQuery('#option1').append(jsondata.pol_op1);
 					//выбираем в другой комнате если не выбрано
 					setTimeout(function() {
 						acti = jQuery('a[data-id_categ="564"]').hasClass('active');
 						acti2 = jQuery('a[data-id_categ="844"]').hasClass('active');
-						if(acti || acti2){
+						if(acti){
+                            jQuery('a[data-num="'+fg_pol[0]+'"]').click();
+						}
+						else if(acti2){
+
 						}
 						else{
 							jQuery('a[data-num="'+fg_pol[0]+'"]').click();
