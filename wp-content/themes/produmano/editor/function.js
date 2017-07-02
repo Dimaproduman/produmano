@@ -84,6 +84,12 @@ jQuery(document).ready(function(){
 		jQuery('input[name="d2"]').val(jQuery('input[name="height"]').val());
 		jQuery('input[name="d3"]').val(jQuery('input[name="s_area"]').val());
 		jQuery('input[name="d4"]').val(jQuery("#bathrooms_type").val());
+
+		rr = $(this).parent();
+        jQuery('input[name="d5"]').val(rr[0]['children'][0]['innerText']);
+        jQuery('input[name="d6"]').val(rr[0]['children'][2]['innerText']);
+		//console.log(rr[0]['children'][0]['innerText']);
+        //console.log(rr[0]['children'][2]['innerText']);
 	});
 	
 	
