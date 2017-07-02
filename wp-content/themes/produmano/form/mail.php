@@ -26,8 +26,10 @@ if($_POST['d1']){
 	$d2 = $_POST['d2'];
 	$d3 = $_POST['d3'];
 	$d4 = $_POST['d4'];
+    $d5 = $_POST['d5'];
+    $d6 = $_POST['d6'];
 	
-	$message = "$title$name$phone$email\nПлощаль квартиры:$d1\nВысота потолка:$d2\nПлощадь санузлов:$d3\nСанузел:$d4\n Со страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
+	$message = "$title$name$phone$email\nПлощаль квартиры:$d1\nВысота потолка:$d2\nПлощадь санузлов:$d3\nСанузел:$d4\nВид:$d5\nЦена:$d6\n Со страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
 }
 
 
@@ -91,7 +93,15 @@ $sms_api_id = "F4CC1E90-2324-6A86-E565-A16C38A0E6ED";
 $sms_to     = "79261099111";
 
 // Отправка SMS
-$sms_msg = "Всплывающая форма с produmano.com: " . $name . " " . $phone . " " . $email;
+$sms_msg = $title." " . $name . " " . $phone . " " . $email;
+if($_POST['d1']){
+    $d1 = $_POST['d1'];
+    $d2 = $_POST['d2'];
+    $d3 = $_POST['d3'];
+    $d4 = $_POST['d4'];
+
+    $sms_msg = "$title$name$phone$email\nПлощаль кв:$d1\nВысота:$d2\nПл санузлов:$d3\nСанузел:$d4\n\nВид:$d5\nЦена:$d6\n";
+}
 file_get_contents("http://sms.ru/sms/send?api_id=" . $sms_api_id . "&to=" . $sms_to . "&text=" . urlencode($sms_msg));
 
 

@@ -106,6 +106,8 @@
 					  <input type="hidden" name="d2" >
 						<input type="hidden" name="d3" >
 						<input type="hidden" name="d4" >
+                    <input type="hidden" name="d5" >
+                    <input type="hidden" name="d6" >
                     <button type="submit">Отправить</button>
                 </form>
 				<p id="fz" style="font-size: 12px;
