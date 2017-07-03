@@ -15,6 +15,12 @@ $(function(){
 		var phone = $( this ).find( "input[name=phone]" );
 		var email = $( this ).find( "input[name=email]" );
 		var title = $( this ).find( "input[name=title]" ).val();
+        var d1 = $( this ).find( "input[name=d1]" ).val();
+        var d2 = $( this ).find( "input[name=d2]" ).val();
+        var d3 = $( this ).find( "input[name=d3]" ).val();
+        var d4 = $( this ).find( "input[name=d4]" ).val();
+        var d5 = $( this ).find( "input[name=d5]" ).val();
+        var d6 = $( this ).find( "input[name=d6]" ).val();
         
         if (name.length> 0){
         if (name.val() == "") {
@@ -42,6 +48,12 @@ $(function(){
 			'phone' : phone.val(),
 			'email' : email.val(),
 			'title' : title,
+            'd1' : d1,
+            'd2' : d2,
+            'd3' : d3,
+            'd4' : d4,
+            'd5' : d5,
+            'd6' : d6,
 		};
 		 
 		$.ajax({
