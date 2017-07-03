@@ -78,12 +78,11 @@ $('.input-placeholder-val').click(function(){
 	$('.calc-flat').each(function(){
 		$(this).on("change keyup input ", function() {
 			var subCalc = $(this).data('calc');
-			$('.input-animate').each(function(){
+			$('.form-order-block .input-animate').each(function(){
 				if($(this).data('calc') == subCalc ){
 					$(this).click();
 				}
 			})
 		})
 	})
-
 })

@@ -43,17 +43,17 @@ Template Name: Главная
                 <div class="calc-apartment">
                     <div class="input calc-apartment__el">
                         <label for="rooms">Площаль квартиры</label>
-                        <input type="text" class="number input--number calc-flat" name="area" id="area" data-calc="area">
+                        <input type="text" class="number input--number calc-flat" name="area" id="area" data-calc="area"  placeholder="25">
                         <div class="input__error area--error"> Максимальная площадь 500 м2</div>
                     </div>
                     <div class="input calc-apartment__el">
                         <label for="rooms">Высота потолка</label>
-                        <input type="text" class="number input--number calc-flat" name="height" id="height" data-calc="height">
+                        <input type="text" class="number input--number calc-flat" name="height" id="height" data-calc="height" placeholder="2,5">
                         <div class="input__error height--error"> Высота потолков от 2 до 4м</div>
                     </div>
                     <div class="input calc-apartment__el">
                         <label for="rooms">Площадь санузлов</label>
-                        <input type="text" class="number input--number calc--flat" name="s_area" id="s_area" data-calc="s_area">
+                        <input type="text" class="number input--number calc-flat" name="s_area" id="s_area" data-calc="s_area" placeholder="3">
                          <div class="input__error s_area--error"> площадь от 2 до 40 м</div>
                          <div class="input__error s_area--error-squer"> Не может быть больше площади квартиры</div>
                     </div>
