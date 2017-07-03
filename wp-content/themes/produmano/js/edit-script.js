@@ -6,7 +6,7 @@ $(document).ready(function(){
 	//only integer in input
 	 function onlyInteger(a){
    	$(a).bind("change keyup input click", function(e) {
-    		var reg = /(\d+[\.\,]?\d?)/;
+    		var reg = /(\d+[\.\,]?\d?\d?)/;
     			if(this.value.match(reg)){
    	        this.value = this.value.match(reg)[1];
     			}
