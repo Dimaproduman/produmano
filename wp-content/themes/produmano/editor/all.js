@@ -1094,7 +1094,9 @@ jQuery(document).on('click','#menu-l > li.menu-post > a', function(){
 				
 				fun_iconright(jsondata);
 				//полоса на раздельный санузел
-				if(inf_p == 569){
+				zn = jQuery('#bathrooms_type').val();
+				console.log(zn);
+				if(inf_p == 569 && zn == 'v2'){
 					jQuery("#img img:nth-child(17)").replaceWith('<img class="abs lin" src="/wp-content/uploads/2017/01/sanuzel-razdel-ny-j.png">');
 				}
 				
@@ -1141,6 +1143,8 @@ jQuery(document).on('click','#menu-l > li.menu-post > a', function(){
 								fun_iconright(jsondata);
 								
 								//полоса на раздельный санузел
+								zn = jQuery('#bathrooms_type').val();
+								console.log(zn);
 								if(inf_p == 569){
 									jQuery("#img img:nth-child(16)").replaceWith('<img class="abs lin" src="/wp-content/uploads/2017/01/sanuzel-razdel-ny-j.png">');
 								}
@@ -1910,7 +1914,7 @@ coo1 = $.cookie('option1');
 	coo3 = $.cookie('option3');
 	jQuery('input[name="s_area"]').val(coo3);
 	coo4 = $.cookie('option4');
-	console.log(coo4);
+	//console.log(coo4);
 	jQuery('#bathrooms_type').val(coo4);
 	
 	if($.cookie('one') ==1){

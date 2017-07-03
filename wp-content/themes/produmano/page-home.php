@@ -364,6 +364,7 @@ function toprice($id, $mkey)
         jQuery(".basic4 span").text(rex4);
         jQuery(".basic5 span").text(rex5);
         jQuery(".basic6 span").text(rex6);
+        jQuery(".ddx2 > span").text(rex6);
 
         jQuery(".b1 span").text(dop1);
         jQuery(".b2 span").text(dop2);
