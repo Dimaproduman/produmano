@@ -544,7 +544,7 @@ function fun_calc() {
                 //разделение
                 c_poto_opc = c_poto*0.5;
                 c_poto= c_poto*0.5;
-                console.log(c_poto_opc);
+               // console.log(c_poto_opc);
             }
         });
 
@@ -1182,7 +1182,7 @@ function fun_calc() {
 
     // опции
     с_mater = c_pol + c_pol_p + c_oboi +c_dver +c_dver_v +c_plin +k_poto +c_poto+c_poto_s +c_akc1 +c_akc2 +c_akc3 +c_rad +c_ing +c_ing_r+ pol_s +san_1 +san_2 +san_3 +san_4;
-    console.log(с_mater+'!!!!!!!');
+    //console.log(с_mater+'!!!!!!!');
 
     so1_c = '(<b>не выбрано</b>)';so2_c = '(<b>не выбрано</b>)';so3_c = '(<b>не выбрано</b>)';so4_c = '(<b>не выбрано</b>)';so5_c = '(<b>не выбрано</b>)';so6_c = '(<b>не выбрано</b>)';so7_c = '(<b>не выбрано</b>)';so8_c = '(<b>не выбрано</b>)';so9_c = '(<b>не выбрано</b>)';so10_c = '(<b>не выбрано</b>)';so11_c = '(<b>не выбрано</b>)';so12_c = '(<b>не выбрано</b>)';so13_c = '(<b>не выбрано</b>)';so14_c = '(<b>не выбрано</b>)';so15_c = '(<b>не выбрано</b>)';so16_c = '(<b>не выбрано</b>)';so17_c = '(<b>не выбрано</b>)';so18_c = '(<b>не выбрано</b>)';so19_c = '(<b>не выбрано</b>)';so20_c = '(<b>не выбрано</b>)';so21_c = '(<b>не выбрано</b>)';so22_c = '(<b>не выбрано</b>)';
 
@@ -1454,7 +1454,7 @@ function fun_calc() {
         rez_sten = rez_sten + vva3_opc;
         //console.log(vva3_opc);
     }
-    console.log(rez_sten);
+    //console.log(rez_sten);
     //добавляем опцию со втор стр
     rez_sten = rez_sten + so2;
     rez_sten = rez_sten + so7_op;
@@ -1586,7 +1586,7 @@ function fun_calc() {
     jQuery("#pric").text(c_totals);
     jQuery(".it em>em").text(c_totals);
 
-    console.log(c_totals);
+   // console.log(c_totals);
     c_pol_p=0;
     vva1 = 0;
     vva2 = 0;

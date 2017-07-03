@@ -1914,7 +1914,7 @@ coo1 = $.cookie('option1');
 	coo3 = $.cookie('option3');
 	jQuery('input[name="s_area"]').val(coo3);
 	coo4 = $.cookie('option4');
-	console.log(coo4);
+	//console.log(coo4);
 	jQuery('#bathrooms_type').val(coo4);
 	
 	if($.cookie('one') ==1){
