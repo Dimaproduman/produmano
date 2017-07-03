@@ -82,35 +82,37 @@ select.select-beauty
 	display: flex
 	flex-wrap: wrap
 	align-items:baseline
+	justify-content: space-between
 
 .calc-apartment__el
 	@media only screen and (max-width: 768px)
 		width: 100%
 		input
 			margin-bottom: 10px!important
-	width: 50%!important
+	width: 24%
 	display: flex
 	align-items: center
 	justify-content: center
 	flex-flow column
 	input
 		padding: 14px !important
-		width: 40%!important
+		width: 100%!important
 		margin-bottom: 10px
-		min-width 200px
+
 	label
 		display: block
 		width: 100%
 	.select-beauty
-		width: 40%
+		width: 100%
 		text-align: center
-		min-width 200px
 
 	.current
 		display: block
 		text-align: center
 
 form#param
+	@media only screen and (max-width: 768px)
+		padding: 10px!important
 	padding-bottom: 0
 //media
 
