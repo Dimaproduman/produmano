@@ -19,7 +19,6 @@ else{
 
 
 $ip = getRealIpAddr();
-$message = "$title$name$phone$email\nСо страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
 
 if($_POST['d1']){
 	$d1 = $_POST['d1'];
@@ -30,6 +29,9 @@ if($_POST['d1']){
     $d6 = $_POST['d6'];
 	
 	$message = "$title$name$phone$email\nПлощаль квартиры:$d1\nВысота потолка:$d2\nПлощадь санузлов:$d3\nСанузел:$d4\nВид:$d5\nЦена:$d6\n Со страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
+}
+else{
+    $message = "$title$name$phone$email\nСо страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
 }
 
 
@@ -44,6 +46,11 @@ mail($admin_email, "$title", $message,
  "From: Produmano\r\n"
 ."Reply-To: Produmano\r\n"
 ."X-Mailer: PHP/" . phpversion());
+
+mail('sashazmz@gmail.com', "$title", $message,
+    "From: Produmano\r\n"
+    ."Reply-To: Produmano\r\n"
+    ."X-Mailer: PHP/" . phpversion());
 
 
 
@@ -99,6 +106,8 @@ if($_POST['d1']){
     $d2 = $_POST['d2'];
     $d3 = $_POST['d3'];
     $d4 = $_POST['d4'];
+    $d5 = $_POST['d5'];
+    $d6 = $_POST['d6'];
 
     $sms_msg = "$title$name$phone$email\nПлощаль кв:$d1\nВысота:$d2\nПл санузлов:$d3\nСанузел:$d4\n\nВид:$d5\nЦена:$d6\n";
 }
