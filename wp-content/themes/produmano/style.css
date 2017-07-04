@@ -3731,3 +3731,23 @@ a.btn-how-work.hidden-xs {
 div#ten {
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);
 }
+span.dd3 {
+    font-size: 12px;
+}
+span.dd4 {
+    font-family: 'GothaProMedium';
+    font-size: 17px;
+}
+span.ddx {
+    font-size: 12px;
+    font-family: 'GothaPro';
+}
+span.ddx2 {
+    float: right;
+    font-size: 17px;
+    padding-top: 2px;
+}
+span.dd7 {
+    float: right;
+    margin-top: -3px;
+}

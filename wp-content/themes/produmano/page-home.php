@@ -77,7 +77,7 @@ Template Name: Главная
                             <h3>Скандинавский</h3>
                             <div class="p"><p> Скандинавский стиль - это микс белых окрашенных стен, солнечного света и ярких акцентов. </p></div>
                             <div class="price basic1"><span>250 000</span></div>
-							<div class="prplus b1">в том числе работы <span>200 000</span></div>
+							<div class="prplus b1">цена за работы <span>200 000</span>/кв.м.</div>
                             <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
                             <a href="/editor?category=1" class="li" data-type="individual">посмотреть стиль</a>
                         </div>
@@ -91,7 +91,7 @@ Template Name: Главная
                             <div class="p"><p> 
 Современная классика объединяет роскошь лепного декора и лаконизм простых крашеных стен.</p></div>
                             <div class="price basic2"><span>250 000</span></div>
-							<div class="prplus b2">в том числе работы <span>200 000</span></div>
+							<div class="prplus b2">цена за работы <span>200 000</span>/кв.м.</div>
                             <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
                             <a href="/editor?category=2" class="li" data-type="individual">посмотреть стиль</a>
                         </div>
@@ -105,7 +105,7 @@ Template Name: Главная
                             <div class="p"><p>Современный стиль подобно конструктору может сочетать в себе черты всех возможных стилей
 в минималистичном окружении.</p></div>
                             <div class="price basic3"><span>250 000</span></div>
-							<div class="prplus b3">в том числе работы <span>200 000</span></div>
+							<div class="prplus b3">цена за работы <span>200 000</span>/кв.м.</div>
                             <a href="#" data-target="#modCalls" data-toggle="modal"  class="btn-select" data-type="individual">Получить смету</a>
                             <a href="/editor?category=3" class="li" data-type="individual">посмотреть стиль</a>
                         </div>
@@ -120,7 +120,7 @@ Template Name: Главная
                             <h3>Лофт</h3>
                             <div class="p"><p> В интерьере квартир крайне популярным стал благодаря акцентным кирпичным стенам и стильной мебели из дерева и металла. </p></div>
                            <div class="price basic4"><span>250 000</span></div>
-						   <div class="prplus b4">в том числе работы <span>200 000</span></div>
+						   <div class="prplus b4">цена за работы <span>200 000</span>/кв.м.</div>
                             <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
                             <a href="/editor?category=4" class="li" data-type="individual">посмотреть стиль</a>
                         </div>
@@ -134,7 +134,7 @@ Template Name: Главная
 <h3>Эко</h3>
                             <div class="p"><p> Эко является тематическим стилем, главная задача которого - создать ощущение природы в городской квартире.</p></div>
                             <div class="price basic5"><span>250 000</span></div>
-							<div class="prplus b5">в том числе работы <span>200 000</span></div>
+							<div class="prplus b5">цена за работы <span>200 000</span>/кв.м.</div>
                             <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
                             <a href="/editor?category=5" class="li" data-type="individual">посмотреть стиль</a>
                         </div>
@@ -149,7 +149,7 @@ Template Name: Главная
                             <div class="p"><p>Используйте все возможные инструменты редактора
 и создавайте интерьер который подойдет именно вам.</p></div>
                            <div class="price basic6"><span>250 000</span></div>
-						   <div class="prplus b6">в том числе работы <span>200 000</span></div>
+						   <div class="prplus b6">цена за работы <span>200 000</span>/кв.м.</div>
 						   
 						   <a href="/editor?category=6" class="btn-select lasts" data-type="individual">Создать свой стиль</a>
                         </div>
@@ -348,6 +348,7 @@ function toprice($id, $mkey)
         fun_calc();
         rex<?php echo $ii; ?> = c_totals;
         dop<?php echo $ii; ?> = rabot;
+        mkv<?php echo $ii; ?> = c_mkv;
 
         <?php
         }
@@ -355,19 +356,30 @@ function toprice($id, $mkey)
 
 
         jQuery(".basic1 span").text(rex1);
-        jQuery(".basic2 span").text(rex2);
+       jQuery(".basic2 span").text(rex2);
         jQuery(".basic3 span").text(rex3);
         jQuery(".basic4 span").text(rex4);
         jQuery(".basic5 span").text(rex5);
         jQuery(".basic6 span").text(rex6);
         jQuery(".ddx2 > span").text(rex6);
 
-        jQuery(".b1 span").text(dop1);
-        jQuery(".b2 span").text(dop2);
-        jQuery(".b3 span").text(dop3);
-        jQuery(".b4 span").text(dop4);
-        jQuery(".b5 span").text(dop5);
-        jQuery(".b6 span").text(dop6);
+
+        jQuery(".dd4").text(mkv6);
+
+       // jQuery(".b1 span").text(dop1);
+       // jQuery(".b2 span").text(dop2);
+        //jQuery(".b3 span").text(dop3);
+       // jQuery(".b4 span").text(dop4);
+       // jQuery(".b5 span").text(dop5);
+       // jQuery(".b6 span").text(dop6);
+
+
+        jQuery(".b1 span").text(mkv1);
+        jQuery(".b2 span").text(mkv2);
+        jQuery(".b3 span").text(mkv3);
+        jQuery(".b4 span").text(mkv4);
+        jQuery(".b5 span").text(mkv5);
+        jQuery(".b6 span").text(mkv6);
     }
 
 

@@ -1576,12 +1576,18 @@ function fun_calc() {
     с_two = с_two.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     с_two = с_two + ' P.';
 
+    //за квадратн метер
+    c_mkv = c_total/area;
+    c_mkv = c_mkv.toFixed(0); //300.23
+    c_mkv = c_mkv.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    c_mkv = c_mkv + ' P.';
+    console.log(c_mkv);
 
     c_total = c_total.toFixed(0); //300.23
     c_totals = c_total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     c_totals = c_totals + ' P.';
 
-    //console.log(с_two);
+
     jQuery(".st10>em>em").text(с_two);
     jQuery("#pric").text(c_totals);
     jQuery(".it em>em").text(c_totals);
