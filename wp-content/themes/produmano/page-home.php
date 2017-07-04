@@ -380,6 +380,7 @@ function toprice($id, $mkey)
         jQuery(".b4 span").text(mkv4);
         jQuery(".b5 span").text(mkv5);
         jQuery(".b6 span").text(mkv6);
+
     }
 
 

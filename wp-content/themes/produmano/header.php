@@ -136,6 +136,7 @@
                             <div>
                                 <span class="dd3"><span class="dd6">Цена за работы </span><span class="dd7"><span class="dd4">100 000 Р.</span><span class="dd5">/кв.м.</span></span></span>
 
+
                                 <span class="ddx">Бюджет ремонта от </span>
                                 <span class="ddx2"><span>250 000<span> Р.</span>
                             </div>

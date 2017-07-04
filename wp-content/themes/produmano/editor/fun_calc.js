@@ -1576,6 +1576,7 @@ function fun_calc() {
     с_two = с_two.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     с_two = с_two + ' P.';
 
+
     //за квадратн метер
     c_mkv = c_total/area;
     c_mkv = c_mkv.toFixed(0); //300.23
