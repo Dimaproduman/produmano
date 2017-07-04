@@ -61,12 +61,19 @@ jQuery(document).ready(function(){
 		$.cookie('option2', option2);
 		option3= jQuery('input[name="s_area"]').val();
 		$.cookie('option3', option3);
+        console.log(option3);
 		option4= jQuery("#bathrooms_type").val();
+		console.log(option4);
 		$.cookie('option4', option4);
 		
 		
 	}).keyup();
 	jQuery("select").change(fun_c);
+    jQuery(document).on('change','#bathrooms_type', function(){
+        option4= jQuery("#bathrooms_type").val();
+        console.log(option4);
+        $.cookie('option4', option4);
+    }).change();
 
 
     //вызываем функцию калькулятора
@@ -98,7 +105,7 @@ jQuery(document).ready(function(){
 	coo3 = $.cookie('option3');
 	coo4 = $.cookie('option4');
 	
-	//console.log(coo4);
+	console.log(coo4);
 	
 	if(coo1 !== null){
 		jQuery('input[name="area"]').val(coo1);

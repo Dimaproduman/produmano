@@ -291,10 +291,6 @@ Template Name: Главная
             </div>
         </div>
     </div>
-	
-	
-
-<?php get_footer(); ?>
 
 
 <?php
@@ -310,7 +306,7 @@ function toprice($id, $mkey)
 
 
 <script type="text/javascript" src="/wp-content/themes/produmano/editor/fun_calc.js"></script>
-
+<script type="text/javascript" src="/wp-content/themes/produmano/editor/function.js"></script>
 
 
 <script>
@@ -320,7 +316,7 @@ function toprice($id, $mkey)
         //g_area = g_area;
         //g_height = 3;
         //g_s_area = 3;
-       // g_bathrooms_type = 'v1';
+        // g_bathrooms_type = 'v1';
         <?php
         $g[] = array("гостинная", "кухня", "прихожая", "санузел_общ");
         $g[] =  array("гостинная_копировать", "кухня_копировать", "прихожая_копировать", "санузел_общ_копировать");
@@ -330,13 +326,13 @@ function toprice($id, $mkey)
         $g[] =  array("гостинная_копировать5", "кухня_копировать5", "прихожая_копировать5", "санузел_общ_копировать5");
         $ii =0;
         foreach ($g as $value) {
-            $ii++;
+        $ii++;
 
-            $dd1 = $value[0];
-            $dd2 = $value[1];
-            $dd3 = $value[2];
-            $dd4 = $value[3];
-                ?>
+        $dd1 = $value[0];
+        $dd2 = $value[1];
+        $dd3 = $value[2];
+        $dd4 = $value[3];
+        ?>
 
         gos = '<?php toprice('560', $dd1); ?>';
         kuh = '<?php toprice('560', $dd2); ?>';
@@ -381,4 +377,7 @@ function toprice($id, $mkey)
     //ca(40, '3', '3');
 
 </script>
-<script type="text/javascript" src="/wp-content/themes/produmano/editor/function.js"></script>
+<?php get_footer(); ?>
+
+
+
