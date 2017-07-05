@@ -5,6 +5,10 @@
 .input-row {
   position: relative;
 }
+.main-form__label {
+  text-align: center;
+  display: block;
+}
 .input-placeholder-val {
   position: absolute;
   top: 15px;

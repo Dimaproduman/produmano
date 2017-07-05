@@ -22,8 +22,15 @@ $(document).ready(function(){
 	var errorValInput= function (el,minSize,size,errors) {
 		$(el).on("change keyup input ", function() {
 				var currentVal = $(this).val().replace(',','.')*1;
-	 	    if (currentVal > size || currentVal < minSize ) {
+	 	    if (currentVal > size) {
+	 	    		$(errors).show();
 	 	        $(this).val('') ;
+	 	    }
+	 	    else {
+	 				$(errors).hide();
+	 	    }
+	 	    if (currentVal < minSize ) {
+	 	        //$(this).val(minSize) ;
 	 	    		$(errors).show();
 	 	    }
 	 	    else {

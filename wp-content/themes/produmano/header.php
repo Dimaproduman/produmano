@@ -108,31 +108,35 @@
                         <p class="zform">Расскажите о квартире</p>
                         <form class="form">
                             <div class="input">
-                                <div class="input-row">
-                                    <input type="text" class="number input-animate input--number" name="area_h" id="area_h"   data-input="Площадь квартиры, м2" data-calc="area">
-                                </div>
-                                    <div class="input__error area_h--error"> Максимальная площадь 500 м2</div>
-                            </div>
+            <div class="input-row">
+                <label for="" class="main-form__label">Площадь квартиры, м2</label>
+                <input type="text" class="number  input--number" name="area_h" id="area_h" data-calc="area" placeholder="25">
+            </div>
+                <div class="input__error area_h--error"> Максимальная площадь 500 м2</div>
+        </div>
 
-                            <div class="input-row">
-                                <input type="text" class="number input-animate input--number" name="height_h" id="height_h" data-input="Высота потолка, м" data-calc="height">
-                            </div>
-                            <div class="input__error height_h--error"> Высота потолков от 2 до 4м</div>
+        <div class="input-row">
+            <label for="" class="main-form__label">Высота потолка, м</label>
+            <input type="text" class="number  input--number" name="height_h" id="height_h"  data-calc="height" placeholder="2,5">
+        </div>
+        <div class="input__error height_h--error"> Высота потолков от 2 до 4м</div>
 
-                            <div class="input-row">
-                                <input type="text" class="number input-animate input--number" name="s_area_h" id="s_area_h" data-input="Площадь санузлов, м2" data-calc="s_area">
-                            </div>
-                            <div class="input__error s_area_h--error"> площадь от 2 до 40 м</div>
-                            <div class="input__error s_area_h--error-squer"> Не может быть больше площади квартиры</div>
+        <div class="input-row">
+            <label for="" class="main-form__label">Площадь санузлов, м2</label>
+            <input type="text" class="number  input--number" name="s_area_h" id="s_area_h"  data-calc="s_area" placeholder="3">
+        </div>
+        <div class="input__error s_area_h--error"> площадь от 2 до 40 м</div>
+        <div class="input__error s_area_h--error-squer"> Не может быть больше площади квартиры</div>
 
 
-                            <div class="input">
-                                <select name="bathrooms_type_h" id="bathrooms_type_h" class="select-beauty">
-                                    <option value="v1" selected="selected" data-display="Общий">Общий</option>
-                                    <option value="v2">Раздельный</option>
-                                    <option value="v3">Два санузла</option>
-                                </select>
-                            </div>
+        <div class="input">
+            <label for="" class="main-form__label">Тип санузла</label>
+            <select name="bathrooms_type_h" id="bathrooms_type_h" class="select-beauty">
+                <option value="v1" selected="selected" data-display="Общий">Общий</option>
+                <option value="v2">Раздельный</option>
+                <option value="v3">Два санузла</option>
+            </select>
+        </div>
                             <div>
                                 <span class="dd3"><span class="dd6">Цена за работы </span><span class="dd7"><span class="dd4">100 000 Р.</span><span class="dd5">/кв.м.</span></span></span>
 
