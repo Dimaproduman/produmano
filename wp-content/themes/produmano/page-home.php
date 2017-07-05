@@ -356,6 +356,7 @@ function toprice($id, $mkey)
         dop<?php echo $ii; ?> = rabot;
         ar = area*1;
 
+
         mkv<?php echo $ii; ?> = dop<?php echo $ii; ?> / ar;
         mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?>.toFixed(0); //300.23
         mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?>.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
