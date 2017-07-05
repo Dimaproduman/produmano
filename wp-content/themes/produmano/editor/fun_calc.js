@@ -1556,9 +1556,10 @@ function fun_calc() {
 
 
     rabot = rez_pol + rez_poto + rez_sten + rez_elec + rez_ob;
-    rabot = rabot.toFixed(0); //300.23
-    rabot = rabot.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    rabot = rabot + ' P.';
+    rabot = rabot *1;
+    rabots = rabot.toFixed(0); //300.23
+    rabots = rabots.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    rabots = rabots + ' P.';
 
 
 
@@ -1578,11 +1579,11 @@ function fun_calc() {
 
 
     //за квадратн метер
-    c_mkv = c_total/area;
-    c_mkv = c_mkv.toFixed(0); //300.23
-    c_mkv = c_mkv.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    c_mkv = c_mkv + ' P.';
-    console.log(c_mkv);
+    //c_mkv = c_total/area;
+   // c_mkv = c_mkv.toFixed(0); //300.23
+   // c_mkv = c_mkv.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+   // c_mkv = c_mkv + ' P.';
+   // console.log(c_mkv);
 
     c_total = c_total.toFixed(0); //300.23
     c_totals = c_total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
