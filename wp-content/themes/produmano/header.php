@@ -151,6 +151,7 @@
     </div>
     <?php }
 
+
 	// ниже не на главной!!!
 else{	?>
 	<div class="header-main sr">
