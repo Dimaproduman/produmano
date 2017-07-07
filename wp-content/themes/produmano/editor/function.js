@@ -37,11 +37,18 @@ jQuery(document).ready(function(){
 			jQuery('input#s_area_h').val(jQuery('input[name="s_area"]').val());
 			fun_c();
 		});
-		
+
 		jQuery("#bathrooms_type_h").change(fu);
 		function fu() {
 			jQuery('#bathrooms_type').val(jQuery('#bathrooms_type_h').val());
+			jQuery('select').niceSelect('update');
 		}
+
+    jQuery("#bathrooms_type").change(fuu);
+    function fuu() {
+        jQuery('#bathrooms_type_h').val(jQuery('#bathrooms_type').val());
+        jQuery('select').niceSelect('update');
+    }
 		
 		
 		

@@ -20,33 +20,58 @@ Template Name: Выбор дизайна
 	<div class="form-select ooo">
 			<p>Введите данные о квартире</p>
                 <form id="param">
-				<div class="input">
-					<label for="rooms">Площадь квартиры</label>
-					<input type="text" class="number" name="area" id="area" placeholder="25">
-				</div>
-				<div class="input">
-					<label for="rooms">Высота потолка</label>
-					<input type="text" class="number" name="height" id="height" placeholder="2.5">
-				</div>
-				<div class="input">
-					<label for="rooms">Площадь санузлов</label>
-					<input type="text" class="number" name="s_area" id="s_area" placeholder="3">
-				</div>
-				<div class="input">
-					<label for="rooms">Санузел
-					</label>
-					<select name="bathrooms_type" id="bathrooms_type">
-						<option value="v1" selected="selected">Общий</option>
-						<option value="v2">Раздельный</option>
-						<option value="v3">Два санузла</option>
-					</select>
-				</div>
+                    <div class="calc-apartment">
+                        <div class="input calc-apartment__el">
+                            <label for="rooms">Площаль квартиры</label>
+                            <input type="text" class="number input--number calc-flat" name="area" id="area" data-calc="area" placeholder="25">
+                            <div class="input__error area--error"> Максимальная площадь 500 м2</div>
+                        </div>
+                        <div class="input calc-apartment__el">
+                            <label for="rooms">Высота потолка</label>
+                            <input type="text" class="number input--number calc-flat" name="height" id="height" data-calc="height" placeholder="2,5">
+                            <div class="input__error height--error"> Высота потолков от 2 до 4м</div>
+                        </div>
+                        <div class="input calc-apartment__el">
+                            <label for="rooms">Площадь санузлов</label>
+                            <input type="text" class="number input--number calc-flat" name="s_area" id="s_area" data-calc="s_area" placeholder="3">
+                            <div class="input__error s_area--error"> площадь от 2 до 40 м</div>
+                            <div class="input__error s_area--error-squer"> Не может быть больше площади квартиры</div>
+                        </div>
+                        <div class="input calc-apartment__el">
+                            <label for="rooms">Санузел</label>
+                            <select name="bathrooms_type" id="bathrooms_type" class="select-beauty" style="display: none;">
+                                <option value="v1" selected="selected" data-display="Общий">Общий</option>
+                                <option value="v2">Раздельный</option>
+                                <option value="v3">Два санузла</option>
+                            </select>
+                        </div>
+                    </div>
 			
 			</form>
             </div>
 			
 			<div id="vdesing" class="container">
 				<div class="col-lg-12 col-md-12">
+                    <div class="item">
+                        <div class="top_d">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
+                                ИНДИВИДУАЛЬНЫЙ
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
+                                <div class="price basic6">от <span>0</span></div>
+                            </div>
+                        </div>
+                        <img src="<?php bloginfo('template_url'); ?>/images/big-d6.jpg" alt="">
+                        <div class="top_d">
+                            <div class="col-lg-8 col-md-8 col-sm-8 dd1">
+                                <p>Индивидуальный стиль - это отражение ваших идей и предпочтений. Используйте все возможные инструменты редактора и создавайте интерьер, который подойдет именно вам.</p>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
+                                <a href="/editor?category=6" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order" data-type="basic">Выбрать стиль</a>
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="item">
 						<div class="top_d">
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
@@ -153,26 +178,7 @@ Template Name: Выбор дизайна
                         
                     </div>
 					
-					 <div class="item">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
-							ИНДИВИДУАЛЬНЫЙ
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
-							<div class="price basic6">от <span>0</span></div>
-							</div>
-						</div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/big-d6.jpg" alt="">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 dd1">
-							<p>Индивидуальный стиль - это отражение ваших идей и предпочтений. Используйте все возможные инструменты редактора и создавайте интерьер, который подойдет именно вам.</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
-							<a href="/editor?category=6" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order" data-type="basic">Выбрать стиль</a>
-							</div>
-						</div>
-                        
-                    </div>
+
 					
 					
 					

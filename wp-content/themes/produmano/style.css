@@ -157,7 +157,7 @@ img:hover {}
 .menu-block .btn-how-work:hover {color: #fff; text-shadow: 0 0 0 #3E5D7B;}
 
 /*Мобильное выезжающее меню слева*/
-.showLeftPush {background: none; border: 0; outline: 0; cursor: pointer; margin: 26px 0 19px 0; display: inline-block; vertical-align: middle;}
+.showLeftPush {background: none; border: 0; outline: 0; cursor: pointer;     margin: 10px 0 0px 0; display: inline-block; vertical-align: middle;}
 .showLeftPush .icon-bar {background: #fff; width: 40px; height: 4px; display: block; margin-bottom: 7px; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px;}
 
 .cbp-spmenu {background: #354657; position: fixed;-webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; transition: all 0.3s ease;}
@@ -1753,17 +1753,14 @@ a#h_phone {
     bottom: 90px;
     border: 5px solid #fff;
 	box-shadow: 0 0 0 0 rgba(90, 153, 220, 0.7), inset 0 1px 0 #abcbe9;
-	-webkit-animation: pulse 2s infinite cubic-bezier(0.6, 0, 0, 1);
 	
 }
 a#h_phone:hover {
   -webkit-animation: none;
 }
-
-@-webkit-keyframes pulse {
-  to {
-    box-shadow: 0 0 0 15px rgba(90, 153, 220, 0), inset 0 1px 0 #abcbe9;
-  }
+div.pp_default .pp_close {
+    width: 20px!important;
+    height: 20px!important;
 }
 .accordion-container {
     display: none;
@@ -2383,7 +2380,33 @@ span.dd7 {
     float: right;
     margin-top: -3px;
 }
-	
+.menu-block {
+    display: none;
+}
+.he2 {
+    width: 25%;
+    text-align: left!important;
+}
+.header .phone {
+    margin-top: 0px;
+}
+.header .phone {
+    float: right;
+    font-size: 15px;
+    height: 20px;
+    padding-right: 0!important;
+}
+.he1 {
+    width: 48%;
+}
+.he3 {
+    width: 26%;
+}
+.header {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 
 
@@ -2497,15 +2520,7 @@ a.logo img {
     margin-bottom: 8px;
     font-size: 10px!important;
 }
-.header .phone {
-    float: left;
-    font-size: 12px;
-}
-.header .phone {
-    line-height: 21px;
-    padding-right: 5px;
-    padding-left: 25px;
-}
+
 .he1 li a {
     font-size: 12px;
 }
@@ -2514,9 +2529,7 @@ a.logo img {
     float: left;
     padding: 11px;
 }
-.header .phone {
-    margin-top: 18px;
-}
+
 .form-order-block .form input[type=text] {
     height: 46px;
     margin-bottom: 15px;
@@ -2894,6 +2907,22 @@ span.ddx2 {
         float: right;
         margin-top: -3px;
     }
+    .header {
+        padding-top: 15px!important;
+        padding-bottom: 15px!important;
+    }
+    .he2 {
+        width: 18%;
+    }
+    .he1 {
+        width: 56%;
+    }
+    .he3 {
+        width: 25%;
+    }
+    .he1 li a {
+        font-size: 14px;
+    }
 
 }
 
@@ -3133,6 +3162,38 @@ div#edit_r {
         padding-top: 2px;
         line-height: 27px;
     }
+    .header > div {
+        float: left !important;
+    }
+    .header > div:nth-child(2) {
+        margin: 0px 0 0 0px !important;
+    }
+    .header .phone {
+        margin-top: 10px;
+    }
+    .he1 li a {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    .he1 {
+        width: 53%;
+    }
+    .he2 {
+        padding-top: 0;
+        width: 23%;
+    }
+    .he3 {
+        width: 24%;
+    }
+    .he1 li {
+        list-style: none;
+        float: left;
+        padding: 13px;
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
 }
 
 
@@ -3179,6 +3240,7 @@ div#edit_r {
 }
 
 @media (max-width: 991px){
+
 	.select-design-main #param {
     padding-left: 0px;
 }
@@ -3210,7 +3272,7 @@ form#param {
     float: right!important;
 }
 .header > div:nth-child(2) {
-    margin: 5px 0 0 40px !important;
+    margin: 0px 0 0 0px !important;
 }
 .he1 button {
     float: right;
@@ -3221,7 +3283,7 @@ form#param {
 }
 .he2 {
     width: 26%;
-    padding-top: 20px;
+    padding-top: 0px;
 }
 .showLeftPush .icon-bar {
     background: #324f6b;
@@ -3333,6 +3395,15 @@ div#bead {
 .cbp-spmenu-open .showLeftPush .icon-bar {
     background: #ffffff;
 }
+    .he2 {
+        width: 26%;
+    }
+    .he1 {
+        width: 48%;
+    }
+    .he3 {
+        width: 26%;
+    }
 }
 
 
@@ -3615,6 +3686,34 @@ span.niceCheck >em >em {
 span#vvs {
     padding: 5px;
 }
+    span.dd3 {
+        font-size: 16px;
+    }
+    span.ddx {
+        font-size: 16px;
+    }
+    span.ddx2 {
+        line-height: 37px;
+        font-size: 21px;
+    }
+    span.dd4 {
+        font-size: 21px;
+    }
+    .he2 {
+        width: 52%;
+    }
+    div.he3 {
+        display: none!important;
+    }
+    .he2 {
+        padding-top: 0;
+    }
+    .header-main {
+        height: 75px;
+    }
+    .showLeftPush {
+        margin: 14px 0 0px 0;
+    }
 
 }
 

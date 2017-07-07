@@ -1559,7 +1559,7 @@ function fun_calc() {
     rabot = rabot *1;
     rabots = rabot.toFixed(0); //300.23
     rabots = rabots.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    rabots = rabots + ' P.';
+    rabots = rabots + ' руб';
 
 
 

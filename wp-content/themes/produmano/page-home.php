@@ -7,22 +7,142 @@ Template Name: Главная
 <?php get_header(); ?>
 
 
+<script type="text/template" id="area-field">
+    <label for="<%= id %>"><%= title %></label>
+    <input type="text" class="number" name="<%= id %>" id="<%= id %>" placeholder="<%= placeholder %>" value="<%= value %>">
+</script>
+<div class="vi">
+    <?php echo do_shortcode('[video_lightbox_youtube video_id="IAAHfzHBIkU&rel=false" width="1000" height="562" autoplay="1" anchor=" "]'); ?>
+</div>
+
+
+<div class="bfon">
+    <div class="header-main">
+        <div class="header container">
+
+            <div class="he2"><a href="/" class="logo"><img src="<?php bloginfo('template_url'); ?>/images/logon.png" alt=""></a></div>
+            <div class="he1">
+                <button class="showLeftPush hidden-lg hidden-md ">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="menu hidden-xs">
+                    <?php wp_nav_menu(array('theme_location' => 'header-menu', 'container' => '', 'items_wrap' => '%3$s', 'walker' => new BS3_Walker_Nav_Menu)); ?>
+
+                </ul>
+
+            </div>
+
+
+            <div  class="he3">
+                <?php if(get_field('телефон', 6) == true) { ?>
+                    <div class="phone "><?php echo get_field('телефон', 6); ?></div>
+                <?php }?>
+                <div class="menu-block"><a href="/design" class="btn-order">рассчитать стоимость</a></div>
+            </div>
+
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <button class="showLeftPush">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <ul><?php wp_nav_menu(array('theme_location' => 'header-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-15"><a href="/how-work">Как это работает?</a></li></ul>
+                <div class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_field('телефон', 6); ?></div>
+                <div class="address"><?php echo get_field('адрес', 6); ?></div>
+            </nav>
+
+        </div>
+    </div>
+    <div class="gl container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6  sc">
+                <span class="f40">Дизайнерский ремонт<br>
+с материалами<br>
+по фиксированной цене</span>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4 col-sm-6  scf">
+                <div class="ce">
+                    <div class="play_b"><img src="/wp-content/themes/produmano/images/b_play.png"></div>
+                    <div class="text_b">О ремонте с Продумано за 1 минуту</div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="b_line"></div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3  vcc">
+                <div>
+                    <div class="hg1">Популярные</div>
+                    <div class="hg2">стили дизайна</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3  vcc">
+                <div>
+                    <div class="hg1">Индивидуальный</div>
+                    <div class="hg2">проект</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3  vcc">
+                <div>
+                    <div class="hg1">Фиксированные</div>
+                    <div class="hg2">сроки от 6 до 14 недель</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3  vcc">
+                <div>
+                    <div class="hg1">Трендовые</div>
+                    <div class="hg2">чистовые материалы</div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 but">
+                <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select btn--hover">Рассчитать стоимость ремонта
+                    с материалами</a>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+    <style>
+        .partner-block.container {
+            display: block!important;
+        }
+    </style>
+
+
+
 <div class="preim ">
 	<div class="container">
 		<div class="col-lg-4 col-md-4 col-sm-4 it-m">
 			<div><img src="/wp-content/themes/produmano/images/pp1.png"></div>
-			<p>Подобраны материалы<br>
-и сантехника</p>
+            <p class="big_b">Проверенные решения</p>
+            <p>Вам не придется тратить время на поиски
+                и бесконечный выбор материалов
+                и сантехники</p>
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 it-m">
-			<div><img src="/wp-content/themes/produmano/images/pp2.png"></div>
-			<p>Гарантия 3 года<br>
-на инженерные коммуникации</p>
+			<div><img src="/wp-content/themes/produmano/images/ppp2.png"></div>
+            <p class="big_b">фиксированная цена</p>
+            <p>Вы точно знаете и планируете бюджет
+                ремонта заранее</p>
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 it-m">
 			<div><img src="/wp-content/themes/produmano/images/pp3.png"></div>
-			<p>На 15% дешевле рынка за счет<br>
-автоматизированной системы работы</p>
+            <p class="big_b">На 15% дешевле рынка</p>
+            <p>Вы экономите на закупке материалов
+                и бесплатном дизайн-проекте</p>
 		</div>
 	</div>
 </div>	
@@ -42,7 +162,7 @@ Template Name: Главная
                 <form id="param">
                 <div class="calc-apartment">
                     <div class="input calc-apartment__el">
-                        <label for="rooms">Площаль квартиры</label>
+                        <label for="rooms">Площадь квартиры</label>
                         <input type="text" class="number input--number calc-flat" name="area" id="area" data-calc="area"  placeholder="25">
                         <div class="input__error area--error"> Максимальная площадь 500 м2</div>
                     </div>
@@ -72,15 +192,30 @@ Template Name: Главная
             <div class="design-plans row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="item">
+                        <img src="<?php bloginfo('template_url'); ?>/images/va6.jpg" alt="">
+                        <div class="text">
+
+                            <h3>Индивидуальный</h3>
+                            <div class="p"><p>Используйте все возможные инструменты редактора
+                                    и создавайте интерьер который подойдет именно вам.</p></div>
+                            <div class="prplus b6">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
+
+
+                            <a href="/editor?category=6" class="btn-select lasts" data-type="individual">Создать свой стиль</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="item">
                         <img src="<?php bloginfo('template_url'); ?>/images/va1.jpg" alt="">
                         <div class="text">
                             <h3>Скандинавский</h3>
                             <div class="p"><p> Скандинавский стиль - это микс белых окрашенных стен, солнечного света и ярких акцентов. </p></div>
-                            <div class="prplus b1">цена за работы <span>200 000</span>/кв.м.</div>
-                            <div class="price basic1"><span>250 000</span></div>
+                            <div class="prplus b1">Стоимость работ <span>200 000</span>руб/м<sup>2</sup></div>
 
-                            <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
-                            <a href="/editor?category=1" class="li" data-type="individual">посмотреть стиль</a>
+                            <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                                с материалами</a>
+
                         </div>
                     </div>
                 </div>
@@ -91,11 +226,11 @@ Template Name: Главная
                             <h3>Классика</h3>
                             <div class="p"><p> 
 Современная классика объединяет роскошь лепного декора и лаконизм простых крашеных стен.</p></div>
-                            <div class="prplus b2">цена за работы <span>200 000</span>/кв.м.</div>
-                            <div class="price basic2"><span>250 000</span></div>
+                            <div class="prplus b2">Стоимость работ <span>200 000</span>руб/м<sup>2</sup></div>
 
-                            <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
-                            <a href="/editor?category=2" class="li" data-type="individual">посмотреть стиль</a>
+                            <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                                с материалами</a>
+
                         </div>
                     </div>
                 </div>
@@ -106,11 +241,11 @@ Template Name: Главная
                             <h3>Современный</h3>
                             <div class="p"><p>Современный стиль подобно конструктору может сочетать в себе черты всех возможных стилей
 в минималистичном окружении.</p></div>
-                            <div class="prplus b3">цена за работы <span>200 000</span>/кв.м.</div>
-                            <div class="price basic3"><span>250 000</span></div>
+                            <div class="prplus b3">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
 
-                            <a href="#" data-target="#modCalls" data-toggle="modal"  class="btn-select" data-type="individual">Получить смету</a>
-                            <a href="/editor?category=3" class="li" data-type="individual">посмотреть стиль</a>
+                            <a href="#" data-target="#modCalls" data-toggle="modal"  class="btn-select" data-type="individual">Рассчитать стоимость
+                                с материалами</a>
+
                         </div>
                     </div>
                 </div>
@@ -122,11 +257,11 @@ Template Name: Главная
                         <div class="text">
                             <h3>Лофт</h3>
                             <div class="p"><p> В интерьере квартир крайне популярным стал благодаря акцентным кирпичным стенам и стильной мебели из дерева и металла. </p></div>
-                            <div class="prplus b4">цена за работы <span>200 000</span>/кв.м.</div>
-                            <div class="price basic4"><span>250 000</span></div>
+                            <div class="prplus b4">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
 
-                            <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
-                            <a href="/editor?category=4" class="li" data-type="individual">посмотреть стиль</a>
+                            <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                                с материалами</a>
+
                         </div>
                     </div>
                 </div>
@@ -137,30 +272,15 @@ Template Name: Главная
                             
 <h3>Эко</h3>
                             <div class="p"><p> Эко является тематическим стилем, главная задача которого - создать ощущение природы в городской квартире.</p></div>
-                            <div class="prplus b5">цена за работы <span>200 000</span>/кв.м.</div>
-                            <div class="price basic5"><span>250 000</span></div>
+                            <div class="prplus b5">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
 
-                            <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Получить смету</a>
-                            <a href="/editor?category=5" class="li" data-type="individual">посмотреть стиль</a>
+                            <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                                с материалами</a>
+
                         </div>
                     </div>
                 </div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="item">
-                        <img src="<?php bloginfo('template_url'); ?>/images/va6.jpg" alt="">
-                        <div class="text">
-                            
-<h3>Индивидуальный</h3>
-                            <div class="p"><p>Используйте все возможные инструменты редактора
-и создавайте интерьер который подойдет именно вам.</p></div>
-                            <div class="prplus b6">цена за работы <span>200 000</span>/кв.м.</div>
-                            <div class="price basic6"><span>250 000</span></div>
 
-						   
-						   <a href="/editor?category=6" class="btn-select lasts" data-type="individual">Создать свой стиль</a>
-                        </div>
-                    </div>
-                </div>
 	
             </div>
         </div>
@@ -212,44 +332,101 @@ Template Name: Главная
 	<div class="container">
 	 <h2>Как мы делаем ремонт</h2>
 	<div class="row">
-	 
-		<div class="col-lg-6 col-md-6 ik-m">
-			<h4>Что делаете вы?</h4>
+
+        <div class="v_line"></div>
+		<div class="col-lg-6 col-md-6 ik-m rig">
 			<div class="stt">
-				<img src="/wp-content/themes/produmano/images/icc1.png">
-				<p>Выбираете дизайн интерьера и дополнительные
-опции на сайте и оставляете заявку.</p>
+                <div class="ots1"></div>
 			</div>
 			<div class="stt">
-				<img src="/wp-content/themes/produmano/images/icc2.png">
-				<p>Встречаетесь с архитектором на объекте для замеров,
-уточнения деталей и подписания договора.</p>
+				<img src="/wp-content/themes/produmano/images/po2.png">
+                <div>
+                    <p class="big_b">Разработка проекта</p>
+                    <p>Наш специалист выезжает на замеры и готовит
+                        необходимую техническую документацию.</p>
+                </div>
 			</div>
-			<div class="stt">
-				<img src="/wp-content/themes/produmano/images/icc3.png">
-				<p>Передаете нам ключи и через 12 недель
-возвращаетесь в отремонтированную квартиру.</p>
-			</div>
+            <div class="stt">
+                <div class="ots2"></div>
+            </div>
+            <div class="stt">
+                <img src="/wp-content/themes/produmano/images/po4.png">
+                <div>
+                    <p class="big_b">Даем гарантию</p>
+                    <p>Вы принимаете работы и получаете 3 года гарантии
+                        на инженерные коммуникации и год на отделочные
+                        работы.</p>
+                </div>
+            </div>
 		</div>
-		
-		
-		
-<div class="col-lg-6 col-md-6 ik-m">
-			<h4>Что делаем мы?</h4>
-			<div class="stt">
-				<img src="/wp-content/themes/produmano/images/icc4.png">
-				<p>Производим обмеры и разрабатываем
-технический проект.</p>
-			</div>
-			<div class="stt">
-				<img src="/wp-content/themes/produmano/images/icc5.png">
-				<p>Закупаем материалы и оборудование. </p>
-			</div>
-			<div class="stt">
-				<img src="/wp-content/themes/produmano/images/icc6.png">
-				<p>Проводим черновые и чистовые работы.</p>
-			</div>
-		</div>
+
+
+
+        <div class="col-lg-6 col-md-6 ik-m lef">
+
+            <div class="stt">
+                <img src="/wp-content/themes/produmano/images/po1.png">
+                <div>
+                    <p class="big_b">Вы обращаетесь в Продумано </p>
+                    <p>Мы назначаем встречу в удобное для Вас время.
+                        Мы обсуждаем ваши пожелания, находим лучшие
+                        решения, заключаем договор.</p>
+                </div>
+            </div>
+            <div class="stt">
+                <div class="ots3"></div>
+            </div>
+            <div class="stt">
+                <img src="/wp-content/themes/produmano/images/po3.png">
+                <div>
+                    <p class="big_b">Ремонт от 6 до 14 недель.
+                        Без хлопот и вашего участия</p>
+                    <p>Вам не нужно следить за процессом, мы самостоятельно закупаем все материалы, используем трехступенчатую систему контроля прораб-инженер-архитектор, высылаем еженедельные фото и видеоотчеты, делаем все качественно с соблюдением строительных технологий и оперативно по графику. </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-lg-6 col-md-6 ik-m rig skr">
+            <div class="stt">
+                <img src="/wp-content/themes/produmano/images/po1.png">
+                <div>
+                    <p class="big_b">Вы обращаетесь в Продумано </p>
+                    <p>Мы назначаем встречу в удобное для Вас время.
+                        Мы обсуждаем ваши пожелания, находим лучшие
+                        решения, заключаем договор.</p>
+                </div>
+            </div>
+            <div class="stt">
+                <img src="/wp-content/themes/produmano/images/po2.png">
+                <div>
+                    <p class="big_b">Разработка проекта</p>
+                    <p>Наш специалист выезжает на замеры и готовит
+                        необходимую техническую документацию.</p>
+                </div>
+            </div>
+            <div class="stt">
+                <img src="/wp-content/themes/produmano/images/po3.png">
+                <div>
+                    <p class="big_b">Ремонт от 6 до 14 недель.
+                        Без хлопот и вашего участия</p>
+                    <p>Вам не нужно следить за процессом, мы самостоятельно закупаем все материалы, используем трехступенчатую систему контроля прораб-инженер-архитектор, высылаем еженедельные фото и видеоотчеты, делаем все качественно с соблюдением строительных технологий и оперативно по графику. </p>
+                </div>
+            </div>
+            <div class="stt">
+                <img src="/wp-content/themes/produmano/images/po4.png">
+                <div>
+                    <p class="big_b">Даем гарантию</p>
+                    <p>Вы принимаете работы и получаете 3 года гарантии
+                        на инженерные коммуникации и год на отделочные
+                        работы.</p>
+                </div>
+            </div>
+        </div>
+
+
 		</div>
 	</div>
 </div>	
@@ -267,11 +444,17 @@ Template Name: Главная
 	
 	
 	<div class="video container ">
-				<?php putRevSlider("video") ?>
-				<div class="container">
-				<p>Мы продумали ваш интерьер до дверной ручки. Пока будет делаться ремонт вы сможете на сэкономленные деньги поехать в отпуск или купить новую бытовую технику. Делайте ремонт выгодно вместе с Продумано.</p>
-				</div>
+        <p class="zvi">Мы сделали для вас видео</p>
+				<?php //putRevSlider("video") ?>
+        <div class="ffv">
+            <img class="oth" src="/wp-content/themes/produmano/images/fvideo.jpg">
+            <img class="but_p" src="/wp-content/themes/produmano/images/n_pl.png">
+        </div>
+
 			</div>
+<div class="container dvid">
+    <p>Мы продумали ваш интерьер до дверной ручки. Пока будет делаться ремонт вы сможете на сэкономленные деньги поехать в отпуск или купить новую бытовую технику. Делайте ремонт выгодно вместе с Продумано.</p>
+</div>
 	
 	<div class="linee" style="    width: 100%;
     height: 10px;
@@ -316,6 +499,18 @@ function toprice($id, $mkey)
 
 
 <script>
+    jQuery(document).on('click','.ce', function() {
+        console.log('sss');
+        jQuery('.vi a')[0].click();
+    });
+    jQuery(document).on('click','.but_p', function() {
+        console.log('sss');
+        jQuery('.vi a')[0].click();
+    });
+
+
+
+
     function fun_c(g_area,g_height, g_s_area) {
         inf_cat = '645';
         c_rad = 0;
@@ -360,7 +555,7 @@ function toprice($id, $mkey)
         mkv<?php echo $ii; ?> = dop<?php echo $ii; ?> / ar;
         mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?>.toFixed(0); //300.23
         mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?>.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-        mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?> + ' P.';
+        mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?> + ' ';
 
 
         //console.log(ar);
@@ -399,6 +594,7 @@ function toprice($id, $mkey)
     //ca(40, '3', '3');
 
 </script>
+
 <?php get_footer(); ?>
 
 

@@ -30,6 +30,11 @@ if($_POST['d1']){
 	
 	$message = "$title$name$phone$email\nПлощаль квартиры:$d1\nВысота потолка:$d2\nПлощадь санузлов:$d3\nСанузел:$d4\nВид:$d5\nЦена:$d6\n Со страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
 }
+else if($_POST['d5']){
+    $d5 = $_POST['d5'];
+    $message = "$title$name$phone$email\nВид:$d5\n Со страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
+
+}
 else{
     $message = "$title$name$phone$email\nСо страницы: ".$_SERVER['HTTP_REFERER']."\nIP: $ip\nБраузер: ".$_SERVER['HTTP_USER_AGENT']."\n";
 }
@@ -110,6 +115,11 @@ if($_POST['d1']){
     $d6 = $_POST['d6'];
 
     $sms_msg = "$title$name$phone$email\nПлощаль кв:$d1\nВысота:$d2\nПл санузлов:$d3\nСанузел:$d4\n\nВид:$d5\nЦена:$d6\n";
+}
+else if($_POST['d5']) {
+    $d5 = $_POST['d5'];
+    $sms_msg = "$title$name$phone$email\nВид:$d5\n";
+
 }
 file_get_contents("http://sms.ru/sms/send?api_id=" . $sms_api_id . "&to=" . $sms_to . "&text=" . urlencode($sms_msg));
 

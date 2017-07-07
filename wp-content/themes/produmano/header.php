@@ -23,6 +23,9 @@
 	<link href="<?php bloginfo('template_url'); ?>/css/nice-select.css" rel="stylesheet">
 	<link href="<?php bloginfo('template_url'); ?>/style.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/css/edit-style.css" rel="stylesheet">
+    <?php if(is_front_page()) { ?>
+        <link href="<?php bloginfo('template_url'); ?>/css/variant-gl.css" rel="stylesheet">
+    <?php } ?>
 
 	<?php if ( is_user_logged_in() ) { echo '<style>.to_top{top:32px !important;}</style>'; } ?>
 
@@ -50,109 +53,7 @@
 
 <body>
     <?php if(is_front_page()) { ?>
-        <script type="text/template" id="area-field">
-            <label for="<%= id %>"><%= title %></label>
-            <input type="text" class="number" name="<%= id %>" id="<%= id %>" placeholder="<%= placeholder %>" value="<%= value %>">
-        </script>
 
-
-	<div class="bfon">
-	<div class="header-main">
-        <div class="header container">
-
-			<div class="he2"><a href="/" class="logo"><img src="<?php bloginfo('template_url'); ?>/images/logon.png" alt=""></a></div>
-            <div class="he1">
-				<button class="showLeftPush hidden-lg hidden-md ">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <ul class="menu hidden-xs">
-                    <?php wp_nav_menu(array('theme_location' => 'header-menu', 'container' => '', 'items_wrap' => '%3$s', 'walker' => new BS3_Walker_Nav_Menu)); ?>
-
-                </ul>
-
-            </div>
-
-
-            <div  class="he3">
-                <?php if(get_field('телефон', 6) == true) { ?>
-                    <div class="phone "><?php echo get_field('телефон', 6); ?></div>
-                <?php }?>
-				 <div class="menu-block"><a href="/design" class="btn-order">рассчитать стоимость</a></div>
-            </div>
-
-			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-                <button class="showLeftPush">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <ul><?php wp_nav_menu(array('theme_location' => 'header-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-15"><a href="/how-work">Как это работает?</a></li></ul>
-                <div class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_field('телефон', 6); ?></div>
-                <div class="address"><?php echo get_field('адрес', 6); ?></div>
-            </nav>
-
-        </div>
-    </div>
-        <div class="gl container">
-            <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-6  sc">
-                    <span class="f40">Дизайнерский ремонт по фиксированной цене и без вашего участия</span>
-                    <span class="f24">Выберите один из 6 стилей.<br> А мы разработаем проект, закупим материалы<br> и реализуем ремонт в срок до 14 недель.</span>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6  scf">
-                    <div class="form-order-block form-gl">
-                        <p class="zform">Расскажите о квартире</p>
-                        <form class="form">
-                            <div class="input">
-            <div class="input-row">
-                <label for="" class="main-form__label">Площадь квартиры, м2</label>
-                <input type="text" class="number  input--number" name="area_h" id="area_h" data-calc="area" placeholder="25">
-            </div>
-                <div class="input__error area_h--error"> Максимальная площадь 500 м2</div>
-        </div>
-
-        <div class="input-row">
-            <label for="" class="main-form__label">Высота потолка, м</label>
-            <input type="text" class="number  input--number" name="height_h" id="height_h"  data-calc="height" placeholder="2,5">
-        </div>
-        <div class="input__error height_h--error"> Высота потолков от 2 до 4м</div>
-
-        <div class="input-row">
-            <label for="" class="main-form__label">Площадь санузлов, м2</label>
-            <input type="text" class="number  input--number" name="s_area_h" id="s_area_h"  data-calc="s_area" placeholder="3">
-        </div>
-        <div class="input__error s_area_h--error"> площадь от 2 до 40 м</div>
-        <div class="input__error s_area_h--error-squer"> Не может быть больше площади квартиры</div>
-
-
-        <div class="input">
-            <label for="" class="main-form__label">Тип санузла</label>
-            <select name="bathrooms_type_h" id="bathrooms_type_h" class="select-beauty">
-                <option value="v1" selected="selected" data-display="Общий">Общий</option>
-                <option value="v2">Раздельный</option>
-                <option value="v3">Два санузла</option>
-            </select>
-        </div>
-                            <div>
-                                <span class="dd3"><span class="dd6">Цена за работы </span><span class="dd7"><span class="dd4">100 000 Р.</span><span class="dd5">/кв.м.</span></span></span>
-
-
-                                <span class="ddx">Бюджет ремонта от </span>
-                                <span class="ddx2"><span>250 000<span> Р.</span>
-                            </div>
-                            <input type="hidden" name="title"
-                                   value="Новая заявка на &quot;Бесплатный замер и консультацию&quot;">
-                            <a href="#di" class="btn-select btn--hover" data-type="individual">Выбрать стиль</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <?php }
 
 
@@ -205,16 +106,3 @@ else{	?>
 }
 
 
-	if(is_front_page()){ ?>
-        <div class="slider-wrap">
-            <?php //putRevSlider("sl") ?>
-        </div>
-		<div class="vi">
-		<?php //echo do_shortcode('[video_lightbox_youtube video_id="IAAHfzHBIkU&rel=false" width="1170" height="658" autoplay="1" anchor=" "]'); ?>
-		</div>
-		<style>
-		.partner-block.container {
-    display: block!important;
-}
-		</style>
-    <?php } ?>
