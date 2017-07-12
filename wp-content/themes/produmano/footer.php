@@ -9,7 +9,7 @@
 С КОНСУЛЬТАЦИЕЙ НАШЕГО АРХИТЕКТОРА И ПРОРАБА.</span>
 
 <span class="fpoo" >Сделать для вас ремонт продуманным – основная наша задача.<br>
-Просто позвоните нам сейчас: <span>8 (495) 255-45-99</span><br>
+Просто позвоните нам сейчас: <span class="roistat-phone">8 (495) 255-45-99</span><br>
 Или оставьте заявку на консультацию.</span>
 						
 					</div>
@@ -591,8 +591,6 @@ ga('send', 'pageview');
 
 </script>
 
-script
-   
    
     <?php wp_footer(); ?>
 	
@@ -631,5 +629,23 @@ var google_remarketing_only = true;
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.nice-select.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/edit-script.js"></script>
 
-</body> 
+
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <script type='text/javascript'>
+        (function(){ var widget_id = 'ThHEFcE3Q9';var d=document;var w=window;function l(){
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+    <!-- {/literal} END JIVOSITE CODE -->
+    <!-- BEGIN JIVOSITE INTEGRATION WITH ROISTAT -->
+    <script>
+        (function(w, d, s, h) {
+            var p = d.location.protocol == "https:" ? "https://" : "http://";
+            var u = "/static/marketplace/JivoSite/script.js";
+            var js = d.createElement(s); js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+        })(window, document, 'script', 'cloud.roistat.com');
+    </script>
+    <!-- END JIVOSITE INTEGRATION WITH ROISTAT -->
+
+
+
+    </body>
 </html>

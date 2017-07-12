@@ -12,6 +12,13 @@ Author URL: http://vladmaxi.name
 
 body {font-family: 'GothaPro';}
 
+
+@font-face {
+    font-family: 'GothaProNar';
+    src: url('fonts/GothaProNarMed.otf') format("opentype");
+}
+
+
 @font-face {
     font-family: 'GothaProLight';
     src: url('fonts/GothaProLig.eot');
@@ -1755,12 +1762,21 @@ a#h_phone {
 	box-shadow: 0 0 0 0 rgba(90, 153, 220, 0.7), inset 0 1px 0 #abcbe9;
 	
 }
+.design-plans .item .text .p {
+    display: inline-block;
+}
+.col-lg-4.col-md-4.col-sm-4.dd2.menu-block {
+    display: block;
+}
 a#h_phone:hover {
   -webkit-animation: none;
 }
 div.pp_default .pp_close {
     width: 20px!important;
     height: 20px!important;
+}
+.col-lg-4.col-md-4.col-sm-4.dd2.menu-block {
+    display: block;
 }
 .accordion-container {
     display: none;
@@ -2380,7 +2396,7 @@ span.dd7 {
     float: right;
     margin-top: -3px;
 }
-.menu-block {
+.header-main .menu-block {
     display: none;
 }
 .he2 {
@@ -2407,8 +2423,16 @@ span.dd7 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
-
+.fpoo span {
+    color: #fae029;
+    display: block;
+    height: 0;
+    font-size: 22px;
+}
+iframe[name="google_conversion_frame"] {
+    height: 0;
+    display: block;
+}
 
 
 
@@ -3240,6 +3264,9 @@ div#edit_r {
 }
 
 @media (max-width: 991px){
+    a#h_phone {
+        display: none;
+    }
 
 	.select-design-main #param {
     padding-left: 0px;
