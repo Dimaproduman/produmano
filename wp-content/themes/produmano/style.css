@@ -516,11 +516,41 @@ img:hover {}
 .footer-menu li {display: table-cell; vertical-align: middle; text-align: center;}
 .footer-menu li a {color: #3E5D7B; font: 14px 'GothaProMedium'; text-decoration: none; white-space: nowrap; padding: 7px 20px;}
 .footer-menu li a:hover {color: #3f5468;}
-.footer-block .phone {background: url(images/ico-phone.png) 5px bottom no-repeat; color: #3E3E3E; font: 17px 'GothaProMedium'; padding-left: 32px; display: table; margin: 0 auto; text-align: left;}
+.footer-block .phone { color: #3E3E3E; font: 17px 'GothaProMedium'; padding-left: 32px; display: table; margin: 0 auto; text-align: left;}
 .footer-block .phone span {display: block; font-size: 15px; margin-bottom: 8px; margin-left: -26px;}
 
 
-.footer-block .phone {background: url(images/ico-phone.png) 5px no-repeat; color: #3E3E3E; font: 17px 'GothaProMedium'; padding-left: 32px; display: table; margin: 0 auto; text-align: left;}
+.footer-menu .roistat-phone:before {
+    content: "";
+    background: url(images/ico-phone.png) 5px bottom no-repeat;
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    margin-left: -35px;
+    margin-top: -2px;
+}
+.footer-block .phone {
+    margin-top: -35px;
+}
+span#vv {
+    line-height: 15px;
+    /* text-align: center; */
+    position: relative!important;
+}
+
+
+.footer-block .phone {
+    color: #3E3E3E;
+    margin-top: -20px;
+    font: 17px 'GothaProMedium';
+    padding-left: 32px;
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: -35px;
+    height: 0px;
+}
 .footer-block .phone span {    display: block;
     font-size: 15px;
     margin-bottom: 8px;
@@ -2433,6 +2463,9 @@ iframe[name="google_conversion_frame"] {
     height: 0;
     display: block;
 }
+ul.footer-menu.hidden-xxs img {
+    max-width: 153px;
+}
 
 
 
@@ -2953,7 +2986,28 @@ span.ddx2 {
 
 
 
-
+@media (max-width: 1199px) {
+    .footer-menu {
+        display: table;
+        width: 80%;
+    }
+    .footer-block .phone {
+        color: #3E3E3E;
+        float: right;
+        margin-top: -55px;
+        height: 0px;
+    }
+    .footer-block .roistat-phone:before {
+        content: "";
+        background: url(images/ico-phone.png) 5px bottom no-repeat;
+        width: 30px;
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        margin-left: -35px;
+        margin-top: -2px;
+    }
+}
 
 
 
@@ -3014,7 +3068,7 @@ span.ddx2 {
     font-size: 11px;
 	}
 	.menu-block .btn-order {
-    font: 10px 'GothaProMedium';
+    font: 16px 'GothaProMedium';
 	}
 	span.f40 {
     font-size: 30px;
@@ -3193,7 +3247,11 @@ div#edit_r {
         margin: 0px 0 0 0px !important;
     }
     .header .phone {
-        margin-top: 10px;
+        margin-top: 5px;
+    }
+    .header {
+        padding-top: 19px;
+        padding-bottom: 19px;
     }
     .he1 li a {
         padding-bottom: 15px;
@@ -3202,7 +3260,7 @@ div#edit_r {
         font-size: 12px;
     }
     .he1 {
-        width: 53%;
+        width: 58%;
     }
     .he2 {
         padding-top: 0;
@@ -3214,9 +3272,32 @@ div#edit_r {
     .he1 li {
         list-style: none;
         float: left;
-        padding: 13px;
+        padding: 11px;
         padding-bottom: 0;
-        padding-top: 10px;
+        padding-top: 7px;
+    }
+    a.logo img {
+        max-width: 150px;
+    }
+    .footer-menu {
+        display: table;
+        width: 100%;
+    }
+    .footer-block .phone {
+        margin-top: 0px!important;
+        width: 100%;
+        text-align: center;
+    }
+    .footer-block .phone span {
+        margin-top: 0px !important;
+        width: 100%;
+    }
+    .footer-block .phone {
+        margin-top: 20px!important;
+        width: 100%;
+        text-align: center;
+        height: inherit;
+        display: inline-block!important;
     }
 }
 
@@ -3245,11 +3326,14 @@ div#edit_r {
     display: none;
 }
 .he2 {
-    width: 14%;
-	    padding-top: 20px;
+    width: 18%;
+	    padding-top: 2px;
 }
+    .he1 li a {
+        font-size: 14px;
+    }
 .header > div:nth-child(2) {
-    margin: 30px 0 0 40px !important;
+    margin: 0px 0 0 0px !important;
 }
 .it-m p {
     font-size: 16px;
@@ -3264,6 +3348,34 @@ div#edit_r {
 }
 
 @media (max-width: 991px){
+    .footer-block .phone span {
+        display: block!important;
+    }
+    .footer-block .phone span {
+        margin-top: 0px !important;
+    }
+    .phone.hidden-lg {
+        width: 100%;
+        margin-top: 20px!important;
+        text-align: center;
+    }
+    a.logo.hidden-lg.hidden-md {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-menu {
+        width: 100%;
+    }
+    .header .phone {
+        margin-top: 8px;
+    }
+    .header {
+        padding-top: 19px;
+        padding-bottom: 15px;
+    }
+    .showLeftPush {
+        margin: 5px 0 0px 0;
+    }
     a#h_phone {
         display: none;
     }
@@ -3347,7 +3459,7 @@ form#param {
     min-height: inherit;
 }
 	.footer-block .phone {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 	}
 	.two.container {
     height: auto;
@@ -3438,6 +3550,24 @@ div#bead {
 
 
 @media (max-width: 767px){
+    span#vv {
+        margin-left: 0px!important;
+    }
+    .f820 img {
+        margin-left: 20px;
+    }
+    p {
+        margin: 0 0 15px 0;
+        font-size: 20px;
+        color: #3e3e3e;
+        line-height: 24px;
+    }
+    .sh p {
+        font-size: 20px;
+    }
+    form#param label {
+        font-size: 16px;
+    }
     span.dd3 {
         display: inline-block;
         width: 100%;
@@ -3518,12 +3648,44 @@ div.he3 {
     width: 100%; 
 }
 	.form-order-block .form input[type=text] {
-    font: 12px 'GothaProMedium';
+    font: 16px 'GothaProMedium';
 	    line-height: 40px;
 		    padding: 5px 15px;
 			    outline: initial;
 				    padding-top:5px;
 }
+    .it-m p {
+        font-size: 20px;
+    }
+    .fvv h4 {
+        font-size: 20px;
+    }
+    .fvv .form-order-block p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .fvv span {
+        font-size: 14px;
+    }
+    .stt {
+        padding-right: 0px;
+    }
+    .stt p {
+        padding-top: 16px;
+        font-size: 16px;
+    }
+    .footer-block .phone #vv {
+        margin-top: 10px!important;
+        font-size: 14px!important;
+    }
+    .footer-block .phone span {
+        margin-top: 0px !important;
+    }
+    .footer-block .phone span {
+        display: block;
+        font-size: 24px;
+        line-height: 20px;
+    }
 em#nnr {
     float: none;
     padding-right: 0px;
@@ -3741,7 +3903,37 @@ span#vvs {
     .showLeftPush {
         margin: 14px 0 0px 0;
     }
-
+    .header.container #vv {
+        margin-left: -40px;
+        font-size: 16px!important;
+        line-height: 20px;
+    }
+    form#param input {
+        width: 50px;
+        font-size: 14px;
+    }
+    .footer-block .phone span {
+        display: block;
+        font-size: 24px;
+        line-height: 18px;
+    }
+    .f16 p {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .vc_custom_1497647894315 {
+        padding-left: 0px !important;
+    }
+    label.main-form__label {
+        font-size: 16px;
+    }
+    .header .phone >span {
+        padding-left: 5px!important;
+        font-size: 20px;
+    }
+    .cbp-spmenu .phone i {
+        font-size:20px;
+    }
 }
 
 
@@ -3762,13 +3954,51 @@ ul#menu-ed li {
     width: 33%;
     text-align: center;
 }
-
-
+    .work-steps-list ul li strong {
+        font-size: 18px;
+    }
+    .wpb_raw_code.wpb_content_element.wpb_raw_html p {
+        font-size: 20px;
+    }
+    .col-lg-8.col-md-8.col-sm-8 {
+        font-size: 20px;
+    }
 }
 
 
 
 @media (max-width: 520px){
+    .design-plans .item .text p {
+        font-family: 'GothaPro';
+        line-height: 26px!important;
+        font-size: 20px !important;
+    }
+    .prplus {
+        font-size: 20px;
+        font-family: 'GothaProMedium';
+    }
+    .design-plans .item .text .btn-select {
+        font: 18px 'GothaProMedium';
+    }
+    a.li {
+        text-align: center;
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .fvv .form-order-block p {
+        font-size: 16px;
+    }
+    .faq-list .item > div > span {
+        font-size: 20px;
+    }
+    .form-order-block .form button {
+        font: 18px 'GothaProMedium';
+    }
+    .stt p {
+        font-size: 18px;
+        line-height: 22px;
+    }
 	.accordion-container {
     max-height: 350px;
 	}
@@ -3828,13 +4058,13 @@ div#line_r em {
     margin-top: 30px!important;
 }
 	.footer-block .phone {
-    margin-bottom: 50px!important;    height: 30px; 
+    margin-bottom: 50px!important;    height: 60px;
 	}
 .footer-block .phone span:nth-child(2) {
-    margin-left: -5px!important;
+    margin-left: 0px!important;
 }
 .footer-block .phone span:nth-child(2) {
-    margin-left: -5px!important;
+    margin-left: 0px!important;
 }
 
 	
@@ -3855,14 +4085,30 @@ position: absolute;
 .footer-block .phone {
     margin-top: 0px !important;
 }
-.footer-block .phone #vv {
-    margin-top: 10px!important;
-    font-size: 10px!important;
-}
+    .footer-block .phone #vv {
+        margin-top: 10px!important;
+        font-size: 18px!important;
+        line-height: 20px;
+    }
 .footer-block span.roistat-phone {
     text-align: center!important;
     padding-top: 0!important;
 }
+
+
+    form#param label {
+        font-size: 16px;
+    }
+    form#param input {
+        font-size: 14px;
+    }
+    .top_d p {
+        font-size: 16px;
+        font-family: 'GothaPro';
+        line-height: 20px;
+    }
+
+
 
 }
 

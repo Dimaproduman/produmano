@@ -755,7 +755,7 @@ form#param {
 							<a class="tooltip1"><div>?</div><span class="classic"><?php echo get_field('opc10', 560);	?></span></a>
 						</div>
 						<input type="checkbox"  class="fix_option"  name="so10"  data-price="15000"> 
-						<em>Замена материала труб водоснабжения - сшитый полиэтилен (Rehau) вместо полипропилена
+						<em>Материал труб сшитый полиэтилен (Rehau) вместо полипропилена
 						<em id="nn2">+ Р.</em>
 						</em>
 						</span>

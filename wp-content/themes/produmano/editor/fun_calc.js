@@ -540,10 +540,12 @@ function fun_calc() {
             else if(fg[2] == 588 ){
                 //окрашенный (по маякам)	+1050*(Sобщ-S сан)
                 c_poto= +fg[4] * (+area - +s_area);
+                c_poto = c_poto.toFixed(0);
 
                 //разделение
                 c_poto_opc = c_poto*0.5;
                 c_poto= c_poto*0.5;
+                c_poto = c_poto.toFixed(0);
                // console.log(c_poto_opc);
             }
         });

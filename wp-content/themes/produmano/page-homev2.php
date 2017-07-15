@@ -385,6 +385,11 @@ function toprice($id, $mkey)
     .design-plans .item .text .p {
         min-height: 160px !important;
     }
+    @media (max-width: 767px) {
+        .design-plans .item .text .p {
+            min-height: 70px !important;
+        }
+    }
 </style>
 
 

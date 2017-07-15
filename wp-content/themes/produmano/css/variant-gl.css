@@ -28,7 +28,7 @@
 }
 span.f40 {
     font-size: 48px;
-    padding-right: 80px;
+    padding-right: 10px;
     padding-top: 100px;
 }
 .ce {
@@ -247,6 +247,110 @@ img.but_p:hover {
 .skr {
     display: none;
 }
+.text {
+    height: 280px;
+}
+
+.text-k .p {
+    min-height: 182px;
+}
+.item-k {
+    display: inline-block;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.kom.row.container {
+    padding-right: 0;
+}
+.te-k {
+    background: #f7f5f1;
+    padding: 30px;
+    margin-left: 25px;
+    width: 370px;
+}
+.te-k h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.fle {
+    float: left;
+}
+.fra {
+    float: right;
+}
+.prplusn {
+    border-top: 1px solid #dddddd;
+    display: inline-block;
+    width: 100%;
+    padding-top: 15px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+.prplusn {
+    font-family: 'GothaProMedium';
+    font-size: 18px;
+}
+.prplusn span {
+    font-family: 'GothaProBold';
+}
+.text-k a.btn-select {
+    background: #FAE029;
+    color: #274861;
+    font: 16px 'GothaProMedium';
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 18px 5px;
+    min-width: 225px;
+    margin: 14px auto 0;
+}
+.str-l {
+    width: 14px;
+    height: 22px;
+    background: url(/wp-content/themes/produmano/images/str-l.png);
+    float: left;
+    cursor: pointer;
+}
+.str-r {
+    width: 14px;
+    height: 22px;
+    background: url(/wp-content/themes/produmano/images/str-r.png);
+    float: left;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.str-l:hover, .str-r:hover  {
+opacity: 0.7;
+}
+.bsl {
+    float: left;
+}
+.info-s {
+    float: right;
+    font-size: 16px;
+}
+.big-k {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 35px;
+}
+.te-k h3 {
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -254,8 +358,32 @@ img.but_p:hover {
 
 
 @media (max-width: 1599px) and (min-width: 1025px){
+    .prplusn {
+        font-family: 'GothaProMedium';
+        font-size: 14px;
+    }
+    .te-k {
+        background: #f7f5f1;
+        padding: 30px;
+        margin-left: 20px;
+        width: 298px;
+    }
+    .big-k {
+        margin-bottom: 25px;
+    }
+    .text-k a.btn-select {
+        background: #FAE029;
+        color: #274861;
+        font: 14px 'GothaProMedium';
+    }
+    .text-k .p {
+        min-height: 89px;
+    }
     a.btn-select.lasts {
         margin-bottom: 19px !important;
+    }
+    .text {
+        height: 270px;
     }
     form#param label {
         font-size: 14px;
@@ -336,7 +464,27 @@ img.but_p:hover {
 
 
 @media (max-width: 1025px) {
-
+    .te-k {
+        margin-left: 25px;
+        width: 293px;
+    }
+    .text-k a.btn-select {
+        font: 14px 'GothaProMedium';
+    }
+    .big-k {
+        margin-bottom: 25px;
+    }
+    .fle {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .fra {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .text-k .p {
+        min-height: 85px;
+    }
     .header > div {
         float: left !important;
     }
@@ -397,12 +545,53 @@ img.but_p:hover {
         font-size: 15px;
     }
     .footer-block .phone span {
-        margin-top: -10px !important;
+        margin-top: 0px !important;
+    }
+    .footer-block .phone {
+        margin-top: -55px!important;
+    }
+    span#vv {
+        margin-left: -15px!important;
+    }
+    .footer-block .phone {
+        margin-top: 20px!important;
+        width: 100%;
+        text-align: center;
+        height: inherit;
+        display: inline-block!important;
     }
 }
 
 
 @media (max-width: 991px) {
+    .phone.hidden-lg {
+        width: 100%;
+        margin-top: 20px!important;
+        text-align: center;
+    }
+    a.logo.hidden-lg.hidden-md {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-menu {
+        width: 100%;
+    }
+    .te-k {
+        width: 98%;
+        margin-left: 15px;
+    }
+    .fle, .fra {
+        font-size: 16px;
+    }
+    .t-ce {
+        text-align: center;
+    }
+    .sl-k {
+        padding-right: 0;
+    }
+    .text {
+        height: inherit;
+    }
     .lef, .rig{
         display:none;
     }
@@ -446,7 +635,7 @@ img.but_p:hover {
         margin-top: -57px;
     }
     .hg1 {
-        font-size: 16px;
+        font-size: 18px;
     }
     .hg2 {
         font-size: 12px;
@@ -487,6 +676,38 @@ img.but_p:hover {
 
 
 @media (max-width: 767px) {
+    span#vv {
+        margin-left: 0px!important;
+    }
+    .sl-k {
+        padding-right: 30px;
+    }
+    .te-k {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0px;
+        background: #fff;
+        padding: 0;
+
+    }
+    .fle, .fra {
+        font-size: 20px;
+    }
+    .te-k h3 {
+        font-size: 25px;
+        font-family: 'GothaProBold';
+    }
+    .text-k {
+        margin-left: 15px;
+        margin-right: 30px;
+        padding: 30px;
+        background: #f7f5f1;
+    }
+    .text-k a.btn-select {
+        font: 18px 'GothaProMedium';
+        line-height: 26px;
+        padding: 15px 5px;
+    }
     .it-m p {
         font-size: 16px;
     }
@@ -496,6 +717,7 @@ img.but_p:hover {
 
     .prplus {
         font-size: 20px;
+        font-family: 'GothaProMedium';
     }
     form#param label {
         font-size: 16px;
@@ -539,6 +761,25 @@ img.but_p:hover {
     .footer-block .phone span {
         margin-top: 0px !important;
     }
+    span.f40 {
+        font-size: 26px;
+        line-height: 38px;
+        text-align: center;
+    }
+    .vcc {
+        width: 50%;
+        float: left;
+        padding-right: 0px;
+    }
+    .scf {
+        text-align: center;
+    }
+    .ce {
+        text-align: left;
+    }
+    .p p {
+        font-size: 20px;
+    }
 }
 
 
@@ -552,7 +793,8 @@ img.but_p:hover {
     }
 span.f40 {
     font-size: 26px;
-    line-height: 35px;
+    line-height: 38px;
+    text-align: center;
 }
     .vcc {
         width: 50%;
@@ -580,7 +822,7 @@ span.f40 {
         font-size: 20px;
     }
     .fvv .form-order-block p {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 18px;
     }
     .fvv span {

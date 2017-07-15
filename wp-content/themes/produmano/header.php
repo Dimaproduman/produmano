@@ -26,6 +26,9 @@
     <?php if(is_front_page()) { ?>
         <link href="<?php bloginfo('template_url'); ?>/css/variant-gl.css" rel="stylesheet">
     <?php } ?>
+    <?php if(is_page('v3')) { ?>
+        <link href="<?php bloginfo('template_url'); ?>/css/variant-gl.css" rel="stylesheet">
+    <?php } ?>
 
 	<?php if ( is_user_logged_in() ) { echo '<style>.to_top{top:32px !important;}</style>'; } ?>
 
@@ -46,8 +49,8 @@
 
 	<?php //comments_popup_script(); // off by default ?>
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+
 	<?php wp_head(); ?>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
 </head>
 

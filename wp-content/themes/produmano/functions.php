@@ -200,6 +200,11 @@ function filter_plugin_updates( $update ) {
 }
 add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
 
-
+function jquery_init() {
+    if (!is_admin()) {
+        wp_enqueue_script('jquery');
+    }
+}
+add_action('wp_enqueue_scripts', 'jquery_init');
 
 ?>
