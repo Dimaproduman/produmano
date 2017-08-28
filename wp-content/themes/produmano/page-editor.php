@@ -1,6 +1,10 @@
 <?php error_reporting(0); ?>
 <?php get_header(); ?>
 <style>
+    div#pom{
+
+        display: none!important;
+    }
 div#stick_menu, .header > div:not(:nth-child(1)), .form-order-main, .partner-main, .footer-main, .copyright-main {
     display: none;
 }
@@ -696,6 +700,17 @@ form#param {
 						</em>
 						</span>
 				</label>
+                <label class="checkbox">
+					<span class="niceCheck"  id="so23">
+						<div id="zv" class="o1">
+							<a class="tooltip1"><div>?</div><span class="classic"><?php echo get_field('opc23', 560);	?></span></a>
+						</div>
+						<input type="checkbox"  class="fix_option"  name="so23"  data-price="15000">
+						<em>Проект перепланировки и ТП для согласования
+						<em id="nn2">+25 000 Р.</em>
+						</em>
+						</span>
+                </label>
 			</div>
 			
 			<h4>ЧЕРНОВЫЕ РАБОТЫ</h4>
@@ -760,6 +775,17 @@ form#param {
 						</em>
 						</span>
 				</label>
+                <label class="checkbox">
+					<span class="niceCheck"  id="so24">
+						<div id="zv" class="o1">
+							<a class="tooltip1"><div>?</div><span class="classic"><?php echo get_field('opc24', 560);	?></span></a>
+						</div>
+						<input type="checkbox"  class="fix_option"  name="so24"  data-price="15000">
+						<em>Установка бойлера (30л)
+						<em id="nn2">+12 000 Р.</em>
+						</em>
+						</span>
+                </label>
 				<label class="checkbox">
 					<span class="niceCheck"  id="so22">
 						<div id="zv" class="o1">
@@ -1008,7 +1034,7 @@ form#param {
 				<div id="zv" class="o1">
 					<a class="tooltip1"><div>?</div><span class="classic"><?php echo get_field('opc32', 560);	?></span></a>
 				</div>
-				<em>Дополнительные материалы и работы
+				<em>Дополнительные услуги и оборудование
 				<em id="nn2">Индивидуально</em>
 				</em>
 			</div>

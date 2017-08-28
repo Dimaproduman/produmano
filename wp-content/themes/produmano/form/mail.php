@@ -78,7 +78,7 @@ $comment= $title;
 
 $roistatData  = array(
 	'roistat' => isset($_COOKIE['roistat_visit']) ? $_COOKIE['roistat_visit'] : null,
-	'key'     => 'MjcwNjc6NDYwNjU6NzllZGM2ZDE2ZDg4YjgxZjcyZThhZjM0ODg2YmMxOTQ=', 
+	'key'     => 'NTE1NjI6NDYwNjU6OGQ3NjUxMmM5M2JmNGMxMTQzMjU0ZjQwMDEyYWRlZGI=',
 	'title'   => $title,
 	'name'    => $name,
 	'email'   => $email,
@@ -102,7 +102,8 @@ file_get_contents("https://cloud.roistat.com/api/proxy/1.0/leads/add?" . http_bu
 
 // API ID и кому отправляем
 $sms_api_id = "F4CC1E90-2324-6A86-E565-A16C38A0E6ED";
-$sms_to     = "79261099111";
+//$sms_to     = "79261099111";
+$sms_to     = array("79261099111", "89771350792");
 
 // Отправка SMS
 $sms_msg = $title." " . $name . " " . $phone . " " . $email;

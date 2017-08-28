@@ -9,6 +9,14 @@ Template Name: Выбор дизайна
 .menu-block.container a.btn-order {
     display: none;
 }
+.kom.row.container {
+    padding-right: 15px;
+    margin: 0 auto;
+    padding-left: 0;
+}
+.text-k .p {
+    padding-bottom: 25px;
+}
 </style>
    
    <div class="header-m">
@@ -50,144 +58,196 @@ Template Name: Выбор дизайна
 			</form>
             </div>
 			
-			<div id="vdesing" class="container">
-				<div class="col-lg-12 col-md-12">
-                    <div class="item">
-                        <div class="top_d">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
-                                ИНДИВИДУАЛЬНЫЙ
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
-                                <div class="price basic6">от <span>0</span></div>
-                            </div>
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/big-d6.jpg" alt="">
-                        <div class="top_d">
-                            <div class="col-lg-8 col-md-8 col-sm-8 dd1">
-                                <p>Индивидуальный стиль - это отражение ваших идей и предпочтений. Используйте все возможные инструменты редактора и создавайте интерьер, который подойдет именно вам.</p>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
-                                <a href="/editor?category=6" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order" data-type="basic">Выбрать стиль</a>
-                            </div>
+
+                <div class="kom row container">
+
+
+
+
+                    <div class="item-k">
+                        <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
+                            <?php putRevSlider("kom6") ?>
                         </div>
 
-                    </div>
-                    <div class="item">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
-							СКАНДИНАВСКИЙ
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
-							<span class="vd1"><div class="price basic1"><span>0</span></div></span>
-							</div>
-						</div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/big-d1.jpg" alt="">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 dd1">
-							<p>Скандинавский стиль - это микс белых окрашенных стен, солнечного света
-и ярких акцентов. Традиционные черты стилю добавляют классические белые двери и высокий плинтус.</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
-							<a href="/editor?category=1" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order" data-type="basic">Выбрать стиль</a>
-							</div>
-						</div>
-                        
-                    </div>
-					
-					 <div class="item">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
-							КЛАССИКА
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
-							<div class="price basic2"><span>0</span></div>
-							</div>
-						</div>
-                        <img src="/wp-content/uploads/2017/04/klassika_2.jpg" alt="">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 dd1">
-							<p>Современная классика объединяет роскошь лепного декора и лаконизм простых крашеных стен. На полу используется инженерная доска из дуба, на стенах декоративная штукатурка, крашеный лепной декор и классические обои.</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
-							<a href="/editor?category=2" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order"  data-type="basic">Выбрать стиль</a>
-							</div>
-						</div>
-                        
-                    </div>
-					
-					 <div class="item">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
-							СОВРЕМЕННЫЙ
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
-							<div class="price basic3"><span>0</span></div>
-							</div>
-						</div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/big-d3.jpg" alt="">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 dd1">
-							<p>Современный стиль, подобно конструктору, может сочетать в себе черты всех возможных стилей в минималистичном окружении. Для стиля характерны яркие акцентные стены, удобная и уютная мебель и, конечно же, ваши индивидуальные предпочтения.</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
-							<a href="/editor?category=3" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order" data-type="basic">Выбрать стиль</a>
-							</div>
-						</div>
-                        
-                    </div>
-					
-					 <div class="item">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
-							ЛОФТ
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
-							<div class="price basic4"><span>0</span></div>
-							</div>
-						</div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/big-d4.jpg" alt="">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 dd1">
-							<p>Стиль лофт брутальный и урбанистичный по происхождению. В интерьере квартир крайне популярным стал благодаря акцентным кирпичным стенам и стильной мебели из дерева и металла.</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
-							<a href="/editor?category=4" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order" data-type="basic">Выбрать стиль</a>
-							</div>
-						</div>
-                        
-                    </div>
-					
-					 <div class="item">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 dd1">
-							ЭКО
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 dd2">
-							<div class="price basic5"><span>0</span></div>
-							</div>
-						</div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/big-d5.jpg" alt="">
-						<div class="top_d">
-							<div class="col-lg-8 col-md-8 col-sm-8 dd1">
-							<p>Эко является тематическим стилем, главная задача которого – создать ощущение природы в городской квартире. В отделке интерьера применяется натуральное дерево, в декоре стен преобладают природные нейтральные цвета и экологические мотивы.</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 dd2 menu-block">
-							<a href="/editor?category=5" onclick="yaCounter39721995.reachGoal('goal_klik_na_vybrat_stil'); return true;" class="btn-order" data-type="basic">Выбрать стиль</a>
-							</div>
-						</div>
-                        
-                    </div>
-					
+                        <div class="col-lg-4 col-md-4 col-sm-4 te-k">
+                            <div class="text-k">
+                                <div class="big-k x6">
+                                    <div class="bsl">
+                                        <div class="str-l"></div>
+                                        <div class="str-r"></div>
+                                    </div>
+                                    <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
+                                </div>
+                                <h3>Индивидуальный</h3>
+                                <div class="p"><p>Используйте все возможные инструменты редактора
+                                        и создавайте интерьер который подойдет именно вам.</p></div>
+                                <div class="prplusn b6">
+                                    <div class="fle">Стоимость работ </div>
+                                    <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
+                                </div>
+                                <div class="t-ce">
+                                    <a href="/editor?category=6"  class="btn-select" >Выбрать стиль</a>
+                                </div>
 
-					
-					
-					
-					
-					
-					
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="item-k">
+                        <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
+                            <?php putRevSlider("kom1") ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 te-k">
+                            <div class="text-k">
+                                <div class="big-k x1">
+                                    <div class="bsl">
+                                        <div class="str-l"></div>
+                                        <div class="str-r"></div>
+                                    </div>
+                                    <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
+                                </div>
+                                <h3>Скандинавский</h3>
+                                <div class="p"><p> Скандинавский стиль - это микс белых окрашенных стен, солнечного света и ярких акцентов. </p></div>
+                                <div class="prplusn b1">
+                                    <div class="fle">Стоимость работ </div>
+                                    <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
+                                </div>
+                                <div class="t-ce">
+                                    <a href="/editor?category=1"  class="btn-select" >Выбрать стиль</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-k">
+                        <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
+                            <?php putRevSlider("kom2") ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 te-k">
+                            <div class="text-k">
+                                <div class="big-k  x2">
+                                    <div class="bsl">
+                                        <div class="str-l"></div>
+                                        <div class="str-r"></div>
+                                    </div>
+                                    <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
+                                </div>
+                                <h3>Классика</h3>
+                                <div class="p"><p>
+                                        Современная классика объединяет роскошь лепного декора и лаконизм простых крашеных стен.</p></div>
+                                <div class="prplusn b2">
+                                    <div class="fle">Стоимость работ </div>
+                                    <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
+                                </div>
+                                <div class="t-ce">
+                                    <a href="/editor?category=2"  class="btn-select" >Выбрать стиль</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-k">
+                        <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
+                            <?php putRevSlider("kom3") ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 te-k">
+                            <div class="text-k">
+                                <div class="big-k  x3">
+                                    <div class="bsl">
+                                        <div class="str-l"></div>
+                                        <div class="str-r"></div>
+                                    </div>
+                                    <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
+                                </div>
+                                <h3>Современный</h3>
+                                <div class="p"><p>Современный стиль подобно конструктору может сочетать в себе черты всех возможных стилей
+                                        в минималистичном окружении.</p></div>
+                                <div class="prplusn b3">
+                                    <div class="fle">Стоимость работ </div>
+                                    <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
+                                </div>
+                                <div class="t-ce">
+                                    <a href="/editor?category=3"  class="btn-select" >Выбрать стиль</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-k">
+                        <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
+                            <?php putRevSlider("kom4") ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 te-k">
+                            <div class="text-k">
+                                <div class="big-k  x4">
+                                    <div class="bsl">
+                                        <div class="str-l"></div>
+                                        <div class="str-r"></div>
+                                    </div>
+                                    <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
+                                </div>
+                                <h3>Лофт</h3>
+                                <div class="p"><p> В интерьере квартир крайне популярным стал благодаря акцентным кирпичным стенам и стильной мебели из дерева и металла. </p></div>
+                                <div class="prplusn b4">
+                                    <div class="fle">Стоимость работ </div>
+                                    <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
+                                </div>
+                                <div class="t-ce">
+                                    <a href="/editor?category=4"  class="btn-select" >Выбрать стиль</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-k">
+                        <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
+                            <?php putRevSlider("kom5") ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 te-k">
+                            <div class="text-k">
+                                <div class="big-k  x5">
+                                    <div class="bsl">
+                                        <div class="str-l"></div>
+                                        <div class="str-r"></div>
+                                    </div>
+                                    <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
+                                </div>
+                                <h3>Эко</h3>
+                                <div class="p"><p> Эко является тематическим стилем, главная задача которого - создать ощущение природы в городской квартире.</p></div>
+                                <div class="prplusn b5">
+                                    <div class="fle">Стоимость работ </div>
+                                    <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
+                                </div>
+                                <div class="t-ce">
+                                    <a href="/editor?category=5"  class="btn-select" >Выбрать стиль</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
                 </div>
-			
-			</div>
+
+
+
 
 
 <?php
@@ -200,7 +260,34 @@ function toprice($id, $mkey)
 
 }
 ?>
+
+
+<script type="text/javascript" src="/wp-content/themes/produmano/editor/fun_calc.js"></script>
+<script type="text/javascript" src="/wp-content/themes/produmano/editor/function.js"></script>
+
+
 <script>
+    //листание слайдов
+    // console.log(revapi4.revmaxslide());
+
+
+
+
+
+
+
+    jQuery(document).on('click','.ce', function() {
+        console.log('sss');
+        jQuery('.vi a')[0].click();
+    });
+    jQuery(document).on('click','.but_p', function() {
+        console.log('sss');
+        jQuery('.vi a')[0].click();
+    });
+
+
+
+
     function fun_c(g_area,g_height, g_s_area) {
         inf_cat = '645';
         c_rad = 0;
@@ -239,6 +326,16 @@ function toprice($id, $mkey)
         fun_calc();
         rex<?php echo $ii; ?> = c_totals;
         dop<?php echo $ii; ?> = rabot;
+        ar = area*1;
+
+
+        mkv<?php echo $ii; ?> = dop<?php echo $ii; ?> / ar;
+        mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?>.toFixed(0); //300.23
+        mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?>.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+        mkv<?php echo $ii; ?> = mkv<?php echo $ii; ?> + ' ';
+
+
+        //console.log(ar);
 
         <?php
         }
@@ -251,13 +348,20 @@ function toprice($id, $mkey)
         jQuery(".basic4 span").text(rex4);
         jQuery(".basic5 span").text(rex5);
         jQuery(".basic6 span").text(rex6);
+        jQuery(".ddx2 > span").text(rex6);
 
-        jQuery(".b1 span").text(dop1);
-        jQuery(".b2 span").text(dop2);
-        jQuery(".b3 span").text(dop3);
-        jQuery(".b4 span").text(dop4);
-        jQuery(".b5 span").text(dop5);
-        jQuery(".b6 span").text(dop6);
+
+        jQuery(".dd4").text(mkv6);
+
+        jQuery(".b1 span").text(mkv1);
+        jQuery(".b2 span").text(mkv2);
+        jQuery(".b3 span").text(mkv3);
+        jQuery(".b4 span").text(mkv4);
+        jQuery(".b5 span").text(mkv5);
+        jQuery(".b6 span").text(mkv6);
+
+
+
     }
 
 
@@ -267,8 +371,130 @@ function toprice($id, $mkey)
     //ca(40, '3', '3');
 
 </script>
-<script type="text/javascript" src="/wp-content/themes/produmano/editor/fun_calc.js"></script>
-<script type="text/javascript" src="/wp-content/themes/produmano/editor/function.js"></script>
+
+<?php get_footer(); ?>
+
+<script>
+    //листание слайдов
+    setTimeout(function() {
+        //console.log(revapi4.revmaxslide());
+        jQuery('.x1 .se-k').text(revapi4.revmaxslide());
+    }, 1000);
+    jQuery(document).on('click','.x1 .str-l', function() {
+        revapi4.revprev();
+        setTimeout(function() {
+            jQuery('.x1 .se-s').text(revapi4.revcurrentslide());
+        }, 1000);
+    });
+    jQuery(document).on('click','.x1 .str-r', function() {
+        revapi4.revnext();
+        setTimeout(function() {
+            jQuery('.x1 .se-s').text(revapi4.revcurrentslide());
+        }, 1000);
+    });
 
 
-<?php get_footer(); ?> 
+
+    //листание слайдов
+    setTimeout(function() {
+        //console.log(revapi4.revmaxslide());
+        jQuery('.x2 .se-k').text(revapi5.revmaxslide());
+    }, 1000);
+    jQuery(document).on('click','.x2 .str-l', function() {
+        revapi5.revprev();
+        setTimeout(function() {
+            jQuery('.x2 .se-s').text(revapi5.revcurrentslide());
+        }, 1000);
+    });
+    jQuery(document).on('click','.x2 .str-r', function() {
+        revapi5.revnext();
+        setTimeout(function() {
+            jQuery('.x2 .se-s').text(revapi5.revcurrentslide());
+        }, 1000);
+    });
+
+
+
+
+
+    //листание слайдов
+    setTimeout(function() {
+        //console.log(revapi4.revmaxslide());
+        jQuery('.x3 .se-k').text(revapi6.revmaxslide());
+    }, 1000);
+    jQuery(document).on('click','.x3 .str-l', function() {
+        revapi6.revprev();
+        setTimeout(function() {
+            jQuery('.x3 .se-s').text(revapi6.revcurrentslide());
+        }, 1000);
+    });
+    jQuery(document).on('click','.x3 .str-r', function() {
+        revapi6.revnext();
+        setTimeout(function() {
+            jQuery('.x3 .se-s').text(revapi6.revcurrentslide());
+        }, 1000);
+    });
+
+
+
+    //листание слайдов
+    setTimeout(function() {
+        //console.log(revapi4.revmaxslide());
+        jQuery('.x4 .se-k').text(revapi7.revmaxslide());
+    }, 1000);
+    jQuery(document).on('click','.x4 .str-l', function() {
+        revapi7.revprev();
+        setTimeout(function() {
+            jQuery('.x4 .se-s').text(revapi7.revcurrentslide());
+        }, 1000);
+    });
+    jQuery(document).on('click','.x4 .str-r', function() {
+        revapi7.revnext();
+        setTimeout(function() {
+            jQuery('.x4 .se-s').text(revapi7.revcurrentslide());
+        }, 1000);
+    });
+
+
+    //листание слайдов
+    setTimeout(function() {
+        //console.log(revapi4.revmaxslide());
+        jQuery('.x5 .se-k').text(revapi8.revmaxslide());
+    }, 1000);
+    jQuery(document).on('click','.x5 .str-l', function() {
+        revapi8.revprev();
+        setTimeout(function() {
+            jQuery('.x5 .se-s').text(revapi8.revcurrentslide());
+        }, 1000);
+    });
+    jQuery(document).on('click','.x5 .str-r', function() {
+        revapi8.revnext();
+        setTimeout(function() {
+            jQuery('.x5 .se-s').text(revapi8.revcurrentslide());
+        }, 1000);
+    });
+
+
+    //листание слайдов
+    setTimeout(function() {
+        //console.log(revapi4.revmaxslide());
+        jQuery('.x6 .se-k').text(revapi9.revmaxslide());
+    }, 1000);
+    jQuery(document).on('click','.x6 .str-l', function() {
+        revapi9.revprev();
+        setTimeout(function() {
+            jQuery('.x6 .se-s').text(revapi9.revcurrentslide());
+        }, 1000);
+    });
+    jQuery(document).on('click','.x6 .str-r', function() {
+        revapi9.revnext();
+        setTimeout(function() {
+            jQuery('.x6 .se-s').text(revapi9.revcurrentslide());
+        }, 1000);
+    });
+
+
+
+</script>
+
+

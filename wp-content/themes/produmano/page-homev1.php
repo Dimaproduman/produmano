@@ -38,18 +38,7 @@ Template Name: Главная вариант 1
                 <div class="menu-block"><a href="/design" class="btn-order">рассчитать стоимость</a></div>
             </div>
 
-            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-                <button class="showLeftPush">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
 
-                <ul><?php wp_nav_menu(array('theme_location' => 'header-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-15"><a href="/how-work">Как это работает?</a></li></ul>
-                <div class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_field('телефон', 6); ?></div>
-                <div class="address"><?php echo get_field('адрес', 6); ?></div>
-            </nav>
 
         </div>
     </div>

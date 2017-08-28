@@ -1,6 +1,5 @@
-.btn--hover:hover,
-.btn-select:hover {
-  background: #dfc722 !important;
+.btn--hover:hover, .btn-select:hover {
+  background: #fac829 !important;
 }
 .input-row {
   position: relative;
@@ -117,7 +116,8 @@ select.select-beauty {
   text-align: center;
 }
 form#param {
-  padding-bottom: 0;
+    padding-bottom: 9px;
+    padding-top: 9px;
 }
 @media only screen and (max-width: 768px) {
   form#param {

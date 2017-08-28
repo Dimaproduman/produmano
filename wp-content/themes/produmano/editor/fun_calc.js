@@ -193,10 +193,13 @@ function fun_calc() {
                     c_pol = +fg[4] * (+area - +s_area);
 
 
+
                     //console.log(c_pol);
                     //разделение
                     c_pol_opc = c_pol * 0.1;
+                   // c_pol_opc = c_pol_opc.toFixed(0);
                     c_pol = c_pol * 0.9;
+                   // c_pol = c_pol.toFixed(0);
                     // console.log(c_pol_opc);
                 }
 
@@ -215,12 +218,15 @@ function fun_calc() {
                 else if (fg[2] == 582) {
                     //паркет +2500 *(Sобщ-S сан - S плитки в коридор или кухню(если есть))
                     c_pol = +fg[4] * (+area - +s_area);
+                    //c_pol = c_pol.toFixed(0);
 
 
                     //console.log(c_pol);
                     //разделение
                     c_pol_opc = c_pol * 0.1;
+                    //c_pol_opc = c_pol_opc.toFixed(0);
                     c_pol = c_pol * 0.9;
+                   // c_pol = c_pol.toFixed(0);
                     // console.log(c_pol_opc);
                 }
 
@@ -233,6 +239,7 @@ function fun_calc() {
         c_id = 582;
         pz = $('a[data-id_categ="'+c_id+'"]').attr('data-caption');
         data_c_pol= pz * (+area - +s_area);
+        data_c_pol = data_c_pol.toFixed(0);
         $('.name_o'+c_id+' #cal').text(data_c_pol);
 
 
@@ -330,7 +337,9 @@ function fun_calc() {
                     // обои без покраски	-300*S общ
                     // обои с покраской	+390*S общ
                     // обои с покраской	+390*S общ
-                    c_oboi = +fg[4] * (+area);
+                    c_oboi = +fg[4] * (+area)+10000;
+                   // c_oboi = c_oboi.toFixed(0);
+
                 }
 
             });
@@ -342,13 +351,15 @@ function fun_calc() {
                 //console.log(fg);
                 if (fg[2] == 702 || fg[2] == 845) {
                     // обои без покраски	-300*S общ
-                    c_oboi = 0;
+                    c_oboi = 10000;
                 }
                 else if (fg[2] == 651 || fg[2] == 638 || fg[2] == 639 || fg[2] == 640 || fg[2] == 679 || fg[2] == 680 || fg[2] == 681) {
                     // обои без покраски	-300*S общ
                     // обои с покраской	+390*S общ
                     // обои с покраской	+390*S общ
-                    c_oboi = +fg[4] * (+area);
+                    c_oboi = +fg[4] * (+area)+10000;
+                   // c_oboi = c_oboi.toFixed(0);
+
                 }
 
             });
@@ -367,6 +378,7 @@ function fun_calc() {
             pz = $('.op a[data-id_categ="'+item+'"]').attr('data-caption');
             //console.log(pz);
             data_c_oboi= pz * (+area);
+            data_c_oboi = data_c_oboi.toFixed(0);
             $('.name_o'+item+' #cal').text(data_c_oboi);
         });
 
@@ -540,12 +552,12 @@ function fun_calc() {
             else if(fg[2] == 588 ){
                 //окрашенный (по маякам)	+1050*(Sобщ-S сан)
                 c_poto= +fg[4] * (+area - +s_area);
-                c_poto = c_poto.toFixed(0);
+                //c_poto = c_poto.toFixed(0);
 
                 //разделение
                 c_poto_opc = c_poto*0.5;
                 c_poto= c_poto*0.5;
-                c_poto = c_poto.toFixed(0);
+                //c_poto = c_poto.toFixed(0);
                // console.log(c_poto_opc);
             }
         });
@@ -674,6 +686,7 @@ function fun_calc() {
         c_id = 588;
         pz = $('a[data-id_categ="'+c_id+'"]').attr('data-caption');
         data_c_poto= pz * (+area - +s_area);
+        data_c_poto = data_c_poto.toFixed(0);
         if(parseFloat( data_c_poto ) > 0 ){
             data_c_poto = '+'+data_c_poto+' руб.';
         }
@@ -739,6 +752,7 @@ function fun_calc() {
             c_id = 588;
             pz = $('a[data-id_categ="'+c_id+'"]').attr('data-caption');
             data_c_poto= 0 - pz * (+area - +s_area);
+            data_c_poto = data_c_poto.toFixed(0);
             if(parseFloat( data_c_poto ) > 0 ){
                 data_c_poto = '+'+data_c_poto+' руб.';
             }
@@ -1183,8 +1197,17 @@ function fun_calc() {
     }
 
     // опции
-    с_mater = c_pol + c_pol_p + c_oboi +c_dver +c_dver_v +c_plin +k_poto +c_poto+c_poto_s +c_akc1 +c_akc2 +c_akc3 +c_rad +c_ing +c_ing_r+ pol_s +san_1 +san_2 +san_3 +san_4;
+    //с_mater = c_pol + c_pol_p + c_oboi +c_dver +c_dver_v +c_plin +k_poto +c_poto+c_poto_s +c_akc1 +c_akc2 +c_akc3 +c_rad +c_ing +c_ing_r+ pol_s +san_1 +san_2 +san_3 +san_4;
+    с_mater = 0;
     //console.log(с_mater+'!!!!!!!');
+
+    // в чистовые материалы комнат
+    c_chist_kom = c_pol + c_pol_p + c_oboi + c_dver +c_dver_v +c_plin +k_poto +c_poto+c_poto_s +c_akc1 +c_akc2 +c_akc3 + c_rad +c_ing +c_ing_r;
+// в чистовые материалы санузла
+    c_chist_san = pol_s +san_1 +san_2 +san_3 +san_4;
+
+
+
 
     so1_c = '(<b>не выбрано</b>)';so2_c = '(<b>не выбрано</b>)';so3_c = '(<b>не выбрано</b>)';so4_c = '(<b>не выбрано</b>)';so5_c = '(<b>не выбрано</b>)';so6_c = '(<b>не выбрано</b>)';so7_c = '(<b>не выбрано</b>)';so8_c = '(<b>не выбрано</b>)';so9_c = '(<b>не выбрано</b>)';so10_c = '(<b>не выбрано</b>)';so11_c = '(<b>не выбрано</b>)';so12_c = '(<b>не выбрано</b>)';so13_c = '(<b>не выбрано</b>)';so14_c = '(<b>не выбрано</b>)';so15_c = '(<b>не выбрано</b>)';so16_c = '(<b>не выбрано</b>)';so17_c = '(<b>не выбрано</b>)';so18_c = '(<b>не выбрано</b>)';so19_c = '(<b>не выбрано</b>)';so20_c = '(<b>не выбрано</b>)';so21_c = '(<b>не выбрано</b>)';so22_c = '(<b>не выбрано</b>)';
 
@@ -1203,7 +1226,7 @@ function fun_calc() {
     }
 
     if($('input[name="so2"]').prop('checked')) {
-        so2 = -2000 *(+area - +s_area) * height/2.45;
+        so2 = -1200 *(+area - +s_area) * height/2.45;
         so2_c = '(<b>выбрано</b>)';
         i_so2 = so2.toFixed(0); //300.23
         i_so2 = i_so2.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
@@ -1237,13 +1260,13 @@ function fun_calc() {
 
 
     if($('input[name="so6"]').prop('checked')) {
-        so6 =950*area;
+        so6 =1950*area;
         so6_c = '(<b>выбрано</b>)';
         i_so6 = so6.toFixed(0); //300.23
         i_so6 = i_so6.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
         jQuery('#so6 em > em').text(i_so6+' Р.' );
     }else{so6 = 0;
-        i_so6 = 950 *area;
+        i_so6 = 1950 *area;
         i_so6 = i_so6.toFixed(0); //300.23
         i_so6 = i_so6.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
         jQuery('#so6 em > em').text(i_so6+' Р.' );
@@ -1416,8 +1439,30 @@ function fun_calc() {
         so22_c = '(<b>выбрано</b>)';
     }else{so22 = 0;	}
 
+    if($('input[name="so23"]').prop('checked')) {
+        so23 = 25000;
+        so23_c = '(<b>выбрано</b>)';
+        jQuery('#so23 em > em').text('25 000 Р.' );
+    }else{so23 = 0;
+        jQuery('#so23 em > em').text('25 000 Р.' );
+
+    }
+
+    if($('input[name="so24"]').prop('checked')) {
+        so24 = 12000;
+        so24_c = '(<b>выбрано</b>)';
+        jQuery('#so24 em > em').text('12 000 Р.' );
+    }else{so24 = 0;
+        jQuery('#so24 em > em').text('12 000 Р.' );
+
+    }
 
 
+
+    //переменная умножения
+    //ymn = 1;
+    ymn = jQuery('.persent').text();
+    ymn = ymn * 1;
 
 
 
@@ -1430,6 +1475,7 @@ function fun_calc() {
     }
     //добавляем опцию со втор стр
     rez_pol = rez_pol + so1;
+    rez_pol = rez_pol * ymn;
 
 
     //Работы по потолку	S общ*400
@@ -1442,6 +1488,7 @@ function fun_calc() {
         rez_poto = rez_poto + k_poto_opc;
         //console.log(k_poto_opc);
     }
+    rez_poto = rez_poto * ymn;
 
 
 
@@ -1460,25 +1507,32 @@ function fun_calc() {
     //добавляем опцию со втор стр
     rez_sten = rez_sten + so2;
     rez_sten = rez_sten + so7_op;
+    rez_sten = rez_sten * ymn;
 
     // Работы электрике	S общ*950
     rez_elec = +area *950;
     //добавляем опцию со втор стр
     rez_elec = rez_elec + so3;
     rez_elec = rez_elec + so9_op + so14_op + so15_op + so16_op;
+    rez_elec = rez_elec * ymn;
 
     // Работы по сантехнике	S общ*600
     rez_sant = +area *600;
+    rez_sant = rez_sant * ymn;
     // Прочие (укрытие пленкой, подъем, уборка и пр)	S общ*300
     rez_ob = +area *300;
     rez_ob =rez_ob + so6;
+    rez_ob = rez_ob * ymn;
     // Черновые материалы с сантехникой и электрикой	S общ*МЧ*H/2,45
-    rez_cher =+area * +mch * +height/2.45;
+    rez_cher =(+area * +mch * +height/2.45) + so10+ so7_dop +so9_dop + so14_dop  + so15_dop + so16_dop;
+    rez_cher = rez_cher * ymn;
     //console.log(rez_cher );
-    //Чистовые материалы комнаты	(S общ-S сан)*М комнат*H/2,45
-    rez_ches = (+area - +s_area)* +mcom * +height / 2.45;
-    // Чистовые материалы санузел	S сан*М сан*H/2,45
-    rez_san = +s_area * +msan * +height/2.45;
+    //Чистовые материалы комнаты	(S общ-S сан)*М комнат*H/2,45!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    rez_ches = ((+area - +s_area)* +mcom * +height / 2.45)+c_chist_kom;
+    rez_ches = rez_ches * ymn;
+    // Чистовые материалы санузел	S сан*М сан*H/2,45!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    rez_san = (+s_area * +msan * +height/2.45) +c_chist_san;
+    rez_san = rez_san * ymn;
 
 
     //запись в степ 3
@@ -1565,14 +1619,22 @@ function fun_calc() {
 
 
 
-    c_step2 = so4 + so5 + so7_dop + so8 + so9_dop + so10 + so11 + so12 + so13 + so14_dop  + so15_dop + so16_dop + so17 + so18 + so22;
+    //c_step2 = so4 + so5 + so7_dop + so8 + so9_dop + so10 + so11 + so12 + so13 + so14_dop  + so15_dop + so16_dop + so17 + so18 + so22;
+    c_step2 = so4 + so5  + so8  + so11 + so22;
+    c_step2 =  c_step2 * ymn;
+
     //c_step2 = so1 + so2 + so3 + so4 + so5 + so6 + so7 + so8 + so9 + so10 + so11 + so12 + so13 + so14  + so15 + so16 + so17 + so18 + so22;
    // console.log(c_step2);
+//Дополнительные материалы и работы
+    с_mater = so23 + so24+ so12+ so13+ so17 + so18;
+    с_mater =  с_mater * ymn;
 
 
     c_total= +rez_pol + +rez_poto + +rez_sten + +rez_elec + +rez_sant + +rez_ob + +rez_cher + +rez_ches + +rez_san +с_mater +c_step2;
     //console.log(с_mater);
    // console.log(c_total);
+
+
 
     с_two = с_mater +c_step2;
     с_two = с_two.toFixed(0); //300.23

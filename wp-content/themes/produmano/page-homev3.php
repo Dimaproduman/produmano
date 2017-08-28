@@ -3,7 +3,6 @@
 Template Name: Главная вариант 3
 */
 ?>
-
 <?php get_header(); ?>
 
 
@@ -42,18 +41,7 @@ Template Name: Главная вариант 3
                 <div class="menu-block"><a href="/design" class="btn-order">рассчитать стоимость</a></div>
             </div>
 
-            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-                <button class="showLeftPush">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
 
-                <ul><?php wp_nav_menu(array('theme_location' => 'header-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-15"><a href="/how-work">Как это работает?</a></li></ul>
-                <div class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_field('телефон', 6); ?></div>
-                <div class="address"><?php echo get_field('адрес', 6); ?></div>
-            </nav>
 
         </div>
     </div>
@@ -191,208 +179,102 @@ Template Name: Главная вариант 3
 
         <div class="design-plans row">
 
-            <div class="kom row container">
 
 
 
 
-                <div class="item-k">
-                    <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
-                        <?php putRevSlider("kom6") ?>
-                    </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-4 te-k">
-                        <div class="text-k">
-                            <div class="big-k x6">
-                                <div class="bsl">
-                                    <div class="str-l"></div>
-                                    <div class="str-r"></div>
-                                </div>
-                                <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
-                            </div>
-                            <h3>Индивидуальный</h3>
-                            <div class="p"><p>Используйте все возможные инструменты редактора
-                                    и создавайте интерьер который подойдет именно вам.</p></div>
-                            <div class="prplusn b6">
-                                <div class="fle">Стоимость работ </div>
-                                <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
-                            </div>
-                            <div class="t-ce">
-                                <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
-                                    с материалами</a>
-                            </div>
 
-                        </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="item">
+                    <img src="<?php bloginfo('template_url'); ?>/images/va6.jpg" alt="">
+                    <div class="text">
+
+                        <h3>Индивидуальный</h3>
+                        <div class="p"><p>Используйте все возможные инструменты редактора
+                                и создавайте интерьер который подойдет именно вам.</p></div>
+                        <div class="prplus b6">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
+
+
+                        <a href="/editor?category=6" class="btn-select lasts" data-type="individual">Создать свой стиль</a>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="item">
+                    <img src="<?php bloginfo('template_url'); ?>/images/va1.jpg" alt="">
+                    <div class="text">
+                        <h3>Скандинавский</h3>
+                        <div class="p"><p> Скандинавский стиль - это микс белых окрашенных стен, солнечного света и ярких акцентов. </p></div>
+                        <div class="prplus b1">Стоимость работ <span>200 000</span>руб/м<sup>2</sup></div>
 
+                        <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                            с материалами</a>
 
-
-                <div class="item-k">
-                    <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
-                        <?php putRevSlider("kom1") ?>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 te-k">
-                        <div class="text-k">
-                            <div class="big-k x1">
-                                <div class="bsl">
-                                    <div class="str-l"></div>
-                                    <div class="str-r"></div>
-                                </div>
-                                <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
-                            </div>
-                            <h3>Скандинавский</h3>
-                            <div class="p"><p> Скандинавский стиль - это микс белых окрашенных стен, солнечного света и ярких акцентов. </p></div>
-                            <div class="prplusn b1">
-                                <div class="fle">Стоимость работ </div>
-                                <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
-                            </div>
-                            <div class="t-ce">
-                                <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
-                                    с материалами</a>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="item">
+                    <img src="<?php bloginfo('template_url'); ?>/images/va2.jpg" alt="">
+                    <div class="text">
+                        <h3>Классика</h3>
+                        <div class="p"><p>
+                                Современная классика объединяет роскошь лепного декора и лаконизм простых крашеных стен.</p></div>
+                        <div class="prplus b2">Стоимость работ <span>200 000</span>руб/м<sup>2</sup></div>
 
-                <div class="item-k">
-                    <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
-                        <?php putRevSlider("kom2") ?>
-                    </div>
+                        <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                            с материалами</a>
 
-                    <div class="col-lg-4 col-md-4 col-sm-4 te-k">
-                        <div class="text-k">
-                            <div class="big-k  x2">
-                                <div class="bsl">
-                                    <div class="str-l"></div>
-                                    <div class="str-r"></div>
-                                </div>
-                                <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
-                            </div>
-                            <h3>Классика</h3>
-                            <div class="p"><p>
-                                    Современная классика объединяет роскошь лепного декора и лаконизм простых крашеных стен.</p></div>
-                            <div class="prplusn b2">
-                                <div class="fle">Стоимость работ </div>
-                                <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
-                            </div>
-                            <div class="t-ce">
-                                <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
-                                    с материалами</a>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="item">
+                    <img src="<?php bloginfo('template_url'); ?>/images/va3.jpg" alt="">
+                    <div class="text">
+                        <h3>Современный</h3>
+                        <div class="p"><p>Современный стиль подобно конструктору может сочетать в себе черты всех возможных стилей
+                                в минималистичном окружении.</p></div>
+                        <div class="prplus b3">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
 
-                <div class="item-k">
-                    <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
-                        <?php putRevSlider("kom3") ?>
-                    </div>
+                        <a href="#" data-target="#modCalls" data-toggle="modal"  class="btn-select" data-type="individual">Рассчитать стоимость
+                            с материалами</a>
 
-                    <div class="col-lg-4 col-md-4 col-sm-4 te-k">
-                        <div class="text-k">
-                            <div class="big-k  x3">
-                                <div class="bsl">
-                                    <div class="str-l"></div>
-                                    <div class="str-r"></div>
-                                </div>
-                                <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
-                            </div>
-                            <h3>Современный</h3>
-                            <div class="p"><p>Современный стиль подобно конструктору может сочетать в себе черты всех возможных стилей
-                                    в минималистичном окружении.</p></div>
-                            <div class="prplusn b3">
-                                <div class="fle">Стоимость работ </div>
-                                <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
-                            </div>
-                            <div class="t-ce">
-                                <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
-                                    с материалами</a>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
-
-                <div class="item-k">
-                    <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
-                        <?php putRevSlider("kom4") ?>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 te-k">
-                        <div class="text-k">
-                            <div class="big-k  x4">
-                                <div class="bsl">
-                                    <div class="str-l"></div>
-                                    <div class="str-r"></div>
-                                </div>
-                                <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
-                            </div>
-                            <h3>Лофт</h3>
-                            <div class="p"><p> В интерьере квартир крайне популярным стал благодаря акцентным кирпичным стенам и стильной мебели из дерева и металла. </p></div>
-                            <div class="prplusn b4">
-                                <div class="fle">Стоимость работ </div>
-                                <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
-                            </div>
-                            <div class="t-ce">
-                                <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
-                                    с материалами</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item-k">
-                    <div class="col-lg-8 col-md-8 col-sm-12 sl-k">
-                        <?php putRevSlider("kom5") ?>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 te-k">
-                        <div class="text-k">
-                            <div class="big-k  x5">
-                                <div class="bsl">
-                                    <div class="str-l"></div>
-                                    <div class="str-r"></div>
-                                </div>
-                                <div class="info-s"><span class="se-s">1</span> / <span class="se-k">5</span> </div>
-                            </div>
-                            <h3>Эко</h3>
-                            <div class="p"><p> Эко является тематическим стилем, главная задача которого - создать ощущение природы в городской квартире.</p></div>
-                            <div class="prplusn b5">
-                                <div class="fle">Стоимость работ </div>
-                                <div  class="fra"><span>7 000</span>руб/м<sup>2</sup></div>
-                            </div>
-                            <div class="t-ce">
-                                <a href="#" data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
-                                    с материалами</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
             </div>
 
 
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="item">
+                    <img src="<?php bloginfo('template_url'); ?>/images/va4.jpg" alt="">
+                    <div class="text">
+                        <h3>Лофт</h3>
+                        <div class="p"><p> В интерьере квартир крайне популярным стал благодаря акцентным кирпичным стенам и стильной мебели из дерева и металла. </p></div>
+                        <div class="prplus b4">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
 
+                        <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                            с материалами</a>
 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="item">
+                    <img src="<?php bloginfo('template_url'); ?>/images/va5.jpg" alt="">
+                    <div class="text">
 
+                        <h3>Эко</h3>
+                        <div class="p"><p> Эко является тематическим стилем, главная задача которого - создать ощущение природы в городской квартире.</p></div>
+                        <div class="prplus b5">Стоимость работ  <span>200 000</span>руб/м<sup>2</sup></div>
 
+                        <a href="#"  data-target="#modCalls" data-toggle="modal" class="btn-select" data-type="individual">Рассчитать стоимость
+                            с материалами</a>
 
-
-
-
+                    </div>
+                </div>
+            </div>
 
 
         </div>
@@ -717,129 +599,4 @@ function toprice($id, $mkey)
 </script>
 
 <?php get_footer(); ?>
-
-<script>
-    //листание слайдов
-    setTimeout(function() {
-        //console.log(revapi4.revmaxslide());
-        jQuery('.x1 .se-k').text(revapi4.revmaxslide());
-    }, 1000);
-    jQuery(document).on('click','.x1 .str-l', function() {
-        revapi4.revprev();
-        setTimeout(function() {
-            jQuery('.x1 .se-s').text(revapi4.revcurrentslide());
-        }, 1000);
-    });
-    jQuery(document).on('click','.x1 .str-r', function() {
-        revapi4.revnext();
-        setTimeout(function() {
-            jQuery('.x1 .se-s').text(revapi4.revcurrentslide());
-        }, 1000);
-    });
-
-
-
-    //листание слайдов
-    setTimeout(function() {
-        //console.log(revapi4.revmaxslide());
-        jQuery('.x2 .se-k').text(revapi5.revmaxslide());
-    }, 1000);
-    jQuery(document).on('click','.x2 .str-l', function() {
-        revapi5.revprev();
-        setTimeout(function() {
-            jQuery('.x2 .se-s').text(revapi5.revcurrentslide());
-        }, 1000);
-    });
-    jQuery(document).on('click','.x2 .str-r', function() {
-        revapi5.revnext();
-        setTimeout(function() {
-            jQuery('.x2 .se-s').text(revapi5.revcurrentslide());
-        }, 1000);
-    });
-
-
-
-
-
-    //листание слайдов
-    setTimeout(function() {
-        //console.log(revapi4.revmaxslide());
-        jQuery('.x3 .se-k').text(revapi6.revmaxslide());
-    }, 1000);
-    jQuery(document).on('click','.x3 .str-l', function() {
-        revapi6.revprev();
-        setTimeout(function() {
-            jQuery('.x3 .se-s').text(revapi6.revcurrentslide());
-        }, 1000);
-    });
-    jQuery(document).on('click','.x3 .str-r', function() {
-        revapi6.revnext();
-        setTimeout(function() {
-            jQuery('.x3 .se-s').text(revapi6.revcurrentslide());
-        }, 1000);
-    });
-
-
-
-    //листание слайдов
-    setTimeout(function() {
-        //console.log(revapi4.revmaxslide());
-        jQuery('.x4 .se-k').text(revapi7.revmaxslide());
-    }, 1000);
-    jQuery(document).on('click','.x4 .str-l', function() {
-        revapi7.revprev();
-        setTimeout(function() {
-            jQuery('.x4 .se-s').text(revapi7.revcurrentslide());
-        }, 1000);
-    });
-    jQuery(document).on('click','.x4 .str-r', function() {
-        revapi7.revnext();
-        setTimeout(function() {
-            jQuery('.x4 .se-s').text(revapi7.revcurrentslide());
-        }, 1000);
-    });
-
-
-    //листание слайдов
-    setTimeout(function() {
-        //console.log(revapi4.revmaxslide());
-        jQuery('.x5 .se-k').text(revapi8.revmaxslide());
-    }, 1000);
-    jQuery(document).on('click','.x5 .str-l', function() {
-        revapi8.revprev();
-        setTimeout(function() {
-            jQuery('.x5 .se-s').text(revapi8.revcurrentslide());
-        }, 1000);
-    });
-    jQuery(document).on('click','.x5 .str-r', function() {
-        revapi8.revnext();
-        setTimeout(function() {
-            jQuery('.x5 .se-s').text(revapi8.revcurrentslide());
-        }, 1000);
-    });
-
-
-    //листание слайдов
-    setTimeout(function() {
-        //console.log(revapi4.revmaxslide());
-        jQuery('.x6 .se-k').text(revapi9.revmaxslide());
-    }, 1000);
-    jQuery(document).on('click','.x6 .str-l', function() {
-        revapi9.revprev();
-        setTimeout(function() {
-            jQuery('.x6 .se-s').text(revapi9.revcurrentslide());
-        }, 1000);
-    });
-    jQuery(document).on('click','.x6 .str-r', function() {
-        revapi9.revnext();
-        setTimeout(function() {
-            jQuery('.x6 .se-s').text(revapi9.revcurrentslide());
-        }, 1000);
-    });
-
-
-
-</script>
-
-
 

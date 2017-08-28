@@ -199,7 +199,7 @@ function fun_iconright(jsondata) {
 			if(typeof fg_pol !== "undefined") {
 				//console.log(inf_cat_pol);
 				jQuery('#option1').append('<span>Вы можете выбрать другой материал пола в разделе гостиная.</span>');
-                console.log(fg_pol);
+                // console.log(fg_pol);
 				if(fg_pol[2] == 564){
 					jQuery('#option1').append(jsondata.pol_op1);
 					//выбираем в другой комнате если не выбрано
@@ -774,12 +774,12 @@ ck = 0;
 jQuery("#yes").on("click", function() {
 	ck= 1;
 	$('a[id-category='+pp+']').click();
-	console.log(pp);
+	// console.log(pp);
 });
 
 jQuery("#no").on("click", function() {
 	ck= 0;
-	console.log('n');
+	// console.log('n');
 });
 
 //ck = 0;
@@ -1095,7 +1095,7 @@ jQuery(document).on('click','#menu-l > li.menu-post > a', function(){
 				fun_iconright(jsondata);
 				//полоса на раздельный санузел
 				zn = jQuery('#bathrooms_type').val();
-				console.log(zn);
+				// console.log(zn);
 				if(inf_p == 569 && zn == 'v2'){
 					jQuery("#img img:nth-child(17)").replaceWith('<img class="abs lin" src="/wp-content/uploads/2017/01/sanuzel-razdel-ny-j.png">');
 				}
@@ -1144,7 +1144,7 @@ jQuery(document).on('click','#menu-l > li.menu-post > a', function(){
 								
 								//полоса на раздельный санузел
 								zn = jQuery('#bathrooms_type').val();
-								console.log(zn);
+								// console.log(zn);
 								if(inf_p == 569){
 									jQuery("#img img:nth-child(16)").replaceWith('<img class="abs lin" src="/wp-content/uploads/2017/01/sanuzel-razdel-ny-j.png">');
 								}
@@ -1564,9 +1564,9 @@ jQuery(document).on('click','.op li a', function(){
 				}
 			);
 			//arrs = JSON.stringify( arrs );
-			console.log('!!!jj');
+			// console.log('!!!jj');
 			//console.log(arrs);	
-			console.log('!!!jj');
+			// console.log('!!!jj');
 			//console.log(arrs);
 			
 			 $('#menu-l > li.visable > a').each(function() { 
@@ -1754,7 +1754,7 @@ jQuery(document).on('click','.op li a', function(){
 					pol_otpl = pol_otpl.split(';');	
 					
 					if(pol_otpl[2] == 844) { 
-						console.log(pol_otpl[2]);
+						// console.log(pol_otpl[2]);
 						cc_pol = '<p>Площадь плитки на полу: '+cc_pol+'</p>';
 						//console.log(cc_pol); 
 					}

@@ -134,7 +134,11 @@ img:hover {}
 .header .phone {background: url(images/ico-phone.png) 0 center no-repeat; color: #3E3E3E; font: 17px 'GothaProMedium'; padding-left: 38px; display: table; margin: 0 auto;}
 .header .btn-consult {float: right; color: #3E3E3E; font: 12px 'GothaProMedium'; text-transform: uppercase; text-align: center; text-decoration: none; border: 3px solid #CACACA; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; padding: 18px 0; min-width: 243px;}
 .header .btn-consult:hover {background: #324F6B; color: #fff; border: 3px solid #324F6B;}
-
+.phone-link {
+    padding-left: 15px;
+    color: #3e5d7b;
+    text-decoration: none;
+}
 
 /* ==============================================
 ********  Меню сайта
@@ -493,7 +497,7 @@ img:hover {}
 .form-order-block .form input[type=text]:-moz-placeholder {color:#B9B9B9;}
 .form-order-block .form input[type=text]:-ms-input-placeholder {color:#B9B9B9;}
 .form-order-block .form button {background: #FAE029; color: #3e3e3e; font: 14px 'GothaProMedium'; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 0; outline: 0; cursor: pointer; width: 100%; height: 60px; text-align: center; text-transform: uppercase;}
-.form-order-block .form button:hover {background: #DFC722;}
+.form-order-block .form button:hover {    background: #fac829;}
 
 
 /* ==============================================
@@ -515,6 +519,7 @@ img:hover {}
 .footer-menu {display: table; width: 100%; margin: 0; padding: 0;}
 .footer-menu li {display: table-cell; vertical-align: middle; text-align: center;}
 .footer-menu li a {color: #3E5D7B; font: 14px 'GothaProMedium'; text-decoration: none; white-space: nowrap; padding: 7px 20px;}
+.footer-menu li .contacts__mail-link {padding: 7px 20px 7px 15px;}
 .footer-menu li a:hover {color: #3f5468;}
 .footer-block .phone { color: #3E3E3E; font: 17px 'GothaProMedium'; padding-left: 32px; display: table; margin: 0 auto; text-align: left;}
 .footer-block .phone span {display: block; font-size: 15px; margin-bottom: 8px; margin-left: -26px;}
@@ -555,6 +560,15 @@ span#vv {
     font-size: 15px;
     margin-bottom: 8px;
     margin-left: -15px;}
+
+.footer-block .phone .znte {
+    display: inline-block;
+    min-width: 10px;
+}
+
+.footer-menu .roistat-phone {
+    padding-left: 0;
+}
 
 /*Копирайт*/
 .copyright-main {background: #F1EFEB; padding-top: 20px; padding-bottom: 20px;}
@@ -612,7 +626,7 @@ span#vv {
 .modal-dialog form input[type=text]:-ms-input-placeholder {color:#D2D2D2;}
 
 .modal-dialog form button {background: #FAE029; color: #3e3e3e; font: 14px 'GothaProMedium'; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 0; outline: 0; cursor: pointer; width: 100%; height: 60px; text-align: center; text-transform: uppercase;}
-.modal-dialog form button:hover {background: #DFC722;}
+.modal-dialog form button:hover {    background: #fac829;}
 
 /*Спасибо*/
 #thanks p {text-align: center;}
@@ -876,7 +890,7 @@ ul#menu-ed li a {
     color: #333;
     padding-left: 40px;
     padding-right: 40px;
-	    margin-top: -1px;
+/*	    margin-top: -1px;*/
 }
 ul#menu-ed  li:hover a{
     background: none;
@@ -1587,6 +1601,7 @@ div#mask {
     z-index: 99;
 	display:none;
 }
+
 div#help {
     width: 1200px;
     margin: 0 auto;
@@ -1871,6 +1886,7 @@ div.pp_default .pp_close {
 .bfon{
 	 background: url(/wp-content/themes/produmano/images/fon1.jpg);
 	     min-height: 670px;
+    background-size: 100%;
 }
 .head {
     padding-top: 35px;
@@ -2380,6 +2396,10 @@ a.btn-select.lasts {
     margin-bottom: 31px!important;
     display: block;
 }
+.he1 li a:hover {
+    color: #324f6b;
+    border-bottom: 3px solid #fae029;
+}
 .header-main {
     position: fixed;
     width: 100%;
@@ -2399,6 +2419,9 @@ a.btn-select.lasts {
 }
 	nav#cbp-spmenu-s1 {
     z-index: 2;
+}
+.bsl {
+    display: none;
 }
 .bg-site.active {
     display: none;
@@ -2466,10 +2489,39 @@ iframe[name="google_conversion_frame"] {
 ul.footer-menu.hidden-xxs img {
     max-width: 153px;
 }
-
-
-
-
+.header-main {
+    z-index: 2;
+}
+.header-main.sr {
+    z-index: 3;
+}
+.coman img {
+    width: 75px;
+    padding-right: 0;
+}
+.coman .co1 {
+    font-size: 14px;
+    font-family: 'GothaProMedium';
+    padding-left: 95px;
+    padding-right: 95px;
+    margin-bottom: 0px;
+}
+p.co2 {
+    padding-top: 0!important;
+    padding-left: 95px;
+    padding-right: 95px;
+    font-size: 13px;
+}
+.coman {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.inst{
+    display: none;
+}
+.cbp-spmenu i {
+    float: left;
+}
 
 
 @media (min-width: 768px){
@@ -2520,7 +2572,7 @@ ul.footer-menu.hidden-xxs img {
 	}
 	#help_2 {
     position: absolute;
-    top: 210px;
+    top: 225px;
     z-index: 999;
     margin-left: 320px;
 	}
@@ -2739,8 +2791,8 @@ div#vdesing > div {
     font-size: 20px;
 }
 .three {
-    padding-top: 38px;
-    padding-bottom: 22px;
+    padding-top: 32px;
+    padding-bottom: 26px;
 }
 .three.container a {
     position: absolute;
@@ -2786,6 +2838,9 @@ ul#menu-l {
 div#content-1 {
     width: 150px;
 }
+    .clos span {
+        margin-left: 132px;
+    }
 div#content-2 {
     width: 590px;
 }
@@ -3932,7 +3987,26 @@ span#vvs {
         font-size: 20px;
     }
     .cbp-spmenu .phone i {
-        font-size:20px;
+        font-size: 20px;
+        margin-top: 16px;
+        margin-left: 10px;
+    }
+    span#vv a {
+        padding-left: 0;
+    }
+    .footer-block .phone span {
+        margin-left: 0!important;
+    }
+    .footer-block .phone #vv {
+        margin-top: 10px!important;
+        font-size: 14px!important;
+        margin-left: 0!important;
+    }
+    .form_n input[type="text"] {
+        width: 100%;
+    }
+    .form_n button {
+        margin-bottom: 20px;
     }
 }
 
@@ -4157,4 +4231,87 @@ div#ten {
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);
 }
 
+.van img {
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 40px;
+}
+.van h5 {
+    text-transform: uppercase;
+    font-size: 16px;
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-left: 12px;
+    margin-bottom: 20px;
+}
+.van ul {
+    float: left;
+    width: 100%;
+}
+.van li {
+    text-align: left;
+    margin-bottom: 13px;
+    width: 100%;
+}
+.fre h2 {
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.van {
+    margin-top: 16px;
+}
+.form_n {
+    background: #f9f8f8;
+    padding: 40px;
+    border: 4px solid #fae029;
+    padding-bottom: 35px;
+}
+.form_n h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.form_n p {
+    font-size: 14px;
+}
+p.fzi {
+    font-size: 13px;
+    max-width: 810px;
+    margin: 0 auto;
+}
 
+.form_n input[type="text"] {
+    background: #fff;
+    width: 255px;
+    margin-right: 25px;
+    height: 53px;
+    text-align: left;
+    border: 1px solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 0 15px;
+    text-align: left;
+    text-transform: initial;
+    color: #3e3e3e;
+    font: inherit;
+    border: 1px solid #cdcdcd;
+    outline: 0;
+    margin-bottom: 17px;
+}
+.form_n button {
+      background: #FAE029;
+      color: #3e3e3e;
+      font: 14px 'GothaProMedium';
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      width: 255px;
+      height: 53px;
+      text-align: center;
+      text-transform: uppercase;
+  }

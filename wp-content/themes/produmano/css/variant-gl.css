@@ -9,6 +9,19 @@
 .header .phone {
     margin-top: 0px;
 }
+
+.phone-link {
+    padding-left: 15px;
+    color: #3e5d7b;
+    text-decoration: none;
+}
+
+.contacts__mail-link {
+    color: #3e5d7b;
+    line-height: 1.7;
+    text-decoration: none;
+}
+
 .header .phone {
     float: right;
     font-size: 15px;
@@ -18,6 +31,7 @@
 .he1 {
     width: 48%;
 }
+
 .he3 {
     width: 26%;
 }
@@ -28,7 +42,7 @@
 }
 span.f40 {
     font-size: 48px;
-    padding-right: 10px;
+    padding-right: 0px;
     padding-top: 100px;
 }
 .ce {
@@ -269,6 +283,21 @@ img.but_p:hover {
     margin-left: 25px;
     width: 370px;
 }
+
+@media screen and (max-width: 1599px) {
+     .te-k {
+        box-sizing: border-box;
+        height: 412px;    
+    }
+}
+
+@media screen and (min-width: 1599px) {
+     .te-k {
+         box-sizing: border-box;
+         height: 516px;
+    }
+}
+
 .te-k h3 {
     font-size: 20px;
     text-transform: uppercase;
@@ -342,7 +371,12 @@ opacity: 0.7;
 .te-k h3 {
     margin-bottom: 25px;
 }
-
+.big-k {
+    display: none;
+}
+.text-k {
+    margin-top: 20px;
+}
 
 
 
@@ -677,7 +711,7 @@ opacity: 0.7;
 
 @media (max-width: 767px) {
     span#vv {
-        margin-left: 0px!important;
+        margin-left: 20px!important;
     }
     .sl-k {
         padding-right: 30px;
